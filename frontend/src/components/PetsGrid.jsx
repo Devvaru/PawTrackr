@@ -2,6 +2,9 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
+// TODO: Remove commented code
+// https://react-bootstrap.netlify.app/docs/components/cards#grid-cards
+
 function PetsGrid() {
   return (
     <Row xs={1} md={4} className='g-4'>
