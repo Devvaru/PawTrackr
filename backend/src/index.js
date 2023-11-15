@@ -21,7 +21,7 @@ const petApiRoutes = require('./routes/pets-api');
 app.use('/api/pets', petApiRoutes);
 
 app.get("/", (req, res) => {
-    res.send("Welcome to the back end");
+    return res.text("Welcome to the back end");
 })
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
