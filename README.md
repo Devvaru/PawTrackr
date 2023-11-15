@@ -6,8 +6,6 @@ PawTrackr is a full stack app that enables pet owners to track all their pets' i
 
 <!-- [ Demo Video ] -->
 
-<!-- [ Video of Cypress Test Runner (Stretch) ] -->
-
 <!-- [ Screenshots ] -->
 
 ## Project ERD (Entity Relationship Diagram)
@@ -48,14 +46,16 @@ While working to build this project to successful completion, we:
 * [React](https://react.dev/)
 * [Express](https://expressjs.com)
 * [Node.js](https://nodejs.org/)
+* [react-bootstrap](https://react-bootstrap.netlify.app/)
 * [SASS](https://www.npmjs.com/package/sass)
 * [node-postgres](https://node-postgres.com/)
 * [Babel](https://babeljs.io/)
-* [dotenv](https://www.npmjs.com/package/dotenv)
+* [Morgan](https://www.npmjs.com/package/morgan/)
+* [dotenv](https://www.npmjs.com/package/dotenv/)
 
 ## A note about `create-react-app`
 
-For larger-scale production-ready applications with enhanced customization, React's official documentation and best practices now recommend other ways to [Start a New React Project](https://react.dev/learn/start-a-new-react-project)\
+For larger-scale production-ready applications with enhanced customization, React's official documentation and best practices now recommend other ways to [Start a New React Project](https://react.dev/learn/start-a-new-react-project)
 
 Since this was a project for educational purposes, it has been bootstrapped with [Create React App](https://github.com/facebook/create-react-app) which provided a straightforward way to get a functional React app up and running quickly.
 
@@ -68,8 +68,7 @@ Since this was a project for educational purposes, it has been bootstrapped with
 
 ### Set up Frontend & Backend
 
-<!-- * From within the project root folder, install all dependencies with `npm i` (or `npm install`), in the `/frontend` and `/backend` folders -->
-* From within the project root folder, install all dependencies with `npm i` (or `npm install`), in the `/backend` folder
+* From within the project root folder, install all dependencies with `npm i` (or `npm install`), in the `/frontend` and `/backend` folders
 
 ### Set Up Database
 
@@ -93,15 +92,15 @@ Since this was a project for educational purposes, it has been bootstrapped with
 
 * Using the provided `.env.example` file as a template, create a new `.env` file in the same folder.
 * Add your database name, username, and password.
-* **Note:** If running the app locally, the `PGHOST` would be `localhost`, and for PostgreSQL the `PGPORT` will usually be `5432`.
+* **Note:** If running the app locally, the `DB_HOST` would be `localhost`, and for PostgreSQL the `DB_PORT` will usually be `5432`.
 * For security reasons, the `.env` file has been added to the `.gitignore` file, so these sensitive details will not accidentally be published to GitHub.
   
 ### Start the App
 
 * Connect to the database server from the root folder by using the `psql` command and your database credentials
-* Start the backend by running the `npm start` command from within the `/backend` folder. The API server will run on Port **TBC**
-* Start the frontend side using the `npm start` command from within the `/frontend` folder. The client will run on Port Port **TBC**
-* Navigate to [http://localhost:**TBC**/](http://localhost:**TBC**/) in your browser
+* Start the backend by running the `npm start` command from within the `/backend` folder. The API server will run on Port 8080
+* Start the frontend side using the `npm start` command from within the `/frontend` folder. The client will run on Port 3000
+* Navigate to [http://localhost:3000](http://localhost:3000) in your browser
 
 <!-- ## Acknowledgements & Thanks
 
