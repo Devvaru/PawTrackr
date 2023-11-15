@@ -1,18 +1,13 @@
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { useState, useEffect } from 'react';
 import PetsGridItem from './PetsGridItem';
-import Image from 'react-bootstrap/Image';
 
 // TODO: Remove commented code
 // https://react-bootstrap.netlify.app/docs/components/cards#grid-cards
 
 function PetsGrid(props) {
-  const { modalShow, setModalShow } = props;
 
   const [pets, setPets] = useState([]);
-  console.log(pets);
 
   useEffect(() => {
     fetch('http://localhost:8080/api/pets')

@@ -1,28 +1,32 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import PetModal from './PetModal';
 import { useState, useEffect } from 'react';
-import Image from 'react-bootstrap/Image';
 
 // TODO: Remove commented code
 // https://react-bootstrap.netlify.app/docs/components/cards#grid-cards
 
 function PetsGridItem(props) {
   const { pet } = props;
-
-  const displayModal = () => {
-    
-  };
+  const [modalShow, setModalShow] = useState(false);
 
   return (
     <div>
       <Col>
-        <Card>
-          <Card.Img onClick={displayModal}
+        <Card onClick={() => setModalShow(true)}>
+          <Card.Img
             variant='top'
             src={pet.pet_img_url}
             alt={`Photo of ${pet.name}`}
           />
+          {modalShow && <PetModal
+            key={pet.id}
+            id={pet.id}
+            show={modalShow}
+            setModalShow={setModalShow}
+            onHide={() => setModalShow(false)}
+            pet={pet}
+          />}
           {/* <Image src={pet.pet_img_url} roundedCircle /> */}
           <Card.Body>
             <Card.Title>{pet.name}</Card.Title>
