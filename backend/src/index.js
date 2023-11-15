@@ -1,5 +1,3 @@
-// require('dotenv').config()
-
 const PORT = 8080;
 const express = require('express');
 const app = express();
@@ -12,16 +10,14 @@ app.use(morgan('dev'));
 app.use(cors());
 
 // Separated Routes for each Resource
-// Note: Feel free to replace the example routes below with your own
 const petApiRoutes = require('./routes/pets-api');
 
 // Mount all resource routes
-// Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/pets', petApiRoutes);
 
 app.get("/", (req, res) => {
-    return res.text("Welcome to the back end");
+  res.send("Welcome to the back end");
 })
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
