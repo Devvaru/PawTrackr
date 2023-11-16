@@ -1,12 +1,19 @@
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 
 function PetModal(props) {
-  console.log(props)
+  console.log(props);
   const { pet } = props;
+
+  // Display Pet Date of Birth in YYYY/MM/DD format
+  const dateOfBirth = new Date(pet.date_of_birth);
+  const formattedDateOfBirth = `${dateOfBirth.getFullYear()}/${(
+    dateOfBirth.getMonth() + 1
+  )
+    .toString()
+    .padStart(2, '0')}/${dateOfBirth.getDate().toString().padStart(2, '0')}`;
+
   return (
     <Modal
       {...props}
@@ -25,7 +32,7 @@ function PetModal(props) {
       <Modal.Body>
         <Col xs={10} md={10}>
           <Image src={pet.pet_img_url} rounded />
-          <p><strong>Date of Birth:</strong> {pet.date_of_birth}</p>
+          <p><strong>Date of Birth:</strong> {formattedDateOfBirth}</p>
           <p><strong>Species:</strong> {pet.variant}</p>
           <p><strong>Weight:</strong> {pet.weight} grams</p>
           <p><strong>Food:</strong> {pet.food}</p>
