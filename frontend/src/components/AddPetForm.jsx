@@ -1,111 +1,71 @@
 import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Container from 'react-bootstrap/Container';
+// import InputGroup from 'react-bootstrap/InputGroup';
+// import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import { useState } from 'react';
 
 function AddPetForm() {
-  const [name, setName] = useState('');
-  const [date, setDate] = useState('');
-  // // const [imageUrl, setImageUrl] = useState('');
-  
-  // const handleSubmit = () => {
-  //   const newPet = {
-  //     name: name,
-  //     // image_url: imageUrl,
-  //   }
-  //   console.log(newPet);
-  // };
-  // console.log(name);
+  const [ name, setName ] = useState({});
 
   const handleSubmit = (event) => {
-
-    console.log(name);
-    console.log(date);
+    event.preventDefault();
+    const formData = new FormData(event.target)
+    console.log(formData.get('name'));
+    console.log(formData.get('breed'));
   };
+
+
 
   return (
     <>
-      <Container>
-        <br/>
-        <Form onSubmit={handleSubmit}>
-          <InputGroup className="mb-3">
-            <InputGroup.Text id="inputGroup-sizing-default">
-              Name
-            </InputGroup.Text>
-            <Form.Control
-              aria-label="Default"
-              aria-describedby="inputGroup-sizing-default"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </InputGroup>
-          <br />
-          <InputGroup className="mb-3">
-            <InputGroup.Text id="inputGroup-sizing-default">
-              Image
-            </InputGroup.Text>
-            <Form.Control
-              aria-label="Default"
-              aria-describedby="inputGroup-sizing-default"
-            />
-          </InputGroup>
-          <br />
-          <InputGroup className="mb-3">
-            <InputGroup.Text id="inputGroup-sizing-default">
-              Date of Birth
-            </InputGroup.Text>
-            <Form.Control type="date"
-              aria-label="Default"
-              aria-describedby="inputGroup-sizing-default"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
-          </InputGroup>
-          <br />
-          <InputGroup className="mb-3">
-            <InputGroup.Text id="inputGroup-sizing-default">
-              Species
-            </InputGroup.Text>
-            <Form.Control
-              aria-label="Default"
-              aria-describedby="inputGroup-sizing-default"
-            />
-          </InputGroup>
-          <br />
-          <InputGroup className="mb-3">
-            <InputGroup.Text id="inputGroup-sizing-default">
-              Weight
-            </InputGroup.Text>
-            <Form.Control
-              aria-label="Default"
-              aria-describedby="inputGroup-sizing-default"
-            />
-          </InputGroup>
-          <br />
-          <InputGroup className="mb-3">
-            <InputGroup.Text id="inputGroup-sizing-default">
-              Food
-            </InputGroup.Text>
-            <Form.Control
-              aria-label="Default"
-              aria-describedby="inputGroup-sizing-default"
-            />
-          </InputGroup>
-          <br />
-          <InputGroup className="mb-3">
-            <InputGroup.Text id="inputGroup-sizing-default">
-              Comment
-            </InputGroup.Text>
-            <Form.Control
-              aria-label="Default"
-              aria-describedby="inputGroup-sizing-default"
-            />
-          </InputGroup>
-          <br />
-          <Button type="submit">Submit form</Button>
-        </Form>
-      </Container>
+      <Form onSubmit={handleSubmit}>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="name">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="text" placeholder="Name" name="name" />
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="pet_img_url">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="text" placeholder="Image" name="pet_img_url" />
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="date_of_birth">
+              <Form.Label>Date of Birth</Form.Label>
+              <Form.Control type="text" placeholder="Date of Birth" name="date_of_birth" />
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="variant">
+              <Form.Label>Species</Form.Label>
+              <Form.Control type="text" placeholder="Species" name="variant" />
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="weight">
+              <Form.Label>Species</Form.Label>
+              <Form.Control type="text" placeholder="Weight" name="weight" />
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="food">
+              <Form.Label>Food</Form.Label>
+              <Form.Control type="text" placeholder="Food" name="food" />
+            </Form.Group>
+          </Row>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6" controlId="comment">
+              <Form.Label>Comment</Form.Label>
+              <Form.Control type="text" placeholder="Comment" name="comment" />
+            </Form.Group>
+          </Row>
+        <Button type="submit">Submit form</Button>
+      </Form>
+      {/* </Container> */}
     </>
   );
 }
