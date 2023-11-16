@@ -3,18 +3,26 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-function ColorSchemesExample(props) {
-  const { showPets, setShowPets, showReminders, setShowReminders } = props;
+function Navigationbar(props) {
+  const { showPets, setShowPets, showReminders, setShowReminders, showContacts, setShowContacts } = props;
 
   useEffect(() => {
     if (showPets) {
       setShowReminders(false);
+      setShowContacts(false);
     } 
 
     if (showReminders) {
       setShowPets(false);
+      setShowContacts(false);
     }
-  }, [showPets, showReminders]);
+
+    if (showContacts) {
+      setShowPets(false);
+      setShowReminders(false);
+    } 
+
+  }, [showPets, showReminders, showContacts]);
 
   return (
     <>
@@ -24,7 +32,7 @@ function ColorSchemesExample(props) {
           <Nav className='me-auto'>
             <Nav.Link onClick={() => setShowPets(true)}>Pets</Nav.Link>
             <Nav.Link onClick={() => setShowReminders(true)}>Reminders</Nav.Link>
-            {/* <Nav.Link href='#contacts'>Contacts</Nav.Link> */}
+            <Nav.Link onClick={() => setShowContacts(true)}>Contacts</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -32,4 +40,4 @@ function ColorSchemesExample(props) {
   );
 }
 
-export default ColorSchemesExample;
+export default Navigationbar;
