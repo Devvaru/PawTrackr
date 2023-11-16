@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const petQueries = require('../db/queries/pets');
+const petQueries = require('../db/queries/allQueries');
 
 // Pets Listing Page
 router.get('/', (req, res) => {

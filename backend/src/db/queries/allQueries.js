@@ -17,4 +17,11 @@ const addPet = (pet) => {
     });
 };
 
-module.exports = { getPets, addPet };
+const getReminders = () => {
+  return db.query('SELECT * FROM reminders;')
+    .then(data => {
+      return data.rows;
+    });
+};
+
+module.exports = { getPets, addPet, getReminders };
