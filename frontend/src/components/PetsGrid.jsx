@@ -15,7 +15,6 @@ function PetsGrid(props) {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
-        console.log('Hello');
         return res.json();
       })
       .then((data) => {

@@ -6,7 +6,6 @@ const petQueries = require('../db/queries/pets');
 router.get('/', (req, res) => {
   petQueries.getPets()
     .then(pets => {
-      console.log(pets);
       res.json(pets);
     })
     .catch(err => {
