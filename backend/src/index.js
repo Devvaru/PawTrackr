@@ -2,12 +2,15 @@ const PORT = 8080;
 const express = require('express');
 const app = express();
 const cors = require('cors');
+app.use(cors());
 const morgan = require('morgan');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
-app.use(cors());
+
+// Allow all origins for testing purposes (make more restrictive in production)
+// app.options('*', cors());
 
 // Separated Routes
 const petApiRoutes = require('./routes/pets-api');

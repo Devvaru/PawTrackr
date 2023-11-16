@@ -19,7 +19,18 @@ function AddPetForm() {
     newPet.food = formData.get('food');
     newPet.comment = formData.get('comment');
 
-    console.log(newPet);
+    // console.log(newPet);
+
+    fetch('http://localhost:8080/api/pets', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json',
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'},
+      body: newPet
+    })
+    .then(response => response.json())
+    .then(data => console.log("New Pet", data))
+    .catch(error => console.error('Error:', error));
   };
 
 
