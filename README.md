@@ -39,17 +39,20 @@ While working to build this project to successful completion, we:
 * Leveraged code sharing and carried out code reviews
 * Collaborated effectively to deliver a product by the deadline
 * Built a complete Project to add to our portfolio
+* Learned a new library
 <!-- * Learned a new framework/library/tech stack/language -->
 
 ## Dependencies
 
 * [React](https://react.dev/)
+* [react-bootstrap](https://react-bootstrap.netlify.app/)
 * [Express](https://expressjs.com)
 * [Node.js](https://nodejs.org/)
-* [react-bootstrap](https://react-bootstrap.netlify.app/)
-* [SASS](https://www.npmjs.com/package/sass)
 * [node-postgres](https://node-postgres.com/)
+* [SASS](https://www.npmjs.com/package/sass)
 * [Babel](https://babeljs.io/)
+* [body-parser](https://www.npmjs.com/package/body-parser)
+* [Axios](https://www.npmjs.com/package/axios/)
 * [Morgan](https://www.npmjs.com/package/morgan/)
 * [dotenv](https://www.npmjs.com/package/dotenv/)
 
@@ -79,12 +82,12 @@ Since this was a project for educational purposes, it has been bootstrapped with
 
 ### Set up DB Tables
 
-* Set up database tables by running the migrations file using the `\i backend/src/db/schema/create.sql` command.
+* Within `psql`, set up database tables by running the migrations file with `\i backend/src/db/schema/create.sql`.
 * To verify the tables have been created, run command `\dt` and you should see tables named: `users`, `pets`, `reminders`, and `contacts`.
 
 ### Add Data to Tables
 
-* Run the seed file using the `\i backend/src/db/schema/seeds.sql` command.
+* Within `psql`, run the seed file with `\i backend/src/db/schema/seeds.sql`.
 * To confirm that your tables have been populated with data, run command `SELECT * FROM users;` (or any of the table names) and you should see some data displayed.
 * You can now exit postgres by typing `\q` to return to your command line.
 
