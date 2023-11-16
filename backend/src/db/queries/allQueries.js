@@ -24,4 +24,11 @@ const getReminders = () => {
     });
 };
 
-module.exports = { getPets, addPet, getReminders };
+const getContacts = () => {
+  return db.query('SELECT * FROM contacts;')
+    .then(data => {
+      return data.rows;
+    });
+};
+
+module.exports = { getPets, addPet, getReminders, getContacts };
