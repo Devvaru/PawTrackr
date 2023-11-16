@@ -32,7 +32,7 @@ function ContextAwareToggle({ children, eventKey, callback }) {
 
 function FormAccordion() {
   return (
-    <Accordion defaultActiveKey="0">
+    <Accordion defaultActiveKey="null">
       <Card>
         <Card.Header>
           <ContextAwareToggle eventKey="0">Click me!</ContextAwareToggle>
