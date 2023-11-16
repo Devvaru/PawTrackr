@@ -18,14 +18,18 @@ router.get('/', (req, res) => {
 // users should be able to create a new pet
 router.post("/", (req, res) => {
   // const userId = req.session.user_id;
-
+  console.log(req);
   const newPet = req.body;
+  console.log({newPet});
   newPet.user_id = 1;
   petQueries.addPet(newPet)
-    .then(() => {
-      res.redirect('/');
+    .then((result) => {
+      console.log({result});
+      res.json('It works!!');
+      // res.redirect('/');
     })
     .catch(err => {
+      console.log({err});
       res
         .status(500)
         .json({ error: err.message });

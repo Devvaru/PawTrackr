@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import axios from 'axios';
 
 function AddPetForm() {
   const newPet = {};
@@ -19,18 +20,25 @@ function AddPetForm() {
     newPet.food = formData.get('food');
     newPet.comment = formData.get('comment');
 
-    // console.log(newPet);
+    console.log({newPet});
 
-    fetch('http://localhost:8080/api/pets', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json',
-      'Access-Control-Allow-Origin':'*',
-      'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'},
-      body: newPet
+    // fetch('http://localhost:8080/api/pets', {
+    //   method: 'POST',
+    //   mode: 'no-cors',
+    //   headers: {'Content-Type':'*'},
+    //   body: JSON.stringify({name: 'Test name'})
+    // })
+    // .then(response => response.json())
+    // .then(data => console.log("New Pet", data))
+    // .catch(error => console.error('Error:', error));
+
+    axios.post('http://localhost:8080/api/pets', JSON.stringify(newPet))
+    .then(res => {
+        console.log({res})
     })
-    .then(response => response.json())
-    .then(data => console.log("New Pet", data))
-    .catch(error => console.error('Error:', error));
+    .catch(err => {
+        console.log({err})
+    })
   };
 
 
