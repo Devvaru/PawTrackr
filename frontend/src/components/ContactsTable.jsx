@@ -1,14 +1,14 @@
 import Table from 'react-bootstrap/Table';
-import ReminderItem from './ReminderItem';
+import ContactItem from './ContactItem';
 // import FormAccordion from './FormAccordion';
 import { useState, useEffect } from 'react';
 
-function RemindersTable() {
+function ContactsTable() {
 
-  const [reminders, setReminders] = useState([]);
+  const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/reminders')
+    fetch('http://localhost:8080/api/contacts')
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
@@ -16,7 +16,7 @@ function RemindersTable() {
         return res.json();
       })
       .then((data) => {
-        setReminders(data);
+        setContacts(data);
       })
       .catch((error) => {
         console.error('Fetch error:', error);
@@ -31,20 +31,21 @@ function RemindersTable() {
           {/* <FormAccordion /> */}
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Date</th>
-              <th>Comment</th>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Website</th>
             </tr>
           </thead>
-          {reminders.length !== 0 && (
+          {contacts.length !== 0 && (
             <tbody>
 
               {
-                reminders.map((reminder) => (
+                contacts.map((contact) => (
                   <tr>
-                    <ReminderItem
-                      key={reminder.id}
-                      reminder={reminder}
+                    <ContactItem
+                      key={contact.id}
+                      contact={contact}
                     />
                   </tr>
                 ))
@@ -54,7 +55,7 @@ function RemindersTable() {
 
 
           )}
-          {reminders.length === 0 && <div>Loading</div>}
+          {contacts.length === 0 && <div>Loading</div>}
         </div>
 
 
@@ -63,4 +64,4 @@ function RemindersTable() {
   );
 }
 
-export default RemindersTable;
+export default ContactsTable;

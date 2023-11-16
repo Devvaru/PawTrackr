@@ -1,8 +1,9 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Nav from './components/_Nav';
+import Navigationbar from './components/_Navigationbar';
 import PetsGrid from './components/PetsGrid';
 import RemindersTable from './components/RemindersTable';
+import ContactsTable from './components/ContactsTable';
 import { useState } from 'react';
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Nav 
+      <Navigationbar 
         showPets={showPets}
         setShowPets={setShowPets}
         showReminders={showReminders}
@@ -22,7 +23,7 @@ function App() {
       />
       {showPets && <PetsGrid />}
       {showReminders && <RemindersTable />}
-      {/* {showContacts && <ContactsTable />} */}
+      {showContacts && <ContactsTable />}
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import Row from 'react-bootstrap/Row';
 import { useState, useEffect } from 'react';
 import PetsGridItem from './PetsGridItem';
-import Button from 'react-bootstrap/Button';
 import FormAccordion from './FormAccordion';
 
 
