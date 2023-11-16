@@ -15,4 +15,22 @@ router.get('/', (req, res) => {
     });
 });
 
+// users should be able to create a new pet
+router.post("/", (req, res) => {
+  // const userId = req.session.user_id;
+
+  const newPet = req.body;
+  newPet.user_id = 1;
+  petQueries.addPet(newPet)
+    .then(() => {
+      res.redirect('/');
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
+
 module.exports = router;
