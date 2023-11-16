@@ -1,6 +1,7 @@
 import Row from 'react-bootstrap/Row';
 import { useState, useEffect } from 'react';
 import PetsGridItem from './PetsGridItem';
+import Button from 'react-bootstrap/Button';
 
 // TODO: Remove commented code
 // https://react-bootstrap.netlify.app/docs/components/cards#grid-cards
@@ -27,6 +28,7 @@ function PetsGrid(props) {
 
   return (
     <div>
+    <Button variant="info">Add Pet</Button>{' '}
       {pets.length !== 0 && (
         <Row xs={1} md={4} className='g-4'>
           {pets.map((pet) => (
