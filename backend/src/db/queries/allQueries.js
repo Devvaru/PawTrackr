@@ -18,7 +18,7 @@ const addPet = (pet) => {
 };
 
 const getReminders = () => {
-  return db.query('SELECT * FROM reminders;')
+  return db.query('SELECT * FROM reminders ORDER BY date;')
     .then(data => {
       return data.rows;
     });
