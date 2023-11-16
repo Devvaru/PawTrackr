@@ -4,16 +4,22 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { useState } from 'react';
 
 function AddPetForm() {
-  const [ name, setName ] = useState({});
+  const newPet = {};
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target)
-    console.log(formData.get('name'));
-    console.log(formData.get('breed'));
+    const formData = new FormData(event.target);
+    newPet.name = formData.get('name');
+    newPet.pet_img_url = formData.get('pet_img_url');
+    newPet.date_of_birth = formData.get('date_of_birth');
+    newPet.variant = formData.get('variant');
+    newPet.weight = formData.get('weight');
+    newPet.food = formData.get('food');
+    newPet.comment = formData.get('comment');
+
+    console.log(newPet);
   };
 
 
@@ -29,14 +35,14 @@ function AddPetForm() {
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} md="6" controlId="pet_img_url">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Image</Form.Label>
               <Form.Control type="text" placeholder="Image" name="pet_img_url" />
             </Form.Group>
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} md="6" controlId="date_of_birth">
               <Form.Label>Date of Birth</Form.Label>
-              <Form.Control type="text" placeholder="Date of Birth" name="date_of_birth" />
+              <Form.Control type="date" placeholder="Date of Birth" name="date_of_birth" />
             </Form.Group>
           </Row>
           <Row className="mb-3">
@@ -47,7 +53,7 @@ function AddPetForm() {
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} md="6" controlId="weight">
-              <Form.Label>Species</Form.Label>
+              <Form.Label>Weight</Form.Label>
               <Form.Control type="text" placeholder="Weight" name="weight" />
             </Form.Group>
           </Row>
