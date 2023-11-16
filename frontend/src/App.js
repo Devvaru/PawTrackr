@@ -9,7 +9,6 @@ function App() {
     <div className='App'>
       <Nav />
       <PetsGrid />
-      <AddPetForm />
     </div>
   );
 }
