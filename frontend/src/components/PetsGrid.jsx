@@ -37,7 +37,7 @@ function PetsGrid() {
         }}
       />
       {pets.length !== 0 && (
-        <Row xs={1} md={4} className='g-4'>
+        <Row xs={1} md={4} className='g-4' style={{margin: '0px'}}>
           {pets.map((pet) => (
             <PetsGridItem
               key={pet.id}
