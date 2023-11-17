@@ -30,7 +30,7 @@ function AddReminderForm(props) {
 
   return (
     <>
-      <Row className='justify-content-md-center'>
+      <Row className='justify-content-md-center' style={{marginTop: '30px'}}>
         <Col md={6}>
           <Form ref={formRef} onSubmit={handleSubmit}>
             <Row className='mb-3'>
