@@ -62,4 +62,18 @@ const getContacts = () => {
   });
 };
 
-module.exports = { getPets, addPet, getReminders, addReminder, getContacts };
+const addContact = (contact) => {
+  const { user_id, name, phone_number, email, website } = contact;
+  // Add RETURNING *; to the end of an INSERT query to return the objects that were inserted. This is handy when you need the auto generated id of an object you've just added to the database
+  return db
+    .query(
+      'INSERT INTO contacts (user_id, name, phone_number, email, website) VALUES ($1, $2, $3, $4, $5) RETURNING *;',
+      [user_id, name, phone_number, email, website]
+    )
+    .then((data) => {
+      return data.rows[0];
+    });
+};
+
+
+module.exports = { getPets, addPet, getReminders, addReminder, getContacts, addContact };
