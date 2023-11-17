@@ -32,7 +32,7 @@ function AddContactForm(props) {
 
   return (
     <>
-      <Row className='justify-content-md-center'>
+      <Row className='justify-content-md-center' style={{marginTop: '30px'}}>
         <Col md={6}>
           <Form ref={formRef} onSubmit={handleSubmit}>
             <Row className='mb-3'>
@@ -59,7 +59,7 @@ function AddContactForm(props) {
                 <Form.Control type='text' placeholder='Website' name='website' />
               </Form.Group>
             </Row>
-            <Button type='submit'>Submit form</Button>
+            <Button type='submit' variant="info" style={{ color: "white", fontWeight: '600', marginBottom: '50px' }}>SUBMIT</Button>
           </Form>
         </Col>
       </Row >
