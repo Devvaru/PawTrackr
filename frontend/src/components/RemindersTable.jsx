@@ -6,8 +6,6 @@ import { useState, useEffect } from 'react';
 function RemindersTable() {
   const [reminders, setReminders] = useState([]);
 
-  console.log('Reminders:', reminders);
-
   const loadReminders = () => {
     fetch('http://localhost:8080/api/reminders')
       .then((res) => {
