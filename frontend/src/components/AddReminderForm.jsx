@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import axios from 'axios';
 
-function AddReminderForm() {
+function AddReminderForm(props) {
   const newReminder = {};
 
   const handleSubmit = (event) => {
@@ -18,6 +18,7 @@ function AddReminderForm() {
       .post('http://localhost:8080/api/reminders', newReminder)
       .then((res) => {
         console.log({ res });
+        props.onReminderAdded();
       })
       .catch((err) => {
         console.log({ err });

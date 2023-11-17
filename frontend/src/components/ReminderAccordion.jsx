@@ -29,7 +29,7 @@ function ContextAwareToggle({ children, eventKey, callback }) {
   );
 }
 
-function ReminderAccordion() {
+function ReminderAccordion(props) {
   return (
     <Accordion defaultActiveKey='null'>
       <Card>
@@ -37,7 +37,7 @@ function ReminderAccordion() {
           <ContextAwareToggle eventKey='0'>Click me!</ContextAwareToggle>
         </Card.Header>
         <Accordion.Collapse eventKey='0'>
-          <AddReminderForm />
+          <AddReminderForm onReminderAdded={props.onReminderAdded} />
         </Accordion.Collapse>
       </Card>
     </Accordion>

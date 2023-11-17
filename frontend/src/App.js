@@ -7,23 +7,24 @@ import ContactsTable from './components/ContactsTable';
 import { useState } from 'react';
 
 function App() {
-  const [showPets, setShowPets] = useState(true);
-  const [showReminders, setShowReminders] = useState(false);
-  const [showContacts, setShowContacts] = useState(false);
+  const [activePage, setActivePage] = useState('pets');
 
   return (
     <div className='App'>
-      <Navigationbar 
-        showPets={showPets}
-        setShowPets={setShowPets}
-        showReminders={showReminders}
-        setShowReminders={setShowReminders}
-        showContacts={showContacts}
-        setShowContacts={setShowContacts}
+      <Navigationbar
+        setShowPets={() => {
+          setActivePage('pets');
+        }}
+        setShowReminders={() => {
+          setActivePage('reminders');
+        }}
+        setShowContacts={() => {
+          setActivePage('contacts');
+        }}
       />
-      {showPets && <PetsGrid />}
-      {showReminders && <RemindersTable />}
-      {showContacts && <ContactsTable />}
+      {activePage === 'pets' && <PetsGrid />}
+      {activePage === 'reminders' && <RemindersTable />}
+      {activePage === 'contacts' && <ContactsTable />}
     </div>
   );
 }
