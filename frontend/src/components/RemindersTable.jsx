@@ -1,6 +1,6 @@
 import Table from 'react-bootstrap/Table';
 import ReminderItem from './ReminderItem';
-// import FormAccordion from './FormAccordion';
+import ReminderAccordion from './ReminderAccordion';
 import { useState, useEffect } from 'react';
 
 function RemindersTable() {
@@ -28,7 +28,7 @@ function RemindersTable() {
       <Table responsive="sm">
         <div>
 
-          {/* <FormAccordion /> */}
+          <ReminderAccordion />
           <thead>
             <tr>
               <th>Title</th>
