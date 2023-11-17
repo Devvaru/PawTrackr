@@ -32,13 +32,14 @@ router.post('/', (req, res) => {
 });
 
 // Delete Contact
-router.delete('/:contact_id', (req, res) => {
+router.delete('/:id', (req, res) => {
   const contactId = req.params.id;
+  console.log('contactId', contactId)
 
   contactQueries
     .deleteContact(contactId)
     .then((result) => {
-      console.log({ result });
+      console.log("result", { result });
       res.json('Contact removed successfully! 😃');
     })
     .catch((err) => {

@@ -77,11 +77,8 @@ const addContact = (contact) => {
 
 const deleteContact = (contactId) => {
   return db
-    .query('DELETE FROM contacts WHERE contact_id = $1 RETURNING *;', [contactId])
-    .then((data) => {
-      if (data.rows.length === 0) {
-        throw new Error('Contact not found');
-      }
+    .query('DELETE FROM contacts WHERE id = $1 RETURNING *;', [contactId])
+    .then(() => {
       return { message: 'Contact deleted successfully' };
     });
 };

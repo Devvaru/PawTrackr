@@ -40,6 +40,7 @@ function ContactsTable() {
             <th>Phone Number</th>
             <th>Email</th>
             <th>Website</th>
+            <th>Delete</th>
           </tr>
         </thead>
         {contacts.length !== 0 && (
