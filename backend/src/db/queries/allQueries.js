@@ -75,5 +75,12 @@ const addContact = (contact) => {
     });
 };
 
+const deleteContact = (contactId) => {
+  return db
+    .query('DELETE FROM contacts WHERE id = $1 RETURNING *;', [contactId])
+    .then(() => {
+      return { message: 'Contact deleted successfully' };
+    });
+};
 
-module.exports = { getPets, addPet, getReminders, addReminder, getContacts, addContact };
+module.exports = { getPets, addPet, getReminders, addReminder, getContacts, addContact, deleteContact };

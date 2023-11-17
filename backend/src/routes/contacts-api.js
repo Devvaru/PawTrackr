@@ -31,5 +31,22 @@ router.post('/', (req, res) => {
     });
 });
 
+// Delete Contact
+router.delete('/:id', (req, res) => {
+  const contactId = req.params.id;
+  console.log('contactId', contactId)
+
+  contactQueries
+    .deleteContact(contactId)
+    .then((result) => {
+      console.log("result", { result });
+      res.json('Contact removed successfully! 😃');
+    })
+    .catch((err) => {
+      console.error({ err });
+      res.status(500).json({ error: 'Failed to remove contact! ☹️' });
+    });
+});
+
 
 module.exports = router;

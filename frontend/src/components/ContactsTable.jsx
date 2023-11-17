@@ -40,13 +40,14 @@ function ContactsTable() {
             <th>Phone Number</th>
             <th>Email</th>
             <th>Website</th>
+            <th>Delete</th>
           </tr>
         </thead>
         {contacts.length !== 0 && (
           <tbody>
             {contacts.map((contact) => (
               <tr key={contact.id}>
-                <ContactItem contact={contact} />
+                <ContactItem contact={contact} loadContacts={loadContacts} />
               </tr>
             ))}
           </tbody>
