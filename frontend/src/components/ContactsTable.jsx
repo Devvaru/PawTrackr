@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 function ContactsTable() {
   const [contacts, setContacts] = useState([]);
 
-  useEffect(() => {
+  const loadContacts = () => {
     fetch('http://localhost:8080/api/contacts')
       .then((res) => {
         if (!res.ok) {
@@ -20,32 +20,44 @@ function ContactsTable() {
       .catch((error) => {
         console.error('Fetch error:', error);
       });
+  };
+
+  useEffect(() => {
+    loadContacts();
   }, []);
 
   return (
     <div>
+      <ContactAccordion
+        onContactAdded={() => {
+          loadContacts();
+        }}
+      />
       <Table responsive='sm'>
-        <div>
-          <ContactAccordion />
-          <thead>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        {contacts.length !== 0 && (
+          <tbody>
+            {contacts.map((contact) => (
+              <tr key={contact.id}>
+                <ContactItem contact={contact} />
+              </tr>
+            ))}
+          </tbody>
+        )}
+        {contacts.length === 0 && (
+          <tbody>
             <tr>
-              <th>Name</th>
-              <th>Phone Number</th>
-              <th>Email</th>
-              <th>Website</th>
+              <td colSpan={3}> Loading </td>
             </tr>
-          </thead>
-          {contacts.length !== 0 && (
-            <tbody>
-              {contacts.map((contact) => (
-                <tr key={contact.id}>
-                  <ContactItem contact={contact} />
-                </tr>
-              ))}
-            </tbody>
-          )}
-          {contacts.length === 0 && <div>Loading</div>}
-        </div>
+          </tbody>
+        )}
       </Table>
     </div>
   );

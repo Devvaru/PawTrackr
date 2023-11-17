@@ -1,17 +1,15 @@
 import Row from 'react-bootstrap/Row';
-import { useState, useEffect } from 'react';
 import PetsGridItem from './PetsGridItem';
 import PetAccordion from './PetAccordion';
-
+import { useState, useEffect } from 'react';
 
 // TODO: Remove commented code
 // https://react-bootstrap.netlify.app/docs/components/cards#grid-cards
 
-function PetsGrid(props) {
-
+function PetsGrid() {
   const [pets, setPets] = useState([]);
 
-  useEffect(() => {
+  const loadPets = () => {
     fetch('http://localhost:8080/api/pets')
       .then((res) => {
         if (!res.ok) {
@@ -25,12 +23,19 @@ function PetsGrid(props) {
       .catch((error) => {
         console.error('Fetch error:', error);
       });
+  };
+
+  useEffect(() => {
+    loadPets();
   }, []);
 
   return (
     <div>
-    {/* <Button variant="info">Add Pet</Button>{' '} */}
-    <PetAccordion />
+      <PetAccordion
+        onPetAdded={() => {
+          loadPets();
+        }}
+      />
       {pets.length !== 0 && (
         <Row xs={1} md={4} className='g-4'>
           {pets.map((pet) => (

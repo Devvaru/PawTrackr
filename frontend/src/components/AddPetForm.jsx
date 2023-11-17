@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import axios from 'axios';
 
-function AddPetForm() {
+function AddPetForm(props) {
   const newPet = {};
 
   const handleSubmit = (event) => {
@@ -22,6 +22,7 @@ function AddPetForm() {
       .post('http://localhost:8080/api/pets', newPet)
       .then((res) => {
         console.log({ res });
+        props.onPetAdded();
       })
       .catch((err) => {
         console.log({ err });
