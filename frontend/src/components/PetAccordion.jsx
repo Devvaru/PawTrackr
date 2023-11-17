@@ -30,7 +30,7 @@ function ContextAwareToggle({ children, eventKey, callback }) {
   );
 }
 
-function FormAccordion() {
+function PetAccordion() {
   return (
     <Accordion defaultActiveKey="null">
       <Card>
@@ -45,4 +45,4 @@ function FormAccordion() {
   );
 }
 
-export default FormAccordion;
+export default PetAccordion;

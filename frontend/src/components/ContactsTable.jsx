@@ -1,6 +1,6 @@
 import Table from 'react-bootstrap/Table';
 import ContactItem from './ContactItem';
-// import FormAccordion from './FormAccordion';
+// import PetAccordion from './PetAccordion';
 import { useState, useEffect } from 'react';
 
 function ContactsTable() {
@@ -28,7 +28,7 @@ function ContactsTable() {
       <Table responsive="sm">
         <div>
 
-          {/* <FormAccordion /> */}
+          {/* <PetAccordion /> */}
           <thead>
             <tr>
               <th>Name</th>

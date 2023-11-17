@@ -1,7 +1,7 @@
 import Row from 'react-bootstrap/Row';
 import { useState, useEffect } from 'react';
 import PetsGridItem from './PetsGridItem';
-import FormAccordion from './FormAccordion';
+import PetAccordion from './PetAccordion';
 
 
 // TODO: Remove commented code
@@ -30,7 +30,7 @@ function PetsGrid(props) {
   return (
     <div>
     {/* <Button variant="info">Add Pet</Button>{' '} */}
-    <FormAccordion />
+    <PetAccordion />
       {pets.length !== 0 && (
         <Row xs={1} md={4} className='g-4'>
           {pets.map((pet) => (
