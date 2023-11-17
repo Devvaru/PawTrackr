@@ -4,7 +4,6 @@ import ContactItem from './ContactItem';
 import { useState, useEffect } from 'react';
 
 function ContactsTable() {
-
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
@@ -25,10 +24,9 @@ function ContactsTable() {
 
   return (
     <div>
-      <Table responsive="sm">
+      <Table responsive='sm'>
         <div>
-
-          {/* <PetAccordion /> */}
+          {/* <ContactAccordion /> */}
           <thead>
             <tr>
               <th>Name</th>
@@ -39,26 +37,15 @@ function ContactsTable() {
           </thead>
           {contacts.length !== 0 && (
             <tbody>
-
-              {
-                contacts.map((contact) => (
-                  <tr>
-                    <ContactItem
-                      key={contact.id}
-                      contact={contact}
-                    />
-                  </tr>
-                ))
-              }
-
+              {contacts.map((contact) => (
+                <tr key={contact.id}>
+                  <ContactItem contact={contact} />
+                </tr>
+              ))}
             </tbody>
-
-
           )}
           {contacts.length === 0 && <div>Loading</div>}
         </div>
-
-
       </Table>
     </div>
   );

@@ -4,10 +4,11 @@ import ReminderAccordion from './ReminderAccordion';
 import { useState, useEffect } from 'react';
 
 function RemindersTable() {
-
   const [reminders, setReminders] = useState([]);
 
-  useEffect(() => {
+  console.log('Reminders:', reminders);
+
+  const loadReminders = () => {
     fetch('http://localhost:8080/api/reminders')
       .then((res) => {
         if (!res.ok) {
@@ -21,43 +22,43 @@ function RemindersTable() {
       .catch((error) => {
         console.error('Fetch error:', error);
       });
+  };
+
+  useEffect(() => {
+    loadReminders();
   }, []);
 
   return (
     <div>
-      <Table responsive="sm">
-        <div>
-
-          <ReminderAccordion />
-          <thead>
+      <ReminderAccordion
+        onReminderAdded={() => {
+          loadReminders();
+        }}
+      />
+      <Table responsive='sm'>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        {reminders.length !== 0 && (
+          <tbody>
+            {reminders.map((reminder) => (
+              <tr key={reminder.id}>
+                <ReminderItem reminder={reminder} />
+              </tr>
+            ))}
+          </tbody>
+        )}
+        {reminders.length === 0 && (
+          <tbody>
             <tr>
-              <th>Title</th>
-              <th>Date</th>
-              <th>Comment</th>
+              <td colSpan={3}> Loading </td>
             </tr>
-          </thead>
-          {reminders.length !== 0 && (
-            <tbody>
-
-              {
-                reminders.map((reminder) => (
-                  <tr>
-                    <ReminderItem
-                      key={reminder.id}
-                      reminder={reminder}
-                    />
-                  </tr>
-                ))
-              }
-
-            </tbody>
-
-
-          )}
-          {reminders.length === 0 && <div>Loading</div>}
-        </div>
-
-
+          </tbody>
+        )}
       </Table>
     </div>
   );
