@@ -14,4 +14,21 @@ router.get('/', (req, res) => {
     });
 });
 
+// Add New Reminder
+router.post('/', (req, res) => {
+  const newReminder = req.body;
+  // newReminder.user_id = 1; // TODO: implement later
+
+  reminderQueries
+    .addReminder(newReminder)
+    .then((result) => {
+      console.log({ result });
+      res.json('Reminder added successfully! 😃');
+    })
+    .catch((err) => {
+      console.error({ err });
+      res.status(500).json({ error: 'Failed to add reminder! ☹️' });
+    });
+});
+
 module.exports = router;
