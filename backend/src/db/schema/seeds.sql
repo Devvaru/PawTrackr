@@ -4,13 +4,13 @@ VALUES
 
 INSERT INTO pets (user_id, name, pet_img_url, date_of_birth, variant, weight, food, comment)
 VALUES  
-  (1, 'Fido', 'images/dog_photo.jpg', '2000-04-05', 'Chocolate Lab', ARRAY['15000'], 'IAMS Fur Care', 'Spills water dish a lot!'),
-  (1, 'Maple', 'images/dog_photo.jpg', '1995-03-25', 'Shire Horse', ARRAY['1500000'], 'Hay', 'Likes his blanket'),
-  (1, 'Mocha', 'images/dog_photo.jpg', '2020-08-01', 'Abyssinian Cat', ARRAY['12000', '12300'], 'IAMS Anti Hairball', 'Will do tricks for treats'),
-  (1, 'Morsel', 'images/dog_photo.jpg', '2022-09-24', 'Crested Gecko', ARRAY['15000'], 'Pangea Gecko Diet', 'Very shy'),
-  (1, 'Swampy', 'images/dog_photo.jpg', '2015-06-10', 'Frog', ARRAY['250'], 'Flies', 'Hops a lot!'),
-  (1, 'Mischief', 'images/dog_photo.jpg', '2018-10-31', 'Tabby', ARRAY['4500'], 'IAMS Hairball Remedy', 'Shy but friendly'),
-  (1, 'Princess', 'images/dog_photo.jpg', '2000-04-05', 'Long-haired Dachshund', ARRAY['4000'], 'Raw Meat Diet', '');
+  (1, 'Fido', 'images/chocolate_lab.jpg', '2000-04-05', 'Chocolate Lab', ARRAY['15000'], 'IAMS Fur Care', 'Spills water dish a lot!'),
+  (1, 'Maple', 'images/shire_horse.jpg', '1995-03-25', 'Shire Horse', ARRAY['1500000'], 'Hay', 'Likes his blanket'),
+  (1, 'Mocha', 'images/cat.jpg', '2020-08-01', 'Abyssinian Cat', ARRAY['12000', '12300'], 'IAMS Anti Hairball', 'Will do tricks for treats'),
+  (1, 'Morsel', 'images/gecko.jpg', '2022-09-24', 'Crested Gecko', ARRAY['15000'], 'Pangea Gecko Diet', 'Very shy'),
+  (1, 'Swampy', 'images/frog.jpg', '2015-06-10', 'Frog', ARRAY['250'], 'Flies', 'Hops a lot!'),
+  (1, 'Mischief', 'images/tabby_cat.jpg', '2018-10-31', 'Tabby', ARRAY['4500'], 'IAMS Hairball Remedy', 'Shy but friendly'),
+  (1, 'Princess', 'images/dachshund.jpg', '2000-04-05', 'Long-haired Dachshund', ARRAY['4000'], 'Raw Meat Diet', '');
 
 INSERT INTO reminders (pet_id, title, date, comment)
 VALUES
