@@ -1,12 +1,13 @@
 import axios from "axios";
 
 function ContactItem(props) {
-  const { contact } = props;
+  const { contact, loadContacts } = props;
 
   const handleDelete = (contactId) => {
     axios.delete(`http://localhost:8080/api/contacts/${contactId}`)
       .then(() => {
         console.log(`Deleted contact ${contactId}`);
+        loadContacts();
       })
       .catch(error => {
         console.error(error);

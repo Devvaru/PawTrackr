@@ -47,7 +47,7 @@ function ContactsTable() {
           <tbody>
             {contacts.map((contact) => (
               <tr key={contact.id}>
-                <ContactItem contact={contact} />
+                <ContactItem contact={contact} loadContacts={loadContacts} />
               </tr>
             ))}
           </tbody>
