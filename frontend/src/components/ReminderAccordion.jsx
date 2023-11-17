@@ -1,31 +1,24 @@
-import { useContext } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import AccordionContext from 'react-bootstrap/AccordionContext';
 import { useAccordionButton } from 'react-bootstrap/AccordionButton';
 import AddReminderForm from './AddReminderForm';
 import Card from 'react-bootstrap/Card';
 
-const PINK = 'rgba(255, 192, 203, 0.6)';
-const BLUE = 'rgba(0, 0, 255, 0.6)';
+import Button from 'react-bootstrap/Button';
 
-function ContextAwareToggle({ children, eventKey, callback }) {
-  const { activeEventKey } = useContext(AccordionContext);
-
-  const decoratedOnClick = useAccordionButton(
-    eventKey,
-    () => callback && callback(eventKey)
+function CustomToggle({ children, eventKey }) {
+  const decoratedOnClick = useAccordionButton(eventKey, () =>
+    console.log('totally custom!'),
   );
 
-  const isCurrentEventKey = activeEventKey === eventKey;
-
   return (
-    <button
-      type='button'
-      style={{ backgroundColor: isCurrentEventKey ? PINK : BLUE }}
+    <Button
+      type="button"
+      variant="info"
+      style={{ color: 'white', fontWeight: '600' }}
       onClick={decoratedOnClick}
     >
       {children}
-    </button>
+    </Button>
   );
 }
 
@@ -34,7 +27,7 @@ function ReminderAccordion(props) {
     <Accordion defaultActiveKey='null'>
       <Card>
         <Card.Header>
-          <ContextAwareToggle eventKey='0'>Click me!</ContextAwareToggle>
+          <CustomToggle eventKey='0'>ADD REMINDER</CustomToggle>
         </Card.Header>
         <Accordion.Collapse eventKey='0'>
           <AddReminderForm onReminderAdded={props.onReminderAdded} />

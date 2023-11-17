@@ -51,7 +51,7 @@ function AddReminderForm(props) {
                 <Form.Control type='text' placeholder='Comment' name='comment' />
               </Form.Group>
             </Row>
-            <Button type='submit'>Submit form</Button>
+            <Button type='submit' variant="info" style={{ color: "white", fontWeight: '600', marginBottom: '50px' }}>SUBMIT</Button>
           </Form>
         </Col>
       </Row>
