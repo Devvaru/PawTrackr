@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -5,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import axios from 'axios';
 
 function AddReminderForm(props) {
+  const formRef = useRef();
   const newReminder = {};
 
   const handleSubmit = (event) => {
@@ -19,6 +21,7 @@ function AddReminderForm(props) {
       .then((res) => {
         console.log({ res });
         props.onReminderAdded();
+        formRef.current.reset();
       })
       .catch((err) => {
         console.log({ err });
@@ -27,27 +30,31 @@ function AddReminderForm(props) {
 
   return (
     <>
-      <Form onSubmit={handleSubmit}>
-        <Row className='mb-3'>
-          <Form.Group as={Col} md='6' controlId='title'>
-            <Form.Label>Title</Form.Label>
-            <Form.Control type='text' placeholder='Title' name='title' />
-          </Form.Group>
-        </Row>
-        <Row className='mb-3'>
-          <Form.Group as={Col} md='6' controlId='date'>
-            <Form.Label>Date</Form.Label>
-            <Form.Control type='date' placeholder='Date' name='date' />
-          </Form.Group>
-        </Row>
-        <Row className='mb-3'>
-          <Form.Group as={Col} md='6' controlId='comment'>
-            <Form.Label>Comment</Form.Label>
-            <Form.Control type='text' placeholder='Comment' name='comment' />
-          </Form.Group>
-        </Row>
-        <Button type='submit'>Submit form</Button>
-      </Form>
+      <Row className='justify-content-md-center'>
+        <Col md={6}>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <Row className='mb-3'>
+              <Form.Group controlId='title'>
+                <Form.Label>Title</Form.Label>
+                <Form.Control type='text' placeholder='Title' name='title' />
+              </Form.Group>
+            </Row>
+            <Row className='mb-3'>
+              <Form.Group controlId='date'>
+                <Form.Label>Date</Form.Label>
+                <Form.Control type='date' placeholder='Date' name='date' />
+              </Form.Group>
+            </Row>
+            <Row className='mb-3'>
+              <Form.Group controlId='comment'>
+                <Form.Label>Comment</Form.Label>
+                <Form.Control type='text' placeholder='Comment' name='comment' />
+              </Form.Group>
+            </Row>
+            <Button type='submit'>Submit form</Button>
+          </Form>
+        </Col>
+      </Row>
     </>
   );
 }
