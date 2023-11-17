@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -5,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import axios from 'axios';
 
 function AddReminderForm(props) {
+  const formRef = useRef();
   const newReminder = {};
 
   const handleSubmit = (event) => {
@@ -19,6 +21,7 @@ function AddReminderForm(props) {
       .then((res) => {
         console.log({ res });
         props.onReminderAdded();
+        formRef.current.reset();
       })
       .catch((err) => {
         console.log({ err });
@@ -27,7 +30,7 @@ function AddReminderForm(props) {
 
   return (
     <>
-      <Form onSubmit={handleSubmit}>
+      <Form ref={formRef} onSubmit={handleSubmit}>
         <Row className='mb-3'>
           <Form.Group as={Col} md='6' controlId='title'>
             <Form.Label>Title</Form.Label>

@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -5,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import axios from 'axios';
 
 function AddContactForm(props) {
+  const formRef = useRef();
   const newContact = {};
 
   const handleSubmit = (event) => {
@@ -21,6 +23,7 @@ function AddContactForm(props) {
       .then((res) => {
         console.log({ res });
         props.onContactAdded();
+        formRef.current.reset();
       })
       .catch((err) => {
         console.log({ err });
@@ -29,7 +32,7 @@ function AddContactForm(props) {
 
   return (
     <>
-      <Form onSubmit={handleSubmit}>
+      <Form ref={formRef} onSubmit={handleSubmit}>
         <Row className='mb-3'>
           <Form.Group as={Col} md='6' controlId='name'>
             <Form.Label>Name</Form.Label>
