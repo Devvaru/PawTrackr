@@ -13,10 +13,10 @@ function ReminderItem(props) {
   return (
     <>
       <td>{reminder.title}</td>
-      <td>{'---'}{formattedReminderDate}{'---'}</td>
+      <td>{formattedReminderDate}</td>
       <td>{reminder.comment}</td>
     </>
-  )
+  );
 }
 
 export default ReminderItem;
