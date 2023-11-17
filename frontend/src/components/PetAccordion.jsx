@@ -30,7 +30,7 @@ function ContextAwareToggle({ children, eventKey, callback }) {
   );
 }
 
-function PetAccordion() {
+function PetAccordion(props) {
   return (
     <Accordion defaultActiveKey="null">
       <Card>
@@ -38,7 +38,7 @@ function PetAccordion() {
           <ContextAwareToggle eventKey="0">Click me!</ContextAwareToggle>
         </Card.Header>
         <Accordion.Collapse eventKey="0">
-          <AddPetForm />
+          <AddPetForm onPetAdded={props.onPetAdded} />
         </Accordion.Collapse>
       </Card>
     </Accordion>

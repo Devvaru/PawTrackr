@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import PetModal from './PetModal';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 // TODO: Remove commented code
 // https://react-bootstrap.netlify.app/docs/components/cards#grid-cards
