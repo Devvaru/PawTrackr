@@ -56,6 +56,14 @@ const addReminder = (reminder) => {
     });
 };
 
+const editReminderDone = (reminderId) => {
+  return db
+    .query('UPDATE reminders SET done=true WHERE id = $1 RETURNING *;', [reminderId])
+    .then(() => {
+      return { message: 'Reminder edited successfully' };
+    });
+};
+
 const getContacts = () => {
   return db.query('SELECT * FROM contacts;').then((data) => {
     return data.rows;
@@ -83,4 +91,4 @@ const deleteContact = (contactId) => {
     });
 };
 
-module.exports = { getPets, addPet, getReminders, addReminder, getContacts, addContact, deleteContact };
+module.exports = { getPets, addPet, getReminders, addReminder, editReminderDone, getContacts, addContact, deleteContact };
