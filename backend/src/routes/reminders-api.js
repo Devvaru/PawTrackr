@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
 });
 
 // Edit Reminder Done Field
-router.edit('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   const reminderId = req.params.id;
   console.log('reminderId', reminderId)
 
