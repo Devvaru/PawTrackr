@@ -31,4 +31,21 @@ router.post('/', (req, res) => {
     });
 });
 
+// Edit Reminder Done Field
+router.edit('/:id', (req, res) => {
+  const reminderId = req.params.id;
+  console.log('reminderId', reminderId)
+
+  reminderQueries
+    .editReminderDone(reminderId)
+    .then((result) => {
+      console.log("result", { result });
+      res.json('Reminder edited successfully! 😃');
+    })
+    .catch((err) => {
+      console.error({ err });
+      res.status(500).json({ error: 'Failed to edit reminder! ☹️' });
+    });
+});
+
 module.exports = router;
