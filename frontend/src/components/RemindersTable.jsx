@@ -39,6 +39,7 @@ function RemindersTable() {
             <th>Title</th>
             <th>Date</th>
             <th>Comment</th>
+            <th>Done</th>
           </tr>
         </thead>
         {reminders.length !== 0 && (

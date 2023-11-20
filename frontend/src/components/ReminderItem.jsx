@@ -1,3 +1,5 @@
+import Form from 'react-bootstrap/Form';
+
 function ReminderItem(props) {
   const { reminder } = props;
 
@@ -15,6 +17,7 @@ function ReminderItem(props) {
       <td>{reminder.title}</td>
       <td>{formattedReminderDate}</td>
       <td>{reminder.comment}</td>
+      <td><Form.Check aria-label="option 1" /></td>
     </>
   );
 }
