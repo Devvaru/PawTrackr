@@ -14,15 +14,25 @@ VALUES
 
 INSERT INTO reminders (pet_id, title, date, comment)
 VALUES
-  (2, 'Feed Maple', '2023-12-09 15:00:00', 'Mix food with some water'),
-  (1, 'Feed Fido', '2023-12-12 14:00:00', 'Mix food with some water'),
-  (4, 'Feed Morsel', '2023-12-15 16:00:00', 'Mix food with some water'),
-  (5, 'Feed Horse', '2023-12-22 16:00:00', 'Mix food with some water');
+
+  (2, 'Vet', '2023-12-09 15:00:00', 'No food before scans'),
+  (4, 'Feed', '2023-12-12 14:00:00', 'Give crickets'),
+  (4, 'Medication', '2023-12-15 16:00:00', 'Give with a treat'),
+  (2, 'Feed', '2023-12-26 16:00:00', 'Add carrots'),
+  (3, 'Feed', '2023-12-13 12:00:00', 'Add salmon'),
+  (6, 'Groomer visit', '2023-12-16 13:00:00', 'Ask for claw trim'),
+  (5, 'Medication', '2023-12-22 17:00:00', 'Give with a treat'),
+  (1, 'Feed', '2023-12-28 19:00:00', 'Add raw meat'),
+  (4, 'Buy food', '2024-01-03 18:00:00', 'Visit PetSmart - use coupons!'),
+  (7, 'Medication', '2024-02-25 20:00:00', 'Give with a treat'),
+  (5, 'Feed', '2023-12-19 21:00:00', 'Mix food with some water'),
+  (1, 'Dog sitting', '2023-12-15 24:00:00', 'Give instructions to petsitter'),
+  (7, 'Walk', '2023-12-22 23:00:00', 'Visit the pond');
 
 INSERT INTO reminders (pet_id, title, date, comment, done)
 VALUES
-  (6, 'Feed Swampy', '2023-12-15 07:00:00', 'Mix food with some water', true),
-  (7, 'Feed Princess', '2024-12-14 16:00:00', 'Mix food with some water', true);
+  (6, 'Feed', '2023-09-15 07:00:00', 'Try new chicken flavour wet food', true),
+  (7, 'Feed', '2023-08-14 16:00:00', 'Dislikes the turkey flavour', true);
 
 INSERT INTO contacts (user_id, name, phone_number, email, website)
 VALUES
