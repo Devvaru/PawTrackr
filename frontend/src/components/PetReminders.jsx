@@ -1,6 +1,20 @@
+import { useEffect } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
+import axios from 'axios';
 
-function PetReminders() {
+function PetReminders(props) {
+  const { pet } = props;
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/api/reminders/${pet.id}`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log({ err });
+      });
+  }, [pet]);
 
   return (
     <>

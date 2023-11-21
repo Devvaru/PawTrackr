@@ -41,7 +41,7 @@ function PetModal(props) {
         </Col>
       </Modal.Body>
       <Modal.Body>
-        <PetReminders />
+        <PetReminders pet={pet} />
       </Modal.Body>
     </Modal>
   );
