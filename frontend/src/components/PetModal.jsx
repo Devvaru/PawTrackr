@@ -1,6 +1,7 @@
 import Modal from 'react-bootstrap/Modal';
 import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
+import PetReminders from './PetReminders';
 
 function PetModal(props) {
   console.log(props);
@@ -39,9 +40,9 @@ function PetModal(props) {
           <p><strong>Comments:</strong> {pet.comment}</p>
         </Col>
       </Modal.Body>
-      <Modal.Footer>
-        <p>Upcoming Reminders</p>
-      </Modal.Footer>
+      <Modal.Body>
+        <PetReminders pet={pet} />
+      </Modal.Body>
     </Modal>
   );
 }
