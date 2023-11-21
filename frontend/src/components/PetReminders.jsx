@@ -37,7 +37,22 @@ function PetReminders(props) {
   }, [pet]);
 
   const mapPetReminders = petReminders.map((petReminder) => {
-    return <span key={petReminder.id}>{petReminder.date} - {petReminder.title} - {petReminder.comment} </span>
+    const reminderDate = new Date(petReminder.date);
+    const formattedReminderDate = `${reminderDate.getFullYear()}/${(
+      reminderDate.getMonth() + 1
+    )
+      .toString()
+      .padStart(2, '0')}/${reminderDate
+        .getDate()
+        .toString()
+        .padStart(2, '0')} ${reminderDate
+          .getHours()
+          .toString()
+          .padStart(2, '0')}:${reminderDate
+            .getMinutes()
+            .toString()
+            .padStart(2, '0')}`;
+    return <span key={petReminder.id}>{formattedReminderDate} - {petReminder.title} - {petReminder.comment} </span>
   })
 
   return (
