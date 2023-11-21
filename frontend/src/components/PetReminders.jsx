@@ -36,14 +36,15 @@ function PetReminders(props) {
       });
   }, [pet]);
 
+  const mapPetReminders = petReminders.map((petReminder) => {
+    return <span key={petReminder.id}>{petReminder.date} - {petReminder.title} - {petReminder.comment} </span>
+  })
+
   return (
     <>
       <ListGroup>
         <ListGroup.Item><strong>Upcoming Reminders:</strong></ListGroup.Item>
-        {
-          petReminders.map((petreminder) => (
-          <ListGroup.Item key={petreminder.id}>{petreminder.date} - {petreminder.title} -  {petreminder.comment}</ListGroup.Item>
-        ))}
+        <ListGroup.Item>{mapPetReminders}</ListGroup.Item>
     </ListGroup>
     </>
   );
