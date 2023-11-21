@@ -35,7 +35,7 @@ function PetReminders(props) {
             .getMinutes()
             .toString()
             .padStart(2, '0')}`;
-    return <span key={petReminder.id}>{formattedReminderDate} - {petReminder.title} - {petReminder.comment} </span>
+    return <p key={petReminder.id}>{formattedReminderDate} - {petReminder.title} - {petReminder.comment} </p>
   })
 
   return (

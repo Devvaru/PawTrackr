@@ -26,7 +26,7 @@ VALUES
   (4, 'Buy food', '2024-01-03 18:00:00', 'Visit PetSmart - use coupons!'),
   (7, 'Medication', '2024-02-25 20:00:00', 'Give with a treat'),
   (5, 'Feed', '2023-12-19 21:00:00', 'Mix food with some water'),
-  (1, 'Dog sitting', '2023-12-15 24:00:00', 'Give instructions to petsitter'),
+  (1, 'Dog sitting', '2023-12-15 22:00:00', 'Give instructions to petsitter'),
   (7, 'Walk', '2023-12-22 23:00:00', 'Visit the pond');
 
 INSERT INTO reminders (pet_id, title, date, comment, done)
