@@ -5,8 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
 function CustomToggle({ children, eventKey }) {
-  const decoratedOnClick = useAccordionButton(eventKey, () =>
-  );
+  const decoratedOnClick = useAccordionButton(eventKey);
 
   return (
     <Button
