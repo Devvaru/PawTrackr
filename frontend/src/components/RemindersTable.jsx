@@ -1,5 +1,6 @@
 import Table from 'react-bootstrap/Table';
-import ReminderItem from './ReminderItem';
+import UpcomingReminderItem from './UpcomingReminderItem';
+import CompletedReminderItem from './CompletedReminderItem';
 import ReminderAccordion from './ReminderAccordion';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -21,7 +22,6 @@ function RemindersTable() {
         console.log('Data from completedRemindersPath:', response2.data);
         setUpcomingReminders(response1.data)
         setCompletedReminders(response2.data)
-        // return res.json();
       }))
       .catch(error => {
         console.error('Error fetching reminders:', error);
@@ -53,7 +53,7 @@ function RemindersTable() {
           <tbody>
             {upcomingReminders.map((reminder) => (
               <tr key={reminder.id}>
-                <ReminderItem upcomingReminder={reminder} loadReminders={loadReminders} />
+                <UpcomingReminderItem upcomingReminder={reminder} loadReminders={loadReminders} />
               </tr>
             ))}
           </tbody>
@@ -61,7 +61,33 @@ function RemindersTable() {
         {upcomingReminders.length === 0 && (
           <tbody>
             <tr>
-              <td colSpan={3}> Loading </td>
+              <td colSpan={3}> No reminders </td>
+            </tr>
+          </tbody>
+        )}
+      </Table>
+      <h2>Completed Reminders</h2>
+      <Table responsive='sm'>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        {completedReminders.length !== 0 && (
+          <tbody>
+            {completedReminders.map((reminder) => (
+              <tr key={reminder.id}>
+                <CompletedReminderItem completedReminder={reminder} />
+              </tr>
+            ))}
+          </tbody>
+        )}
+        {completedReminders.length === 0 && (
+          <tbody>
+            <tr>
+              <td colSpan={3}> No reminders </td>
             </tr>
           </tbody>
         )}

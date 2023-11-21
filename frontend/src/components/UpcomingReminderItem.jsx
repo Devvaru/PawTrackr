@@ -2,7 +2,7 @@ import FormCheck from 'react-bootstrap/FormCheck';
 import { useState } from 'react';
 import axios from 'axios';
 
-function ReminderItem(props) {
+function UpcomingReminderItem(props) {
   const { upcomingReminder, loadReminders } = props;
   const [isDone, setIsDone] = useState(upcomingReminder.done);
 
@@ -59,4 +59,4 @@ function ReminderItem(props) {
   );
 }
 
-export default ReminderItem;
+export default UpcomingReminderItem;
