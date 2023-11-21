@@ -2,10 +2,22 @@ const express = require('express');
 const router = express.Router();
 const reminderQueries = require('../db/queries/allQueries');
 
-// Reminders Listing Page
-router.get('/', (req, res) => {
+// Reminders - Upcoming listing
+router.get('/upcoming', (req, res) => {
   reminderQueries
-    .getReminders()
+    .getUpcomingReminders()
+    .then((reminders) => {
+      res.json(reminders);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
+
+// Reminders - Completed listing
+router.get('/completed', (req, res) => {
+  reminderQueries
+    .getCompletedReminders()
     .then((reminders) => {
       res.json(reminders);
     })

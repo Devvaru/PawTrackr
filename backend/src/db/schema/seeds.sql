@@ -16,7 +16,13 @@ INSERT INTO reminders (pet_id, title, date, comment)
 VALUES
   (2, 'Feed Maple', '2023-12-09 15:00:00', 'Mix food with some water'),
   (1, 'Feed Fido', '2023-12-12 14:00:00', 'Mix food with some water'),
-  (4, 'Feed Morsel', '2023-12-15 16:00:00', 'Mix food with some water');
+  (4, 'Feed Morsel', '2023-12-15 16:00:00', 'Mix food with some water'),
+  (5, 'Feed Horse', '2023-12-22 16:00:00', 'Mix food with some water');
+
+INSERT INTO reminders (pet_id, title, date, comment, done)
+VALUES
+  (6, 'Feed Swampy', '2023-12-15 07:00:00', 'Mix food with some water', true),
+  (7, 'Feed Princess', '2024-12-14 16:00:00', 'Mix food with some water', true);
 
 INSERT INTO contacts (user_id, name, phone_number, email, website)
 VALUES

@@ -2,26 +2,26 @@ import FormCheck from 'react-bootstrap/FormCheck';
 import { useState } from 'react';
 import axios from 'axios';
 
-function ReminderItem(props) {
-  const { reminder } = props;
-  const [isDone, setIsDone] = useState(reminder.done);
+function UpcomingReminderItem(props) {
+  const { upcomingReminder, loadReminders } = props;
+  const [isDone, setIsDone] = useState(upcomingReminder.done);
 
   // Display Reminder Date in YYYY/MM/DD format
-  const reminderDate = new Date(reminder.date);
+  const reminderDate = new Date(upcomingReminder.date);
   const formattedReminderDate = `${reminderDate.getFullYear()}/${(
     reminderDate.getMonth() + 1
   )
     .toString()
     .padStart(2, '0')}/${reminderDate
-    .getDate()
-    .toString()
-    .padStart(2, '0')} ${reminderDate
-    .getHours()
-    .toString()
-    .padStart(2, '0')}:${reminderDate
-    .getMinutes()
-    .toString()
-    .padStart(2, '0')}`;
+      .getDate()
+      .toString()
+      .padStart(2, '0')} ${reminderDate
+        .getHours()
+        .toString()
+        .padStart(2, '0')}:${reminderDate
+          .getMinutes()
+          .toString()
+          .padStart(2, '0')}`;
 
   const handleEdit = (reminderId) => {
     console.log('IsDONE', isDone);
@@ -34,6 +34,7 @@ function ReminderItem(props) {
         // TODO: Remove console logs
         console.log(response.data);
         console.log(`Edited reminder ${reminderId}`);
+        loadReminders();
       })
       .catch((error) => {
         console.error(error);
@@ -42,15 +43,15 @@ function ReminderItem(props) {
 
   return (
     <>
-      <td>{reminder.title}</td>
+      <td>{upcomingReminder.title}</td>
       <td>{formattedReminderDate}</td>
-      <td>{reminder.comment}</td>
+      <td>{upcomingReminder.comment}</td>
       <td>
         <FormCheck
           aria-label='option 1'
           checked={isDone}
-          onClick={() => {
-            handleEdit(reminder.id);
+          onChange={() => {
+            handleEdit(upcomingReminder.id);
           }}
         />
       </td>
@@ -58,4 +59,4 @@ function ReminderItem(props) {
   );
 }
 
-export default ReminderItem;
+export default UpcomingReminderItem;
