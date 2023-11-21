@@ -12,6 +12,7 @@ function AddReminderForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
+    newReminder.pet_name = formData.get('name');
     newReminder.title = formData.get('title');
     newReminder.date = formData.get('date');
     newReminder.comment = formData.get('comment');
@@ -30,9 +31,17 @@ function AddReminderForm(props) {
 
   return (
     <>
-      <Row className='justify-content-md-center' style={{marginTop: '30px'}}>
+      <Row className='justify-content-md-center' style={{ marginTop: '30px' }}>
         <Col md={6}>
           <Form ref={formRef} onSubmit={handleSubmit}>
+            <Row className='mb-3'>
+              <Form.Select aria-label='Default select example'>
+                <option>Pet Name</option>
+                <option value='1'>One</option>
+                <option value='2'>Two</option>
+                <option value='3'>Three</option>
+              </Form.Select>
+            </Row>
             <Row className='mb-3'>
               <Form.Group controlId='title'>
                 <Form.Label>Title</Form.Label>
@@ -48,10 +57,24 @@ function AddReminderForm(props) {
             <Row className='mb-3'>
               <Form.Group controlId='comment'>
                 <Form.Label>Comment</Form.Label>
-                <Form.Control type='text' placeholder='Comment' name='comment' />
+                <Form.Control
+                  type='text'
+                  placeholder='Comment'
+                  name='comment'
+                />
               </Form.Group>
             </Row>
-            <Button type='submit' variant="info" style={{ color: "white", fontWeight: '600', marginBottom: '50px' }}>SUBMIT</Button>
+            <Button
+              type='submit'
+              variant='info'
+              style={{
+                color: 'white',
+                fontWeight: '600',
+                marginBottom: '50px',
+              }}
+            >
+              SUBMIT
+            </Button>
           </Form>
         </Col>
       </Row>
