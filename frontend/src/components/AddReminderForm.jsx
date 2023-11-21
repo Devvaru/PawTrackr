@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -6,6 +6,8 @@ import Row from 'react-bootstrap/Row';
 import axios from 'axios';
 
 function AddReminderForm(props) {
+  const [petNames, setPetNames] = useState([petNames]);
+
   const formRef = useRef();
   const newReminder = {};
 
@@ -29,6 +31,18 @@ function AddReminderForm(props) {
       });
   };
 
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/api/pets`)
+      .then((res) => {
+        console.log(res);
+        setPetNames(res.data);
+      })
+      .catch((err) => {
+        console.log({ err });
+      });
+  }, []);
+
   return (
     <>
       <Row className='justify-content-md-center' style={{ marginTop: '30px' }}>
@@ -37,9 +51,9 @@ function AddReminderForm(props) {
             <Row className='mb-3'>
               <Form.Select aria-label='Default select example'>
                 <option>Pet Name</option>
-                <option value='1'>One</option>
-                <option value='2'>Two</option>
-                <option value='3'>Three</option>
+                {petNames.map((petname) => {
+                  <option value='1'>{petname.name}</option>;
+                })}
               </Form.Select>
             </Row>
             <Row className='mb-3'>
