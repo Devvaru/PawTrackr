@@ -6,15 +6,28 @@ import Row from 'react-bootstrap/Row';
 import axios from 'axios';
 
 function AddReminderForm(props) {
-  const [petNames, setPetNames] = useState([petNames]);
+  const [pets, setPets] = useState([]);
 
   const formRef = useRef();
   const newReminder = {};
 
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/api/pets`)
+      .then((res) => {
+        console.log('Response', res);
+        setPets(res.data);
+        console.log('Res.data', res.data);
+      })
+      .catch((err) => {
+        console.log({ err });
+      });
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    newReminder.pet_name = formData.get('name');
+    newReminder.petname = formData.get('name');
     newReminder.title = formData.get('title');
     newReminder.date = formData.get('date');
     newReminder.comment = formData.get('comment');
@@ -31,17 +44,7 @@ function AddReminderForm(props) {
       });
   };
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8080/api/pets`)
-      .then((res) => {
-        console.log(res);
-        setPetNames(res.data);
-      })
-      .catch((err) => {
-        console.log({ err });
-      });
-  }, []);
+  console.log('Line 47 Pet names:', pets);
 
   return (
     <>
@@ -49,11 +52,12 @@ function AddReminderForm(props) {
         <Col md={6}>
           <Form ref={formRef} onSubmit={handleSubmit}>
             <Row className='mb-3'>
-              <Form.Select aria-label='Default select example'>
-                <option>Pet Name</option>
-                {petNames.map((petname) => {
-                  <option value='1'>{petname.name}</option>;
-                })}
+              <Form.Select aria-label='Default select example' name='name'>
+                {pets.map((pet) => (
+                  <option key={pet.id} value={pet.id}>
+                    {pet.name}
+                  </option>
+                ))}
               </Form.Select>
             </Row>
             <Row className='mb-3'>
