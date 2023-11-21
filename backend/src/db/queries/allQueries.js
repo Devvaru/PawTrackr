@@ -37,10 +37,18 @@ const addPet = (pet) => {
     });
 };
 
-const getReminders = () => {
-  return db.query('SELECT * FROM reminders ORDER BY done, date;').then((data) => {
-    return data.rows;
-  });
+const getUpcomingReminders = () => {
+  return db.query('SELECT * FROM reminders WHERE done = false ORDER BY date;')
+    .then((data) => {
+      return data.rows;
+    });
+};
+
+const getCompletedReminders = () => {
+  return db.query('SELECT * FROM reminders WHERE done = true ORDER BY date;')
+    .then((data) => {
+      return data.rows;
+    });
 };
 
 const addReminder = (reminder) => {
@@ -91,4 +99,4 @@ const deleteContact = (contactId) => {
     });
 };
 
-module.exports = { getPets, addPet, getReminders, addReminder, editReminderDone, getContacts, addContact, deleteContact };
+module.exports = { getPets, addPet, getUpcomingReminders, getCompletedReminders, addReminder, editReminderDone, getContacts, addContact, deleteContact };

@@ -13,15 +13,15 @@ function ReminderItem(props) {
   )
     .toString()
     .padStart(2, '0')}/${reminderDate
-    .getDate()
-    .toString()
-    .padStart(2, '0')} ${reminderDate
-    .getHours()
-    .toString()
-    .padStart(2, '0')}:${reminderDate
-    .getMinutes()
-    .toString()
-    .padStart(2, '0')}`;
+      .getDate()
+      .toString()
+      .padStart(2, '0')} ${reminderDate
+        .getHours()
+        .toString()
+        .padStart(2, '0')}:${reminderDate
+          .getMinutes()
+          .toString()
+          .padStart(2, '0')}`;
 
   const handleEdit = (reminderId) => {
     console.log('IsDONE', isDone);
