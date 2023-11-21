@@ -60,4 +60,18 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// Get Single Pet Reminders
+router.get('/:id', (req, res) => {
+  const petId = req.params.id;
+  reminderQueries
+    .getPetReminders(petId)
+    .then((reminders) => {
+      res.json(reminders);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
+
+
 module.exports = router;

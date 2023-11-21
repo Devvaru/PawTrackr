@@ -37,6 +37,18 @@ const addPet = (pet) => {
     });
 };
 
+const getPetReminders = (id) => {
+  // Add RETURNING *; to the end of an INSERT query to return the objects that were inserted. This is handy when you need the auto generated id of an object you've just added to the database
+  return db
+    .query(
+      'SELECT pets.name, reminders.title, reminders.date, reminders.comment FROM pets JOIN reminders ON pets.id = reminders.pet_id WHERE pets.id = $1 RETURNING *;',
+      [id]
+    )
+    .then((data) => {
+      return data.rows;
+    });
+};
+
 const getUpcomingReminders = () => {
   return db.query('SELECT * FROM reminders WHERE done = false ORDER BY date;')
     .then((data) => {
@@ -99,4 +111,4 @@ const deleteContact = (contactId) => {
     });
 };
 
-module.exports = { getPets, addPet, getUpcomingReminders, getCompletedReminders, addReminder, editReminderDone, getContacts, addContact, deleteContact };
+module.exports = { getPets, addPet, getPetReminders, getUpcomingReminders, getCompletedReminders, addReminder, editReminderDone, getContacts, addContact, deleteContact };
