@@ -6,24 +6,6 @@ function PetReminders(props) {
   const { pet } = props;
   const [petReminders, setPetReminders] = useState([]);
 
-  // Display Reminder Date in YYYY/MM/DD format
-  // const reminderDate = new Date(completedReminder.date);
-  // const formattedReminderDate = `${reminderDate.getFullYear()}/${(
-  //   reminderDate.getMonth() + 1
-  // )
-  //   .toString()
-  //   .padStart(2, '0')}/${reminderDate
-  //     .getDate()
-  //     .toString()
-  //     .padStart(2, '0')} ${reminderDate
-  //       .getHours()
-  //       .toString()
-  //       .padStart(2, '0')}:${reminderDate
-  //         .getMinutes()
-  //         .toString()
-  //         .padStart(2, '0')}`;
-
-
   useEffect(() => {
     axios
       .get(`http://localhost:8080/api/reminders/${pet.id}`)
@@ -37,6 +19,7 @@ function PetReminders(props) {
   }, [pet]);
 
   const mapPetReminders = petReminders.map((petReminder) => {
+    // Display Reminder Date in YYYY/MM/DD format
     const reminderDate = new Date(petReminder.date);
     const formattedReminderDate = `${reminderDate.getFullYear()}/${(
       reminderDate.getMonth() + 1
