@@ -12,6 +12,7 @@ function AddReminderForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
+    newReminder.pet_name = formData.get('name');
     newReminder.title = formData.get('title');
     newReminder.date = formData.get('date');
     newReminder.comment = formData.get('comment');
@@ -33,6 +34,12 @@ function AddReminderForm(props) {
       <Row className='justify-content-md-center' style={{marginTop: '30px'}}>
         <Col md={6}>
           <Form ref={formRef} onSubmit={handleSubmit}>
+          <Row className='mb-3'>
+              <Form.Group controlId='name'>
+                <Form.Label>Pet Name</Form.Label>
+                <Form.Control type='text' placeholder='Pet Name' name='name' />
+              </Form.Group>
+            </Row>
             <Row className='mb-3'>
               <Form.Group controlId='title'>
                 <Form.Label>Title</Form.Label>
