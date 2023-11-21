@@ -2,23 +2,29 @@ import Table from 'react-bootstrap/Table';
 import ReminderItem from './ReminderItem';
 import ReminderAccordion from './ReminderAccordion';
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function RemindersTable() {
-  const [reminders, setReminders] = useState([]);
+  const [upcomingReminders, setUpcomingReminders] = useState([]);
+  const [completedReminders, setCompletedReminders] = useState([]);
 
   const loadReminders = () => {
-    fetch('http://localhost:8080/api/reminders')
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setReminders(data);
-      })
-      .catch((error) => {
-        console.error('Fetch error:', error);
+    const upcomingRemindersPath = 'http://localhost:8080/api/reminders/upcoming';
+    const completedRemindersPath = 'http://localhost:8080/api/reminders/completed';
+
+    axios.all([
+      axios.get(upcomingRemindersPath),
+      axios.get(completedRemindersPath)
+    ])
+      .then(axios.spread((response1, response2) => {
+        console.log('Data from upcomingRemindersPath:', response1.data);
+        console.log('Data from completedRemindersPath:', response2.data);
+        setUpcomingReminders(response1.data)
+        setCompletedReminders(response2.data)
+        // return res.json();
+      }))
+      .catch(error => {
+        console.error('Error fetching reminders:', error);
       });
   };
 
@@ -33,6 +39,7 @@ function RemindersTable() {
           loadReminders();
         }}
       />
+      <h2>Upcoming Reminders</h2>
       <Table responsive='sm'>
         <thead>
           <tr>
@@ -42,16 +49,16 @@ function RemindersTable() {
             <th>Done</th>
           </tr>
         </thead>
-        {reminders.length !== 0 && (
+        {upcomingReminders.length !== 0 && (
           <tbody>
-            {reminders.map((reminder) => (
+            {upcomingReminders.map((reminder) => (
               <tr key={reminder.id}>
-                <ReminderItem reminder={reminder} />
+                <ReminderItem upcomingReminder={reminder} loadReminders={loadReminders} />
               </tr>
             ))}
           </tbody>
         )}
-        {reminders.length === 0 && (
+        {upcomingReminders.length === 0 && (
           <tbody>
             <tr>
               <td colSpan={3}> Loading </td>

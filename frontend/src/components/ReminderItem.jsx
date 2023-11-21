@@ -3,11 +3,11 @@ import { useState } from 'react';
 import axios from 'axios';
 
 function ReminderItem(props) {
-  const { reminder } = props;
-  const [isDone, setIsDone] = useState(reminder.done);
+  const { upcomingReminder, loadReminders } = props;
+  const [isDone, setIsDone] = useState(upcomingReminder.done);
 
   // Display Reminder Date in YYYY/MM/DD format
-  const reminderDate = new Date(reminder.date);
+  const reminderDate = new Date(upcomingReminder.date);
   const formattedReminderDate = `${reminderDate.getFullYear()}/${(
     reminderDate.getMonth() + 1
   )
@@ -34,6 +34,7 @@ function ReminderItem(props) {
         // TODO: Remove console logs
         console.log(response.data);
         console.log(`Edited reminder ${reminderId}`);
+        loadReminders();
       })
       .catch((error) => {
         console.error(error);
@@ -42,15 +43,15 @@ function ReminderItem(props) {
 
   return (
     <>
-      <td>{reminder.title}</td>
+      <td>{upcomingReminder.title}</td>
       <td>{formattedReminderDate}</td>
-      <td>{reminder.comment}</td>
+      <td>{upcomingReminder.comment}</td>
       <td>
         <FormCheck
           aria-label='option 1'
           checked={isDone}
-          onClick={() => {
-            handleEdit(reminder.id);
+          onChange={() => {
+            handleEdit(upcomingReminder.id);
           }}
         />
       </td>
