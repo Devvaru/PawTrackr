@@ -50,7 +50,7 @@ const getPetReminders = (id) => {
 };
 
 const getUpcomingReminders = () => {
-  return db.query('SELECT pets.name, reminders.* FROM pets JOIN reminders ON pets.id = reminders.pet_id WHERE reminders.done = false ORDER BY date;')
+  return db.query('SELECT pets.name as pet_name, reminders.* FROM pets JOIN reminders ON pets.id = reminders.pet_id WHERE reminders.done = false ORDER BY date;')
     .then((data) => {
       return data.rows;
     });
