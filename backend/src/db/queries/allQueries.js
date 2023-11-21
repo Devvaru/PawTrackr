@@ -111,4 +111,4 @@ const deleteContact = (contactId) => {
     });
 };
 
-module.exports = { getPets, addPet, getUpcomingReminders, getCompletedReminders, addReminder, editReminderDone, getContacts, addContact, deleteContact };
+module.exports = { getPets, addPet, getPetReminders, getUpcomingReminders, getCompletedReminders, addReminder, editReminderDone, getContacts, addContact, deleteContact };
