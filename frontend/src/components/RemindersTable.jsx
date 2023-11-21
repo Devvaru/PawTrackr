@@ -14,15 +14,15 @@ function RemindersTable() {
     const completedRemindersPath = 'http://localhost:8080/api/reminders/completed';
 
     axios.all([
-      axios.get(upcomingRemindersPath),
-      axios.get(completedRemindersPath)
-    ])
+        axios.get(upcomingRemindersPath),
+        axios.get(completedRemindersPath)
+      ])
       .then(axios.spread((response1, response2) => {
-        console.log('Data from upcomingRemindersPath:', response1.data);
-        console.log('Data from completedRemindersPath:', response2.data);
-        setUpcomingReminders(response1.data)
-        setCompletedReminders(response2.data)
-      }))
+          console.log('Data from upcomingRemindersPath:', response1.data);
+          console.log('Data from completedRemindersPath:', response2.data);
+          setUpcomingReminders(response1.data)
+          setCompletedReminders(response2.data)
+        }))
       .catch(error => {
         console.error('Error fetching reminders:', error);
       });
@@ -43,6 +43,7 @@ function RemindersTable() {
       <Table responsive='sm'>
         <thead>
           <tr>
+            <th>Pet Name</th>
             <th>Title</th>
             <th>Date</th>
             <th>Comment</th>
@@ -70,6 +71,7 @@ function RemindersTable() {
       <Table responsive='sm'>
         <thead>
           <tr>
+            <th>Pet Name</th>
             <th>Title</th>
             <th>Date</th>
             <th>Comment</th>

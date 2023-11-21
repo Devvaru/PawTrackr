@@ -43,6 +43,7 @@ function UpcomingReminderItem(props) {
 
   return (
     <>
+      <td>{upcomingReminder.name}</td>
       <td>{upcomingReminder.title}</td>
       <td>{formattedReminderDate}</td>
       <td>{upcomingReminder.comment}</td>
