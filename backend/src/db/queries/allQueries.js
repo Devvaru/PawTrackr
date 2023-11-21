@@ -64,12 +64,12 @@ const getCompletedReminders = () => {
 };
 
 const addReminder = (reminder) => {
-  const { title, date, comment } = reminder;
+  const { pet_id, title, date, comment } = reminder;
   // Add RETURNING *; to the end of an INSERT query to return the objects that were inserted. This is handy when you need the auto generated id of an object you've just added to the database
   return db
     .query(
-      'INSERT INTO reminders (title, date, comment) VALUES ($1, $2, $3) RETURNING *;',
-      [title, date, comment]
+      'INSERT INTO reminders (pet_id, title, date, comment) VALUES ($1, $2, $3, $4) RETURNING *;',
+      [pet_id, title, date, comment]
     )
     .then((data) => {
       return data.rows[0];
