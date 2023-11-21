@@ -1,5 +1,5 @@
 function CompletedReminderItem(props) {
-  const { completedReminder, loadReminders } = props;
+  const { completedReminder } = props;
 
   // Display Reminder Date in YYYY/MM/DD format
   const reminderDate = new Date(completedReminder.date);
