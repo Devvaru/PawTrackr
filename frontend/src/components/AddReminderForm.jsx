@@ -49,6 +49,7 @@ function AddReminderForm(props) {
           <Form ref={formRef} onSubmit={handleSubmit}>
             <Row className='mb-3'>
               <Form.Select aria-label='select pet name' name='name'>
+              <option value="" selected disabled>Choose Pet Name</option>
                 {pets.map((pet) => (
                   <option key={pet.id} value={pet.id}>
                     {pet.name}
