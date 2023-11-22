@@ -38,7 +38,7 @@ function PetModal(props) {
           <div class='modalTextContainer'>
             <p><strong>Date of Birth:</strong> {formattedDateOfBirth}</p>
             <p><strong>Species:</strong> {pet.variant}</p>
-            <p><strong>Weight:</strong> {pet.weight} grams</p>
+            <p><strong>Weight:</strong> {pet.weight} kg</p>
             <p><strong>Food:</strong> {pet.food}</p>
             <p><strong>Comments:</strong> {pet.comment}</p>
           </div>
