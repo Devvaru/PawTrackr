@@ -48,14 +48,18 @@ function AddReminderForm(props) {
         <Col md={6}>
           <Form ref={formRef} onSubmit={handleSubmit}>
             <Row className='mb-3'>
-              <Form.Select aria-label='select pet name' name='name'>
-              <option value="" selected disabled>Choose Pet Name</option>
-                {pets.map((pet) => (
-                  <option key={pet.id} value={pet.id}>
-                    {pet.name}
+              <Form.Group controlId='name'>
+                <Form.Select aria-label='select pet name' name='name'>
+                  <option value='' selected disabled>
+                    Choose Pet Name
                   </option>
-                ))}
-              </Form.Select>
+                  {pets.map((pet) => (
+                    <option key={pet.id} value={pet.id}>
+                      {pet.name}
+                    </option>
+                  ))}
+                </Form.Select>
+              </Form.Group>
             </Row>
             <Row className='mb-3'>
               <Form.Group controlId='title'>
