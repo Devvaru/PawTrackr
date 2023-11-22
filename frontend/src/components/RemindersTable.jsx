@@ -39,7 +39,7 @@ function RemindersTable() {
           loadReminders();
         }}
       />
-      <h2>Upcoming Reminders</h2>
+      <h2 className='headers'>Upcoming Reminders</h2>
       <Table responsive='sm'>
         <thead>
           <tr>
@@ -67,7 +67,7 @@ function RemindersTable() {
           </tbody>
         )}
       </Table>
-      <h2>Completed Reminders</h2>
+      <h2 className='headers'>Completed Reminders</h2>
       <Table responsive='sm'>
         <thead>
           <tr>
