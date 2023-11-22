@@ -28,6 +28,7 @@ function Navigationbar(props) {
               id="custom-switch"
               label="Change mode"
               onClick={togglemodes}
+              style={{ color: "rgba(255, 255, 255, 0.55)" }}
             />
           </Form>
         </Container>
