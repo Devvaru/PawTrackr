@@ -26,7 +26,7 @@ function Navigationbar(props) {
             <Form.Check // prettier-ignore 
               type="switch"
               id="custom-switch"
-              label="toggle light/dark mode"
+              label="Toggle Light/Dark Mode"
               onClick={togglemodes}
               style={{ color: "rgba(255, 255, 255, 0.55)" }}
             />
