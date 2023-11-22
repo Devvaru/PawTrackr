@@ -23,10 +23,10 @@ function Navigationbar(props) {
           </Nav>
 
           <Form>
-            <Form.Check // prettier-ignore
+            <Form.Check // prettier-ignore 
               type="switch"
               id="custom-switch"
-              label="Change mode"
+              label="toggle light/dark mode"
               onClick={togglemodes}
               style={{ color: "rgba(255, 255, 255, 0.55)" }}
             />
