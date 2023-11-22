@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+body{
+  background-color: #E9ECEF !important;
+}
+
+
+.petsGrid {
+  padding: 25px;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+}
+
+.modalImageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.modalTextContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal-content {
+  padding-bottom: 0px 25px 25px 25px;
+}
+
+.list-group {
+  width: 100%;
+}
+
+.headers {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}

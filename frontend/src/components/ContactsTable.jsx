@@ -33,6 +33,7 @@ function ContactsTable() {
           loadContacts();
         }}
       />
+      <h2 class='headers'>Contacts</h2>
       <Table responsive='sm'>
         <thead>
           <tr>

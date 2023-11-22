@@ -23,21 +23,25 @@ function PetModal(props) {
       centered
     >
       <Modal.Header closeButton onClick={(e) => {
-          props.onHide();
-          e.stopPropagation();
-        }}>
+        props.onHide();
+        e.stopPropagation();
+      }}>
         <Modal.Title id="contained-modal-title-vcenter">
           <p>{pet.name}'s Details</p>
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Col xs={10} md={10}>
-          <Image src={pet.pet_img_url} rounded />
-          <p><strong>Date of Birth:</strong> {formattedDateOfBirth}</p>
-          <p><strong>Species:</strong> {pet.variant}</p>
-          <p><strong>Weight:</strong> {pet.weight} grams</p>
-          <p><strong>Food:</strong> {pet.food}</p>
-          <p><strong>Comments:</strong> {pet.comment}</p>
+          <div className='modalImageContainer'>
+            <Image src={pet.pet_img_url} rounded />
+          </div>
+          <div class='modalTextContainer'>
+            <p><strong>Date of Birth:</strong> {formattedDateOfBirth}</p>
+            <p><strong>Species:</strong> {pet.variant}</p>
+            <p><strong>Weight:</strong> {pet.weight} grams</p>
+            <p><strong>Food:</strong> {pet.food}</p>
+            <p><strong>Comments:</strong> {pet.comment}</p>
+          </div>
         </Col>
       </Modal.Body>
       <Modal.Body>
