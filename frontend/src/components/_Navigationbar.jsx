@@ -1,9 +1,15 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Form from 'react-bootstrap/Form';
 
 function Navigationbar(props) {
   const { setShowPets, setShowReminders, setShowContacts } = props;
+
+  const togglemodes = () => {
+    const element= document.body;
+    element.dataset.bsTheme = element.dataset.bsTheme === "light" ? "dark" : "light";
+  }
 
   return (
     <>
@@ -15,6 +21,15 @@ function Navigationbar(props) {
             <Nav.Link onClick={() => setShowReminders()}>Reminders</Nav.Link>
             <Nav.Link onClick={() => setShowContacts()}>Contacts</Nav.Link>
           </Nav>
+
+          <Form>
+            <Form.Check // prettier-ignore
+              type="switch"
+              id="custom-switch"
+              label="Change mode"
+              onClick={togglemodes}
+            />
+          </Form>
         </Container>
       </Navbar>
     </>
