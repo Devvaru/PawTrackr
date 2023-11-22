@@ -15,9 +15,7 @@ function AddReminderForm(props) {
     axios
       .get(`http://localhost:8080/api/pets`)
       .then((res) => {
-        console.log('Response', res);
         setPets(res.data);
-        console.log('Res.data', res.data);
       })
       .catch((err) => {
         console.log({ err });
@@ -27,7 +25,7 @@ function AddReminderForm(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    newReminder.petname = formData.get('name');
+    newReminder.pet_id = formData.get('name');
     newReminder.title = formData.get('title');
     newReminder.date = formData.get('date');
     newReminder.comment = formData.get('comment');
@@ -44,15 +42,13 @@ function AddReminderForm(props) {
       });
   };
 
-  console.log('Line 47 Pet names:', pets);
-
   return (
     <>
       <Row className='justify-content-md-center' style={{ marginTop: '30px' }}>
         <Col md={6}>
           <Form ref={formRef} onSubmit={handleSubmit}>
             <Row className='mb-3'>
-              <Form.Select aria-label='Default select example' name='name'>
+              <Form.Select aria-label='select pet name' name='name'>
                 {pets.map((pet) => (
                   <option key={pet.id} value={pet.id}>
                     {pet.name}

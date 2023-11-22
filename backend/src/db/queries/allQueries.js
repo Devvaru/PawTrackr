@@ -49,6 +49,12 @@ const getPetReminders = (id) => {
     });
 };
 
+const getReminders = () => {
+  return db.query('SELECT * FROM reminders;').then((data) => {
+    return data.rows;
+  });
+};
+
 const getUpcomingReminders = () => {
   return db.query('SELECT pets.name as pet_name, reminders.* FROM pets JOIN reminders ON pets.id = reminders.pet_id WHERE reminders.done = false ORDER BY date;')
     .then((data) => {
@@ -111,4 +117,4 @@ const deleteContact = (contactId) => {
     });
 };
 
-module.exports = { getPets, addPet, getPetReminders, getUpcomingReminders, getCompletedReminders, addReminder, editReminderDone, getContacts, addContact, deleteContact };
+module.exports = { getPets, addPet, getPetReminders, getReminders, getUpcomingReminders, getCompletedReminders, addReminder, editReminderDone, getContacts, addContact, deleteContact };

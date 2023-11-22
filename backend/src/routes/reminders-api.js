@@ -2,6 +2,18 @@ const express = require('express');
 const router = express.Router();
 const reminderQueries = require('../db/queries/allQueries');
 
+// Reminders - Get All
+router.get('/', (req, res) => {
+  reminderQueries
+    .getReminders()
+    .then((reminders) => {
+      res.json(reminders);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
+
 // Reminders - Upcoming listing
 router.get('/upcoming', (req, res) => {
   reminderQueries
@@ -29,12 +41,11 @@ router.get('/completed', (req, res) => {
 // Add New Reminder
 router.post('/', (req, res) => {
   const newReminder = req.body;
-  // newReminder.user_id = 1; // TODO: implement later
 
   reminderQueries
     .addReminder(newReminder)
     .then((result) => {
-      console.log({ result });
+      console.log(`Result:`, { result });
       res.json('Reminder added successfully! 😃');
     })
     .catch((err) => {
@@ -46,12 +57,12 @@ router.post('/', (req, res) => {
 // Edit Reminder Done Field
 router.put('/:id', (req, res) => {
   const reminderId = req.params.id;
-  console.log('reminderId', reminderId)
+  console.log('reminderId', reminderId);
 
   reminderQueries
     .editReminderDone(reminderId)
     .then((result) => {
-      console.log("result", { result });
+      console.log('result', { result });
       res.json('Reminder edited successfully! 😃');
     })
     .catch((err) => {
@@ -72,6 +83,5 @@ router.get('/:id', (req, res) => {
       res.status(500).json({ error: err.message });
     });
 });
-
 
 module.exports = router;
