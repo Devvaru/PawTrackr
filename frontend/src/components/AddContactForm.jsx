@@ -44,7 +44,7 @@ function AddContactForm(props) {
             <Row className='mb-3'>
               <Form.Group controlId='phone_number'>
                 <Form.Label>Phone Number</Form.Label>
-                <Form.Control type='number' placeholder='Phone Number' name='phone_number' />
+                <Form.Control type='text' placeholder='Phone Number' name='phone_number' />
               </Form.Group>
             </Row>
             <Row className='mb-3'>
