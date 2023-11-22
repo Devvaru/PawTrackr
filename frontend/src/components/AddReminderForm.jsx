@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
@@ -6,13 +6,26 @@ import Row from 'react-bootstrap/Row';
 import axios from 'axios';
 
 function AddReminderForm(props) {
+  const [pets, setPets] = useState([]);
+
   const formRef = useRef();
   const newReminder = {};
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/api/pets`)
+      .then((res) => {
+        setPets(res.data);
+      })
+      .catch((err) => {
+        console.log({ err });
+      });
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    newReminder.pet_name = formData.get('name');
+    newReminder.pet_id = formData.get('name');
     newReminder.title = formData.get('title');
     newReminder.date = formData.get('date');
     newReminder.comment = formData.get('comment');
@@ -35,12 +48,18 @@ function AddReminderForm(props) {
         <Col md={6}>
           <Form ref={formRef} onSubmit={handleSubmit}>
             <Row className='mb-3'>
-              <Form.Select aria-label='Default select example'>
-                <option>Pet Name</option>
-                <option value='1'>One</option>
-                <option value='2'>Two</option>
-                <option value='3'>Three</option>
-              </Form.Select>
+              <Form.Group controlId='name'>
+                <Form.Select aria-label='select pet name' name='name'>
+                  <option value='' selected disabled>
+                    Choose Pet Name
+                  </option>
+                  {pets.map((pet) => (
+                    <option key={pet.id} value={pet.id}>
+                      {pet.name}
+                    </option>
+                  ))}
+                </Form.Select>
+              </Form.Group>
             </Row>
             <Row className='mb-3'>
               <Form.Group controlId='title'>
