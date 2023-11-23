@@ -42,12 +42,12 @@ VALUES
   (2, 'Vet visit', '2024-04-02 19:00:00', ''),
   (4, 'Add more climbing branches', '2023-12-20 11:30:00', ''),
   (7, 'Playdate', '2024-01-13 10:25:00', 'Bring coat for cold weather'),
-  (5, 'Clean enclosure', '2023-11-12 14:15:00', 'Make sure to rinse well'),
+  (5, 'Clean enclosure', '2024-07-12 14:15:00', 'Make sure to rinse well'),
   (1, 'Claw trim', '2023-12-28 17:45:00', 'Try at home, may need to book grooming appointment'),
   (7, 'Obedience lessons', '2023-12-22 23:00:00', 'Bring the training clicker'),
   (6, 'Deep clean pet bed', '2024-01-08 08:00:00', 'Unscented soap, no fabric softener!'),
-  (4, 'Vet checkup', '2023-02-23 15:30:00', 'Refill vitamin supplements prescription'),
-  (7, 'Frisbee lessons', '2023-03-14 14:25:00', 'Bring a few frisbees to share with the group');
+  (4, 'Vet checkup', '2024-02-23 15:30:00', 'Refill vitamin supplements prescription'),
+  (7, 'Frisbee lessons', '2024-03-14 14:25:00', 'Bring a few frisbees to share with the group');
 
 INSERT INTO reminders (pet_id, title, date, comment, done)
 VALUES
