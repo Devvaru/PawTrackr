@@ -13,7 +13,7 @@ function PetsGridItem(props) {
   return (
     <div>
       <Col>
-        <Card onClick={() => setModalShow(true)}>
+        <Card className='pet-card' onClick={() => setModalShow(true)}>
           <Card.Img
             variant='top'
             src={pet.pet_img_url}
