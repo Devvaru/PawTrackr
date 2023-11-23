@@ -90,3 +90,12 @@
 .tableItem {
   max-width: 20px;
 }
+
+span.page-link {
+  background-color: #0dcaf0 !important;
+  border-color: #0dcaf0 !important;
+}
+
+a.page-link {
+  color: #0dcaf0 !important;
+}

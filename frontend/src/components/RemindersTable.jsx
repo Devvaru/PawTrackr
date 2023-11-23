@@ -99,7 +99,7 @@ function RemindersTable() {
           </Pagination.Item>
         ))}
       </Pagination>
-      <Table responsive='sm'>
+      <Table responsive='sm' striped bordered>
         <thead>
           <tr>
             <th>Pet Name</th>
@@ -138,7 +138,7 @@ function RemindersTable() {
           </Pagination.Item>
         ))}
       </Pagination>
-      <Table responsive='sm'>
+      <Table responsive='sm' striped bordered>
         <thead>
           <tr>
             <th>Pet Name</th>
