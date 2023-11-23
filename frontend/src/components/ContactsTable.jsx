@@ -51,14 +51,7 @@ function ContactsTable() {
     showData(contacts.slice(firstIndex, lastIndex));
   };
 
-  const pages = [];
-  const generatePages = () => {
-    for (let i = 1; i <= totalPages; i++) {
-      pages.push(i)
-    }
-    return pages;
-  };
-  generatePages();
+  const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
 
   return (
     <div>
