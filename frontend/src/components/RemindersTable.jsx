@@ -3,11 +3,19 @@ import UpcomingReminderItem from './UpcomingReminderItem';
 import CompletedReminderItem from './CompletedReminderItem';
 import ReminderAccordion from './ReminderAccordion';
 import { useState, useEffect } from 'react';
+import Pagination from 'react-bootstrap/Pagination';
 import axios from 'axios';
 
 function RemindersTable() {
   const [upcomingReminders, setUpcomingReminders] = useState([]);
   const [completedReminders, setCompletedReminders] = useState([]);
+  const [upcomingCurrentPage, setUpcomingCurrentPage] = useState(1);
+  const [upcomingShowedData, upcomingShowData] = useState([]);
+  const [upcomingTotalPages, setUpcomingTotalPages] = useState();
+
+  // Define rowsPerPage as a constant since it does not change
+  const rowsPerPage = 5;
+  const upcomingPages = Array.from({ length: upcomingTotalPages }, (_, index) => index + 1);
 
   const loadReminders = () => {
     const upcomingRemindersPath = 'http://localhost:8080/api/reminders/upcoming';
@@ -32,6 +40,23 @@ function RemindersTable() {
     loadReminders();
   }, []);
 
+  useEffect(() => {
+    // The pagination logic here will run whenever contacts or currentPage changes
+    const upcomingFirstIndex = (upcomingCurrentPage - 1) * rowsPerPage;
+    const upcomingLastIndex = upcomingFirstIndex + rowsPerPage;
+    upcomingShowData(upcomingReminders.slice(upcomingFirstIndex, upcomingLastIndex));
+    setUpcomingTotalPages(Math.ceil(upcomingReminders.length / rowsPerPage));
+
+  }, [upcomingReminders, upcomingCurrentPage, rowsPerPage]);
+
+  const upcomingHandleClick = (page) => {
+    setUpcomingCurrentPage(page);
+    const pageIndex = page - 1;
+    const firstIndex = pageIndex * rowsPerPage;
+    const lastIndex = pageIndex * rowsPerPage + rowsPerPage;
+    upcomingShowData(upcomingReminders.slice(firstIndex, lastIndex));
+  };
+
   return (
     <div>
       <ReminderAccordion
@@ -40,6 +65,17 @@ function RemindersTable() {
         }}
       />
       <h2 className='headers'>Upcoming Reminders</h2>
+       <Pagination className='pagination'>
+        {upcomingPages.map((page) => (
+          <Pagination.Item
+            key={page}
+            active={page === upcomingCurrentPage}
+            onClick={() => upcomingHandleClick(page)}
+          >
+            {page}
+          </Pagination.Item>
+        ))}
+      </Pagination>
       <Table responsive='sm'>
         <thead>
           <tr>
@@ -50,9 +86,9 @@ function RemindersTable() {
             <th>Done</th>
           </tr>
         </thead>
-        {upcomingReminders.length !== 0 && (
+        {upcomingShowedData.length !== 0 && (
           <tbody>
-            {upcomingReminders.map((reminder) => (
+            {upcomingShowedData.map((reminder) => (
               <tr key={reminder.id}>
                 <UpcomingReminderItem upcomingReminder={reminder} loadReminders={loadReminders} />
               </tr>
