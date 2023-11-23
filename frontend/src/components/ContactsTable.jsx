@@ -2,6 +2,7 @@ import Table from 'react-bootstrap/Table';
 import ContactItem from './ContactItem';
 import ContactAccordion from './ContactAccordion';
 import { useState, useEffect } from 'react';
+import Pagination from 'react-bootstrap/Pagination';
 
 function ContactsTable() {
   const [contacts, setContacts] = useState([]);
@@ -26,6 +27,24 @@ function ContactsTable() {
     loadContacts();
   }, []);
 
+  const rows = contacts.length;
+  const rowsPerPage = 2;
+  // use lastPage later to map pagination items and arrows
+  const lastPage = Math.ceil(rows / rowsPerPage);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [showedData, showData] = useState(contacts.slice(0, rowsPerPage));
+  // console.log({ data });
+  // console.log({ showedData });
+  const handleClick = (page) => {
+    setCurrentPage(page);
+    const pageIndex = page - 1;
+    const firstIndex = pageIndex * rowsPerPage;
+    const lastIndex = pageIndex * rowsPerPage + rowsPerPage;
+    // console.log({ firstIndex });
+    // console.log({ lastIndex });
+    showData(contacts.slice(firstIndex, lastIndex));
+  };
+
   return (
     <div>
       <ContactAccordion
@@ -46,8 +65,8 @@ function ContactsTable() {
         </thead>
         {contacts.length !== 0 && (
           <tbody>
-            {contacts.map((contact) => (
-              <tr key={contact.id}>
+            {showedData.map((contact, index) => (
+              <tr key={index}>
                 <ContactItem contact={contact} loadContacts={loadContacts} />
               </tr>
             ))}
@@ -61,6 +80,20 @@ function ContactsTable() {
           </tbody>
         )}
       </Table>
+      <Pagination>
+        <Pagination.Item
+          active={1 === currentPage}
+          onClick={() => handleClick(1)}
+        >
+          {1}
+        </Pagination.Item>
+        <Pagination.Item
+          active={2 === currentPage}
+          onClick={() => handleClick(2)}
+        >
+          {2}
+        </Pagination.Item>
+      </Pagination>
     </div>
   );
 }
