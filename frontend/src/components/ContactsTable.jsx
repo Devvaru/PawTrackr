@@ -71,7 +71,7 @@ function ContactsTable() {
           </Pagination.Item>
         ))}
       </Pagination>
-      <Table responsive='sm' className='contacts-table'>
+      <Table responsive='sm' className='contacts-table' striped bordered>
         <thead>
           <tr>
             <th>Name</th>

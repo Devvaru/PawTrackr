@@ -43,11 +43,11 @@ function UpcomingReminderItem(props) {
 
   return (
     <>
-      <td>{upcomingReminder.pet_name}</td>
-      <td>{upcomingReminder.title}</td>
-      <td>{formattedReminderDate}</td>
-      <td>{upcomingReminder.comment}</td>
-      <td>
+      <td className='tableItem'>{upcomingReminder.pet_name}</td>
+      <td className='tableItem'>{upcomingReminder.title}</td>
+      <td className='tableItem'>{formattedReminderDate}</td>
+      <td className='tableItem'>{upcomingReminder.comment}</td>
+      <td className='tableItem'>
         <FormCheck
           aria-label='option 1'
           checked={isDone}
