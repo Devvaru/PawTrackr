@@ -12,10 +12,14 @@ function RemindersTable() {
   const [upcomingCurrentPage, setUpcomingCurrentPage] = useState(1);
   const [upcomingShowedData, upcomingShowData] = useState([]);
   const [upcomingTotalPages, setUpcomingTotalPages] = useState();
+  const [completedCurrentPage, setCompletedCurrentPage] = useState(1);
+  const [completedShowedData, completedShowData] = useState([]);
+  const [completedTotalPages, setCompletedTotalPages] = useState();
 
   // Define rowsPerPage as a constant since it does not change
   const rowsPerPage = 5;
   const upcomingPages = Array.from({ length: upcomingTotalPages }, (_, index) => index + 1);
+  const completedPages = Array.from({ length: completedTotalPages }, (_, index) => index + 1);
 
   const loadReminders = () => {
     const upcomingRemindersPath = 'http://localhost:8080/api/reminders/upcoming';
@@ -49,12 +53,29 @@ function RemindersTable() {
 
   }, [upcomingReminders, upcomingCurrentPage, rowsPerPage]);
 
+  useEffect(() => {
+    // The pagination logic here will run whenever contacts or currentPage changes
+    const completedFirstIndex = (completedCurrentPage - 1) * rowsPerPage;
+    const completedLastIndex = completedFirstIndex + rowsPerPage;
+    completedShowData(upcomingReminders.slice(completedFirstIndex, completedLastIndex));
+    setCompletedTotalPages(Math.ceil(completedReminders.length / rowsPerPage));
+
+  }, [completedReminders, completedCurrentPage, rowsPerPage]);
+
   const upcomingHandleClick = (page) => {
     setUpcomingCurrentPage(page);
     const pageIndex = page - 1;
     const firstIndex = pageIndex * rowsPerPage;
     const lastIndex = pageIndex * rowsPerPage + rowsPerPage;
     upcomingShowData(upcomingReminders.slice(firstIndex, lastIndex));
+  };
+
+  const completedHandleClick = (page) => {
+    setCompletedCurrentPage(page);
+    const pageIndex = page - 1;
+    const firstIndex = pageIndex * rowsPerPage;
+    const lastIndex = pageIndex * rowsPerPage + rowsPerPage;
+    completedShowData(completedReminders.slice(firstIndex, lastIndex));
   };
 
   return (
@@ -104,6 +125,17 @@ function RemindersTable() {
         )}
       </Table>
       <h2 className='headers'>Completed Reminders</h2>
+      <Pagination className='pagination'>
+        {completedPages.map((page) => (
+          <Pagination.Item
+            key={page}
+            active={page === completedCurrentPage}
+            onClick={() => completedHandleClick(page)}
+          >
+            {page}
+          </Pagination.Item>
+        ))}
+      </Pagination>
       <Table responsive='sm'>
         <thead>
           <tr>
@@ -114,9 +146,9 @@ function RemindersTable() {
             <th>Done</th>
           </tr>
         </thead>
-        {completedReminders.length !== 0 && (
+        {completedShowedData.length !== 0 && (
           <tbody>
-            {completedReminders.map((reminder) => (
+            {completedShowedData.map((reminder) => (
               <tr key={reminder.id}>
                 <CompletedReminderItem completedReminder={reminder} />
               </tr>
