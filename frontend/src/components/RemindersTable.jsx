@@ -60,7 +60,7 @@ function RemindersTable() {
     completedShowData(upcomingReminders.slice(completedFirstIndex, completedLastIndex));
     setCompletedTotalPages(Math.ceil(completedReminders.length / rowsPerPage));
 
-  }, [completedReminders, completedCurrentPage, rowsPerPage]);
+  }, [upcomingReminders, completedReminders, completedCurrentPage, rowsPerPage]);
 
   const upcomingHandleClick = (page) => {
     setUpcomingCurrentPage(page);
