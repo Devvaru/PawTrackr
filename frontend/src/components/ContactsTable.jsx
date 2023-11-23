@@ -2,9 +2,26 @@ import Table from 'react-bootstrap/Table';
 import ContactItem from './ContactItem';
 import ContactAccordion from './ContactAccordion';
 import { useState, useEffect } from 'react';
+import Pagination from 'react-bootstrap/Pagination';
 
 function ContactsTable() {
   const [contacts, setContacts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [showedData, showData] = useState([]);
+
+  // Define rowsPerPage as a constant since it does not change
+  const rowsPerPage = 5;
+
+  useEffect(() => {
+    loadContacts();
+  }, []);
+
+  useEffect(() => {
+    // The pagination logic here will run whenever contacts or currentPage changes
+    const firstIndex = (currentPage - 1) * rowsPerPage;
+    const lastIndex = firstIndex + rowsPerPage;
+    showData(contacts.slice(firstIndex, lastIndex));
+  }, [contacts, currentPage, rowsPerPage]);
 
   const loadContacts = () => {
     fetch('http://localhost:8080/api/contacts')
@@ -16,15 +33,20 @@ function ContactsTable() {
       })
       .then((data) => {
         setContacts(data);
+        console.log("Line 24Data", data)
       })
       .catch((error) => {
         console.error('Fetch error:', error);
       });
   };
 
-  useEffect(() => {
-    loadContacts();
-  }, []);
+  const handleClick = (page) => {
+    setCurrentPage(page);
+    const pageIndex = page - 1;
+    const firstIndex = pageIndex * rowsPerPage;
+    const lastIndex = pageIndex * rowsPerPage + rowsPerPage;
+    showData(contacts.slice(firstIndex, lastIndex));
+  };
 
   return (
     <div>
@@ -34,7 +56,7 @@ function ContactsTable() {
         }}
       />
       <h2 class='headers'>Contacts</h2>
-      <Table responsive='sm'>
+      <Table responsive='sm' className='contacts-table'>
         <thead>
           <tr>
             <th>Name</th>
@@ -44,23 +66,37 @@ function ContactsTable() {
             <th>Delete</th>
           </tr>
         </thead>
-        {contacts.length !== 0 && (
+        {showedData.length !== 0 && (
           <tbody>
-            {contacts.map((contact) => (
-              <tr key={contact.id}>
+            {showedData.map((contact, index) => (
+              <tr key={index}>
                 <ContactItem contact={contact} loadContacts={loadContacts} />
               </tr>
             ))}
           </tbody>
         )}
-        {contacts.length === 0 && (
-          <tbody>
-            <tr>
-              <td colSpan={3}> Loading </td>
-            </tr>
-          </tbody>
-        )}
+
       </Table>
+      <Pagination className='pagination'>
+        <Pagination.Item
+          active={1 === currentPage}
+          onClick={() => handleClick(1)}
+        >
+          {1}
+        </Pagination.Item>
+        <Pagination.Item
+          active={2 === currentPage}
+          onClick={() => handleClick(2)}
+        >
+          {2}
+        </Pagination.Item>
+        <Pagination.Item
+          active={3 === currentPage}
+          onClick={() => handleClick(3)}
+        >
+          {3}
+        </Pagination.Item>
+      </Pagination>
     </div>
   );
 }

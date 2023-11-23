@@ -73,4 +73,15 @@ VALUES
   (1, 'Dr. Goodvet', '123-456-7890', 'vet@goodvet.com', 'http://google.com'),
   (1, 'Dr. Lamba', '555-456-7890', 'vet@lamba.com', 'http://google.com'),
   (1, 'Pet Sitter', '123-444-7890', 'vet@smith.com', 'http://google.com'),
+  (1, 'PetSmart', '123-333-7890', 'petsmart@shop.com', 'http://google.com'),
+
+  (1, 'Dr. Goodvet', '123-456-7890', 'vet@goodvet.com', 'http://google.com'),
+  (1, 'Dr. Lamba', '555-456-7890', 'vet@lamba.com', 'http://google.com'),
+  (1, 'Pet Sitter', '123-444-7890', 'vet@smith.com', 'http://google.com'),
+  (1, 'PetSmart', '123-333-7890', 'petsmart@shop.com', 'http://google.com'), 
+  (1, 'Dr. Goodvet', '123-456-7890', 'vet@goodvet.com', 'http://google.com'),
+  (1, 'Dr. Lamba', '555-456-7890', 'vet@lamba.com', 'http://google.com'),
+  (1, 'Pet Sitter', '123-444-7890', 'vet@smith.com', 'http://google.com'),
+  (1, 'PetSmart', '123-333-7890', 'petsmart@shop.com', 'http://google.com'),
+  (1, 'Dr. Goodvet', '123-456-7890', 'vet@goodvet.com', 'http://google.com'),
   (1, 'PetSmart', '123-333-7890', 'petsmart@shop.com', 'http://google.com');
