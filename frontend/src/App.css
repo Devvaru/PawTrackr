@@ -86,3 +86,7 @@
 .contacts-table {
   margin-bottom: 25px !important;
 }
+
+.tableItem {
+  max-width: 20px;
+}
