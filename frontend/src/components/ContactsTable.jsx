@@ -8,6 +8,7 @@ function ContactsTable() {
   const [contacts, setContacts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [showedData, showData] = useState([]);
+  const [totalPages, setTotalPages] = useState();
 
   // Define rowsPerPage as a constant since it does not change
   const rowsPerPage = 5;
@@ -21,6 +22,8 @@ function ContactsTable() {
     const firstIndex = (currentPage - 1) * rowsPerPage;
     const lastIndex = firstIndex + rowsPerPage;
     showData(contacts.slice(firstIndex, lastIndex));
+    setTotalPages(Math.ceil(contacts.length / rowsPerPage));
+
   }, [contacts, currentPage, rowsPerPage]);
 
   const loadContacts = () => {
@@ -33,7 +36,7 @@ function ContactsTable() {
       })
       .then((data) => {
         setContacts(data);
-        console.log("Line 24Data", data)
+        // console.log("Line 24Data", data)
       })
       .catch((error) => {
         console.error('Fetch error:', error);
@@ -48,6 +51,15 @@ function ContactsTable() {
     showData(contacts.slice(firstIndex, lastIndex));
   };
 
+  const pages = [];
+  const generatePages = () => {
+    for (let i = 1; i <= totalPages; i++) {
+      pages.push(i)
+    }
+    return pages;
+  };
+  generatePages();
+
   return (
     <div>
       <ContactAccordion
@@ -55,7 +67,7 @@ function ContactsTable() {
           loadContacts();
         }}
       />
-      <h2 class='headers'>Contacts</h2>
+      <h2 className='headers'>Contacts</h2>
       <Table responsive='sm' className='contacts-table'>
         <thead>
           <tr>
@@ -78,24 +90,15 @@ function ContactsTable() {
 
       </Table>
       <Pagination className='pagination'>
-        <Pagination.Item
-          active={1 === currentPage}
-          onClick={() => handleClick(1)}
-        >
-          {1}
-        </Pagination.Item>
-        <Pagination.Item
-          active={2 === currentPage}
-          onClick={() => handleClick(2)}
-        >
-          {2}
-        </Pagination.Item>
-        <Pagination.Item
-          active={3 === currentPage}
-          onClick={() => handleClick(3)}
-        >
-          {3}
-        </Pagination.Item>
+        {pages.map((page) => (
+          <Pagination.Item
+            key={page}
+            active={page === currentPage}
+            onClick={() => handleClick(page)}
+          >
+            {page}
+          </Pagination.Item>
+        ))}
       </Pagination>
     </div>
   );
