@@ -21,7 +21,7 @@ function CompletedReminderItem(props) {
 
   return (
     <>
-      <td>{completedReminder.pet_name}</td>
+      <td>{completedReminder.name}</td>
       <td>{completedReminder.title}</td>
       <td>{formattedReminderDate}</td>
       <td>{completedReminder.comment}</td>

@@ -10,10 +10,10 @@ function RemindersTable() {
   const [upcomingReminders, setUpcomingReminders] = useState([]);
   const [completedReminders, setCompletedReminders] = useState([]);
   const [upcomingCurrentPage, setUpcomingCurrentPage] = useState(1);
-  const [upcomingShowedData, setUpcomingShowData] = useState([]);
+  const [upcomingShowedData, upcomingShowData] = useState([]);
   const [upcomingTotalPages, setUpcomingTotalPages] = useState();
   const [completedCurrentPage, setCompletedCurrentPage] = useState(1);
-  const [completedShowedData, setCompletedShowData] = useState([]);
+  const [completedShowedData, completedShowData] = useState([]);
   const [completedTotalPages, setCompletedTotalPages] = useState();
 
   // Define rowsPerPage as a constant since it does not change
@@ -48,7 +48,7 @@ function RemindersTable() {
     // The pagination logic here will run whenever contacts or currentPage changes
     const upcomingFirstIndex = (upcomingCurrentPage - 1) * rowsPerPage;
     const upcomingLastIndex = upcomingFirstIndex + rowsPerPage;
-    setUpcomingShowData(upcomingReminders.slice(upcomingFirstIndex, upcomingLastIndex));
+    upcomingShowData(upcomingReminders.slice(upcomingFirstIndex, upcomingLastIndex));
     setUpcomingTotalPages(Math.ceil(upcomingReminders.length / rowsPerPage));
 
   }, [upcomingReminders, upcomingCurrentPage, rowsPerPage]);
@@ -57,17 +57,17 @@ function RemindersTable() {
     // The pagination logic here will run whenever contacts or currentPage changes
     const completedFirstIndex = (completedCurrentPage - 1) * rowsPerPage;
     const completedLastIndex = completedFirstIndex + rowsPerPage;
-    setCompletedShowData(upcomingReminders.slice(completedFirstIndex, completedLastIndex));
+    completedShowData(completedReminders.slice(completedFirstIndex, completedLastIndex));
     setCompletedTotalPages(Math.ceil(completedReminders.length / rowsPerPage));
 
-  }, [upcomingReminders, completedReminders, completedCurrentPage, rowsPerPage]);
+  }, [completedReminders, completedCurrentPage, rowsPerPage]);
 
   const upcomingHandleClick = (page) => {
     setUpcomingCurrentPage(page);
     const pageIndex = page - 1;
     const firstIndex = pageIndex * rowsPerPage;
     const lastIndex = pageIndex * rowsPerPage + rowsPerPage;
-    setUpcomingShowData(upcomingReminders.slice(firstIndex, lastIndex));
+    upcomingShowData(upcomingReminders.slice(firstIndex, lastIndex));
   };
 
   const completedHandleClick = (page) => {
@@ -75,8 +75,10 @@ function RemindersTable() {
     const pageIndex = page - 1;
     const firstIndex = pageIndex * rowsPerPage;
     const lastIndex = pageIndex * rowsPerPage + rowsPerPage;
-    setCompletedShowData(completedReminders.slice(firstIndex, lastIndex));
+    completedShowData(completedReminders.slice(firstIndex, lastIndex));
   };
+
+  console.log('completedShowedData', completedShowedData)
 
   return (
     <div>
