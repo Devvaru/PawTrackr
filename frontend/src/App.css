@@ -77,3 +77,12 @@
   padding-top: 25px;
   padding-bottom: 25px;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.contacts-table {
+  margin-bottom: 25px !important;
+}
