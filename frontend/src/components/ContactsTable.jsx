@@ -12,6 +12,7 @@ function ContactsTable() {
 
   // Define rowsPerPage as a constant since it does not change
   const rowsPerPage = 5;
+  const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
 
   useEffect(() => {
     loadContacts();
@@ -51,8 +52,6 @@ function ContactsTable() {
     showData(contacts.slice(firstIndex, lastIndex));
   };
 
-  const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
-
   return (
     <div>
       <ContactAccordion
@@ -61,6 +60,17 @@ function ContactsTable() {
         }}
       />
       <h2 className='headers'>Contacts</h2>
+      <Pagination className='pagination'>
+        {pages.map((page) => (
+          <Pagination.Item
+            key={page}
+            active={page === currentPage}
+            onClick={() => handleClick(page)}
+          >
+            {page}
+          </Pagination.Item>
+        ))}
+      </Pagination>
       <Table responsive='sm' className='contacts-table'>
         <thead>
           <tr>
@@ -82,17 +92,6 @@ function ContactsTable() {
         )}
 
       </Table>
-      <Pagination className='pagination'>
-        {pages.map((page) => (
-          <Pagination.Item
-            key={page}
-            active={page === currentPage}
-            onClick={() => handleClick(page)}
-          >
-            {page}
-          </Pagination.Item>
-        ))}
-      </Pagination>
     </div>
   );
 }
