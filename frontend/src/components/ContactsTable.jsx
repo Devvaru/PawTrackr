@@ -92,6 +92,7 @@ function ContactsTable() {
       <Pagination className='pagination'>
         {pages.map((page) => (
           <Pagination.Item
+            key={page}
             active={page === currentPage}
             onClick={() => handleClick(page)}
           >
