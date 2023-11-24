@@ -42,6 +42,11 @@
   background-color: #E9ECEF !important;
 } */
 
+
+.logo {
+cursor: pointer;
+}
+
 .petsGrid {
   padding: 25px;
 }
@@ -125,7 +130,16 @@ a.page-link {
 }
 
 .modal-header {
+  display: flex  !important;
+  align-items: center !important;
+  justify-content: center !important;
   border: none !important;
+  padding-right: 22px !important;
+  padding-left: 55px !important;
+}
+
+.modal-header p {
+  margin: 0px;
 }
 
 .modalImage {
