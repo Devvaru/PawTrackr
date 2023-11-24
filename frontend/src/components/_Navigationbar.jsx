@@ -13,7 +13,7 @@ function Navigationbar(props) {
 
   return (
     <>
-      <Navbar bg='dark' data-bs-theme='dark'>
+      <Navbar bg='dark' data-bs-theme='dark' fixed="top">
         <Container>
           <Navbar.Brand onClick={() => setShowPets()}>PawTrackr</Navbar.Brand>
           <Nav className='me-auto'>

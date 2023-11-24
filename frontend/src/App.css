@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin-top: 56px;
 }
 
 .App-logo {
@@ -133,4 +134,9 @@ a.page-link {
 
 .modalImage:hover {
   transform: scale(1.05);
+}
+
+.row {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
 }
