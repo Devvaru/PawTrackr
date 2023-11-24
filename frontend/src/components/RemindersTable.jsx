@@ -121,7 +121,7 @@ function RemindersTable() {
         {upcomingReminders.length === 0 && (
           <tbody>
             <tr>
-              <td colSpan={3}> No reminders </td>
+              <td colSpan={5}> No Reminders </td>
             </tr>
           </tbody>
         )}
@@ -160,7 +160,7 @@ function RemindersTable() {
         {completedReminders.length === 0 && (
           <tbody>
             <tr>
-              <td colSpan={3}> No reminders </td>
+              <td colSpan={5}> No Reminders </td>
             </tr>
           </tbody>
         )}
