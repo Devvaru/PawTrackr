@@ -48,7 +48,7 @@ function UpcomingReminderItem(props) {
       <td className='tableItem'>{formattedReminderDate}</td>
       <td className='tableItem'>{upcomingReminder.comment}</td>
       <td className='tableItem'>
-        <FormCheck
+        <FormCheck className='doneCheckmark'
           aria-label='Mark Reminder as Done'
           checked={isDone}
           onChange={() => {
