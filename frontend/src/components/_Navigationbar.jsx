@@ -29,6 +29,7 @@ function Navigationbar(props) {
               label="Toggle Light/Dark Mode"
               onClick={togglemodes}
               style={{ color: "rgba(255, 255, 255, 0.55)" }}
+              aria-label="Toggle Light/Dark Mode"
             />
           </Form>
         </Container>
