@@ -2,6 +2,7 @@ import Modal from 'react-bootstrap/Modal';
 import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
 import PetReminders from './PetReminders';
+import Table from 'react-bootstrap/Table';
 
 function PetModal(props) {
   console.log(props);
@@ -31,16 +32,31 @@ function PetModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Col xs={10} md={10}>
+        <Col xs={10} md={10} className='modalColumn'>
           <div className='modalImageContainer'>
-            <Image src={pet.pet_img_url} rounded />
+            <Image src={pet.pet_img_url} className='modalImage' rounded />
           </div>
           <div class='modalTextContainer'>
-            <p><strong>Date of Birth:</strong> {formattedDateOfBirth}</p>
-            <p><strong>Species:</strong> {pet.variant}</p>
-            <p><strong>Weight:</strong> {pet.weight} kg</p>
-            <p><strong>Food:</strong> {pet.food}</p>
-            <p><strong>Comments:</strong> {pet.comment}</p>
+            <Table bordered>
+              <thead>
+                <tr>
+                  <th><strong>Date of Birth</strong></th>
+                  <th><strong>Species</strong></th>
+                  <th><strong>Weight</strong></th>
+                  <th><strong>Food</strong></th>
+                  <th><strong>Comments</strong></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td> {formattedDateOfBirth}</td>
+                  <td> {pet.variant}</td>
+                  <td> {pet.weight} kg</td>
+                  <td> {pet.food}</td>
+                  <td> {pet.comment}</td>
+                </tr>
+              </tbody>
+            </Table>
           </div>
         </Col>
       </Modal.Body>

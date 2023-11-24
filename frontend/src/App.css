@@ -48,6 +48,7 @@
 .modal-body {
   display: flex;
   justify-content: center;
+  padding-top: 0px !important;
 }
 
 .modalImageContainer {
@@ -55,6 +56,9 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  padding: 75px 0px 75px 0px;
+  border: 0.5px solid;
+  border-radius: 15px;
 }
 
 .modalTextContainer {
@@ -66,11 +70,11 @@
 }
 
 .modal-content {
-  padding-bottom: 0px 25px 25px 25px;
+  padding: 0px 0px 50px 0px !important;
 }
 
 .list-group {
-  width: 100%;
+  width: 90%;
 }
 
 .headers {
@@ -103,4 +107,30 @@ a.page-link {
 .form-check-input:checked {
   background-color: #0dcaf0 !important;
   border-color: #0dcaf0 !important;
+}
+
+.pet-card {
+  transition: 0.5s;
+  border: 1px solid grey !important;
+}
+
+.pet-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px 0 rgba(5, 123, 147, 0.2), 0 6px 20px 0 rgba(5, 123, 147, 0.2);
+}
+
+.modalColumn {
+  width: 90% !important;
+}
+
+.modal-header {
+  border: none !important;
+}
+
+.modalImage {
+  transition: 0.5s;
+}
+
+.modalImage:hover {
+  transform: scale(1.05);
 }
