@@ -32,8 +32,7 @@ function AddReminderForm(props) {
 
     axios
       .post('http://localhost:8080/api/reminders', newReminder)
-      .then((res) => {
-        console.log({ res });
+      .then(() => {
         props.onReminderAdded();
         formRef.current.reset();
       })

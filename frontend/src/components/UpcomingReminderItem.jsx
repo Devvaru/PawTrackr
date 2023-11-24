@@ -24,16 +24,12 @@ function UpcomingReminderItem(props) {
           .padStart(2, '0')}`;
 
   const handleEdit = (reminderId) => {
-    console.log('IsDONE', isDone);
     setIsDone(!isDone);
     axios
       .put(`http://localhost:8080/api/reminders/${reminderId}`, {
         done: isDone,
       })
-      .then((response) => {
-        // TODO: Remove console logs
-        console.log(response.data);
-        console.log(`Edited reminder ${reminderId}`);
+      .then(() => {
         loadReminders();
       })
       .catch((error) => {

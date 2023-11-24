@@ -22,8 +22,7 @@ function AddPetForm(props) {
 
     axios
       .post('http://localhost:8080/api/pets', newPet)
-      .then((res) => {
-        console.log({ res });
+      .then(() => {
         props.onPetAdded();
         formRef.current.reset();
       })
@@ -34,7 +33,7 @@ function AddPetForm(props) {
 
   return (
     <>
-      <Row className='justify-content-md-center' style={{marginTop: '30px'}}>
+      <Row className='justify-content-md-center' style={{ marginTop: '30px' }}>
         <Col md={6}>
           <Form ref={formRef} onSubmit={handleSubmit}>
             <Row className='mb-3'>

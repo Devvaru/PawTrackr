@@ -3,9 +3,6 @@ import Col from 'react-bootstrap/Col';
 import PetModal from './PetModal';
 import { useState } from 'react';
 
-// TODO: Remove commented code
-// https://react-bootstrap.netlify.app/docs/components/cards#grid-cards
-
 function PetsGridItem(props) {
   const { pet } = props;
   const [modalShow, setModalShow] = useState(false);
@@ -20,13 +17,13 @@ function PetsGridItem(props) {
             alt={`${pet.name} the ${pet.variant}`}
           />
           {modalShow && <PetModal
-              key={pet.id}
-              id={pet.id}
-              show={modalShow}
-              setModalShow={setModalShow}
-              onHide={() => setModalShow(false)}
-              pet={pet}
-            />}
+            key={pet.id}
+            id={pet.id}
+            show={modalShow}
+            setModalShow={setModalShow}
+            onHide={() => setModalShow(false)}
+            pet={pet}
+          />}
           {/* <Image src={pet.pet_img_url} roundedCircle /> */}
           <Card.Body>
             <Card.Title>{pet.name}</Card.Title>

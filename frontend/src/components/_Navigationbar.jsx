@@ -22,7 +22,7 @@ function Navigationbar(props) {
         </Nav>
 
         <Form>
-          <Form.Check // prettier-ignore 
+          <Form.Check
             type="switch"
             id="custom-switch"
             label="Toggle Light/Dark Mode"

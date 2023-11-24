@@ -20,8 +20,7 @@ function AddContactForm(props) {
 
     axios
       .post('http://localhost:8080/api/contacts', newContact)
-      .then((res) => {
-        console.log({ res });
+      .then(() => {
         props.onContactAdded();
         formRef.current.reset();
       })
@@ -32,7 +31,7 @@ function AddContactForm(props) {
 
   return (
     <>
-      <Row className='justify-content-md-center' style={{marginTop: '30px'}}>
+      <Row className='justify-content-md-center' style={{ marginTop: '30px' }}>
         <Col md={6}>
           <Form ref={formRef} onSubmit={handleSubmit}>
             <Row className='mb-3'>
