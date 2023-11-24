@@ -17,16 +17,16 @@ function PetsGridItem(props) {
           <Card.Img
             variant='top'
             src={pet.pet_img_url}
-            alt={`Photo of ${pet.name}`}
+            alt={`${pet.name} the ${pet.variant}`}
           />
           {modalShow && <PetModal
-            key={pet.id}
-            id={pet.id}
-            show={modalShow}
-            setModalShow={setModalShow}
-            onHide={() => setModalShow(false)}
-            pet={pet}
-          />}
+              key={pet.id}
+              id={pet.id}
+              show={modalShow}
+              setModalShow={setModalShow}
+              onHide={() => setModalShow(false)}
+              pet={pet}
+            />}
           {/* <Image src={pet.pet_img_url} roundedCircle /> */}
           <Card.Body>
             <Card.Title>{pet.name}</Card.Title>
