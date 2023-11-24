@@ -158,3 +158,8 @@ a.page-link {
 .form-check-input {
   border: solid 1px grey !important;
 } 
+
+.nav-bar {
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+}
