@@ -33,6 +33,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -44,7 +45,7 @@
 
 
 .logo {
-cursor: pointer;
+  cursor: pointer;
 }
 
 .petsGrid {
@@ -130,7 +131,7 @@ a.page-link {
 }
 
 .modal-header {
-  display: flex  !important;
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   border: none !important;
@@ -157,4 +158,9 @@ a.page-link {
 
 .form-check-input {
   border: solid 1px grey !important;
-} 
+}
+
+.nav-bar {
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+}

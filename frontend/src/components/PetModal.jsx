@@ -6,7 +6,6 @@ import Table from 'react-bootstrap/Table';
 import CloseButton from 'react-bootstrap/CloseButton';
 
 function PetModal(props) {
-  console.log(props);
   const { pet } = props;
 
   // Display Pet Date of Birth in YYYY/MM/DD format

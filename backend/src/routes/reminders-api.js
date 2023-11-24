@@ -44,8 +44,7 @@ router.post('/', (req, res) => {
 
   reminderQueries
     .addReminder(newReminder)
-    .then((result) => {
-      console.log(`Result:`, { result });
+    .then(() => {
       res.json('Reminder added successfully! 😃');
     })
     .catch((err) => {
@@ -57,12 +56,10 @@ router.post('/', (req, res) => {
 // Edit Reminder Done Field
 router.put('/:id', (req, res) => {
   const reminderId = req.params.id;
-  console.log('reminderId', reminderId);
 
   reminderQueries
     .editReminderDone(reminderId)
-    .then((result) => {
-      console.log('result', { result });
+    .then(() => {
       res.json('Reminder edited successfully! 😃');
     })
     .catch((err) => {

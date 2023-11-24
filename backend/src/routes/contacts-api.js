@@ -21,8 +21,7 @@ router.post('/', (req, res) => {
 
   contactQueries
     .addContact(newContact)
-    .then((result) => {
-      console.log({ result });
+    .then(() => {
       res.json('Contact added successfully! 😃');
     })
     .catch((err) => {
@@ -34,12 +33,10 @@ router.post('/', (req, res) => {
 // Delete Contact
 router.delete('/:id', (req, res) => {
   const contactId = req.params.id;
-  console.log('contactId', contactId)
 
   contactQueries
     .deleteContact(contactId)
-    .then((result) => {
-      console.log("result", { result });
+    .then(() => {
       res.json('Contact removed successfully! 😃');
     })
     .catch((err) => {

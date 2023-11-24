@@ -10,7 +10,6 @@ function PetReminders(props) {
     axios
       .get(`http://localhost:8080/api/reminders/${pet.id}`)
       .then((res) => {
-        console.log(res);
         setPetReminders(res.data)
       })
       .catch((err) => {
@@ -43,7 +42,7 @@ function PetReminders(props) {
       <ListGroup>
         <ListGroup.Item><strong>Upcoming Reminders:</strong></ListGroup.Item>
         <ListGroup.Item>{mapPetReminders}</ListGroup.Item>
-    </ListGroup>
+      </ListGroup>
     </>
   );
 }

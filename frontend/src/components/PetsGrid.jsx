@@ -4,9 +4,6 @@ import PetAccordion from './PetAccordion';
 import { useState, useEffect } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-// TODO: Remove commented code
-// https://react-bootstrap.netlify.app/docs/components/cards#grid-cards
-
 function PetsGrid() {
   const [pets, setPets] = useState([]);
 
@@ -71,7 +68,8 @@ function PetsGrid() {
                           </div>
                         )}
                       </Draggable>
-                    )}
+                    )
+                  }
                   )}
                   {provided.placeholder}
                 </Row>

@@ -26,15 +26,13 @@ function RemindersTable() {
     const completedRemindersPath = 'http://localhost:8080/api/reminders/completed';
 
     axios.all([
-        axios.get(upcomingRemindersPath),
-        axios.get(completedRemindersPath)
-      ])
+      axios.get(upcomingRemindersPath),
+      axios.get(completedRemindersPath)
+    ])
       .then(axios.spread((response1, response2) => {
-          console.log('Data from upcomingRemindersPath:', response1.data);
-          console.log('Data from completedRemindersPath:', response2.data);
-          setUpcomingReminders(response1.data)
-          setCompletedReminders(response2.data)
-        }))
+        setUpcomingReminders(response1.data)
+        setCompletedReminders(response2.data)
+      }))
       .catch(error => {
         console.error('Error fetching reminders:', error);
       });
@@ -77,8 +75,6 @@ function RemindersTable() {
     const lastIndex = pageIndex * rowsPerPage + rowsPerPage;
     completedShowData(completedReminders.slice(firstIndex, lastIndex));
   };
-
-  console.log('completedShowedData', completedShowedData)
 
   return (
     <div>

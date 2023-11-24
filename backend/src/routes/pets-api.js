@@ -27,8 +27,7 @@ router.post('/', (req, res) => {
 
   petQueries
     .addPet(newPet)
-    .then((result) => {
-      console.log({ result });
+    .then(() => {
       res.json('Pet added successfully! 😃');
     })
     .catch((err) => {
