@@ -154,3 +154,7 @@ a.page-link {
   margin-right: 0px !important;
   margin-left: 0px !important;
 }
+
+.form-check-input {
+  border: solid 1px grey !important;
+} 
