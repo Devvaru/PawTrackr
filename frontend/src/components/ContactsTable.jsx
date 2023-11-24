@@ -90,9 +90,15 @@ function ContactsTable() {
             ))}
           </tbody>
         )}
-
+        {contacts.length === 0 && (
+          <tbody>
+            <tr>
+              <td colSpan={5}> No Contacts </td>
+            </tr>
+          </tbody>
+        )}
       </Table>
-    </div>
+    </div >
   );
 }
 
