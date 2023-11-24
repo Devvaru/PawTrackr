@@ -83,7 +83,7 @@ function AddPetForm(props) {
                 <Form.Control type='text' placeholder='Comment' name='comment' />
               </Form.Group>
             </Row>
-            <Button type='submit' variant="info" style={{ color: "white", fontWeight: '600', marginBottom: '50px' }}>SUBMIT</Button>
+            <Button type='submit' variant="info" style={{ color: "#212529", fontWeight: '600', marginBottom: '50px' }}>SUBMIT</Button>
           </Form>
 
         </Col>

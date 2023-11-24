@@ -87,7 +87,7 @@ function AddReminderForm(props) {
               type='submit'
               variant='info'
               style={{
-                color: 'white',
+                color: '#212529',
                 fontWeight: '600',
                 marginBottom: '50px',
               }}

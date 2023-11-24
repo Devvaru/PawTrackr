@@ -12,7 +12,7 @@ function CustomToggle({ children, eventKey }) {
     <Button
       type="button"
       variant="info"
-      style={{ color: 'white', fontWeight: '600' }}
+      style={{ color: '#212529', fontWeight: '600' }}
       onClick={decoratedOnClick}
     >
       {children}
