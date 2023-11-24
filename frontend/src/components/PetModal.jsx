@@ -3,6 +3,7 @@ import Image from 'react-bootstrap/Image';
 import Col from 'react-bootstrap/Col';
 import PetReminders from './PetReminders';
 import Table from 'react-bootstrap/Table';
+import CloseButton from 'react-bootstrap/CloseButton';
 
 function PetModal(props) {
   console.log(props);
@@ -23,13 +24,16 @@ function PetModal(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton onClick={(e) => {
-        props.onHide();
-        e.stopPropagation();
-      }}>
-        <Modal.Title id="contained-modal-title-vcenter">
+      <Modal.Header>
+        <Modal.Title id='contained-modal-title-vcenter'>
           <p>{pet.name}'s Details</p>
         </Modal.Title>
+        <CloseButton
+          onClick={(e) => {
+            props.onHide();
+            e.stopPropagation();
+          }}
+        ></CloseButton>
       </Modal.Header>
       <Modal.Body>
         <Col xs={10} md={10} className='modalColumn'>

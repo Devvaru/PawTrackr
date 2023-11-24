@@ -15,7 +15,7 @@ function Navigationbar(props) {
     <>
       <Navbar bg='dark' data-bs-theme='dark' fixed="top">
         <Container>
-          <Navbar.Brand onClick={() => setShowPets()} aria-label="PawTrackr - Home">PawTrackr</Navbar.Brand>
+          <Navbar.Brand className="logo" onClick={() => setShowPets()} aria-label="PawTrackr - Home">PawTrackr</Navbar.Brand>
           <Nav className='me-auto'>
             <Nav.Link onClick={() => setShowPets()} aria-label="Go to Pets">Pets</Nav.Link>
             <Nav.Link onClick={() => setShowReminders()} aria-label="Go to Reminders">Reminders</Nav.Link>
