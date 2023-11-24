@@ -49,7 +49,7 @@ function UpcomingReminderItem(props) {
       <td className='tableItem'>{upcomingReminder.comment}</td>
       <td className='tableItem'>
         <FormCheck
-          aria-label='option 1'
+          aria-label='Mark Reminder as Done'
           checked={isDone}
           onChange={() => {
             handleEdit(upcomingReminder.id);

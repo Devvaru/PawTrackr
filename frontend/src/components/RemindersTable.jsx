@@ -88,12 +88,17 @@ function RemindersTable() {
         }}
       />
       <h2 className='headers'>Upcoming Reminders</h2>
-       <Pagination className='pagination'>
+      <Pagination
+        role='navigation'
+        aria-label='Page Navigation'
+        className='pagination'
+      >
         {upcomingPages.map((page) => (
           <Pagination.Item
             key={page}
             active={page === upcomingCurrentPage}
             onClick={() => upcomingHandleClick(page)}
+            aria-current={page === upcomingCurrentPage ? 'page' : null}
           >
             {page}
           </Pagination.Item>
@@ -127,12 +132,17 @@ function RemindersTable() {
         )}
       </Table>
       <h2 className='headers'>Completed Reminders</h2>
-      <Pagination className='pagination'>
+      <Pagination
+        role='navigation'
+        aria-label='Page Navigation'
+        className='pagination'
+      >
         {completedPages.map((page) => (
           <Pagination.Item
             key={page}
             active={page === completedCurrentPage}
             onClick={() => completedHandleClick(page)}
+            aria-current={page === completedCurrentPage ? 'page' : null}
           >
             {page}
           </Pagination.Item>

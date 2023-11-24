@@ -34,7 +34,7 @@ function PetModal(props) {
       <Modal.Body>
         <Col xs={10} md={10} className='modalColumn'>
           <div className='modalImageContainer'>
-            <Image src={pet.pet_img_url} className='modalImage' rounded />
+            <Image src={pet.pet_img_url} alt={`${pet.name} the ${pet.variant}`} className='modalImage' rounded />
           </div>
           <div class='modalTextContainer'>
             <Table bordered>

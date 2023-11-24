@@ -15,11 +15,11 @@ function Navigationbar(props) {
     <>
       <Navbar bg='dark' data-bs-theme='dark' fixed="top">
         <Container>
-          <Navbar.Brand onClick={() => setShowPets()}>PawTrackr</Navbar.Brand>
+          <Navbar.Brand onClick={() => setShowPets()} aria-label="PawTrackr - Home">PawTrackr</Navbar.Brand>
           <Nav className='me-auto'>
-            <Nav.Link onClick={() => setShowPets()}>Pets</Nav.Link>
-            <Nav.Link onClick={() => setShowReminders()}>Reminders</Nav.Link>
-            <Nav.Link onClick={() => setShowContacts()}>Contacts</Nav.Link>
+            <Nav.Link onClick={() => setShowPets()} aria-label="Go to Pets">Pets</Nav.Link>
+            <Nav.Link onClick={() => setShowReminders()} aria-label="Go to Reminders">Reminders</Nav.Link>
+            <Nav.Link onClick={() => setShowContacts()} aria-label="Go to Contacts">Contacts</Nav.Link>
           </Nav>
 
           <Form>
@@ -29,6 +29,7 @@ function Navigationbar(props) {
               label="Toggle Light/Dark Mode"
               onClick={togglemodes}
               style={{ color: "rgba(255, 255, 255, 0.55)" }}
+              aria-label="Toggle Light/Dark Mode"
             />
           </Form>
         </Container>
