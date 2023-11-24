@@ -24,7 +24,6 @@ function ContactsTable() {
     const lastIndex = firstIndex + rowsPerPage;
     showData(contacts.slice(firstIndex, lastIndex));
     setTotalPages(Math.ceil(contacts.length / rowsPerPage));
-
   }, [contacts, currentPage, rowsPerPage]);
 
   const loadContacts = () => {
@@ -60,12 +59,17 @@ function ContactsTable() {
         }}
       />
       <h2 className='headers'>Contacts</h2>
-      <Pagination className='pagination'>
+      <Pagination
+        role='navigation'
+        aria-label='Page Navigation'
+        className='pagination'
+      >
         {pages.map((page) => (
           <Pagination.Item
             key={page}
             active={page === currentPage}
             onClick={() => handleClick(page)}
+            aria-current={page === currentPage ? 'page' : null}
           >
             {page}
           </Pagination.Item>
@@ -98,7 +102,7 @@ function ContactsTable() {
           </tbody>
         )}
       </Table>
-    </div >
+    </div>
   );
 }
 
