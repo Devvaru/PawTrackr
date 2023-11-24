@@ -55,7 +55,7 @@ function PetsGrid() {
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="pets">
           {(provided) => (
-            <div className='petsGrid pets' {...provided.droppableProps} ref={provided.innerRef} style={{ border: "1px solid black"}}>
+            <div className='petsGrid pets' {...provided.droppableProps} ref={provided.innerRef}>
               {pets.length !== 0 && (
                 <Row xs={1} md={4} className='g-4' style={{ margin: '0px' }}>
                   {pets.map((pet, index) => {
