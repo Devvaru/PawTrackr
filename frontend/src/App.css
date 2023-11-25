@@ -169,3 +169,8 @@ a.page-link {
   height: 35px;
   margin: 0px;
 }
+
+/* change padding if logo is changed */
+.card-header {
+  padding: 25px 0px 20px 0px !important;
+}
