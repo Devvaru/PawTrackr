@@ -55,7 +55,7 @@
 .modal-body {
   display: flex;
   justify-content: center;
-  padding-top: 0px !important;
+  padding: 0px !important;
 }
 
 .modalImageContainer {
@@ -63,9 +63,9 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding: 75px 0px 75px 0px;
-  border: 0.5px solid;
-  border-radius: 15px;
+  padding: 100px 0px 100px 0px;
+  border: lightgrey 0.5px solid;
+  border-radius: 10px;
 }
 
 .modalTextContainer {
@@ -74,14 +74,24 @@
   justify-content: left;
   align-items: center;
   flex-direction: column;
+  border: lightgrey 0.5px solid;
+  border-radius: 10px;
 }
 
 .modal-content {
-  padding: 0px 0px 50px 0px !important;
+  padding: 0px 0px 40px 0px !important;
+}
+
+.modal-table {
+  border: lightgrey 0.5px solid;
+  border-radius: 10px !important;
+  overflow: hidden;
+  margin: 0px !important;
 }
 
 .list-group {
   width: 90%;
+  border-radius: 10px !important;
 }
 
 .headers {
@@ -128,6 +138,7 @@ a.page-link {
 
 .modalColumn {
   width: 90% !important;
+  margin-bottom: 20px;
 }
 
 .modal-header {
