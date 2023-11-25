@@ -164,3 +164,8 @@ a.page-link {
   padding-left: 50px !important;
   padding-right: 50px !important;
 }
+
+.main-logo {
+  height: 35px;
+  margin: 0px;
+}
