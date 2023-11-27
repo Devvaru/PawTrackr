@@ -77,7 +77,7 @@ function PetsGrid() {
             setActiveView('grid')
           }}
         >
-          Grid
+          <strong>GRID</strong>
         </ToggleButton>
 
         <ToggleButton
@@ -87,7 +87,7 @@ function PetsGrid() {
             setActiveView('table')
           }}
         >
-          Table
+          <strong>TABLE</strong>
         </ToggleButton>
       </ButtonGroup>
 
