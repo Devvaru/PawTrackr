@@ -60,7 +60,6 @@ function ContactsTable() {
       />
       <h2 className='headers'>Contacts</h2>
       <Pagination
-        role='navigation'
         aria-label='Page Navigation'
         className='pagination'
       >
