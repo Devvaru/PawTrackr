@@ -97,8 +97,7 @@ function RemindersTable() {
       />
       <h2 className='headers'>Upcoming Reminders</h2>
       <Pagination
-        role='navigation'
-        aria-label='Page Navigation'
+        aria-label='Page Navigation for Upcoming Reminders'
         className='pagination'
       >
         {upcomingPages.map((page) => (
@@ -145,8 +144,7 @@ function RemindersTable() {
       />
       <h2 className='headers'>Completed Reminders</h2>
       <Pagination
-        role='navigation'
-        aria-label='Page Navigation'
+        aria-label='Page Navigation for Completed Reminders'
         className='pagination'
       >
         {completedPages.map((page) => (
