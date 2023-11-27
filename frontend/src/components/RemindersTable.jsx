@@ -4,6 +4,8 @@ import CompletedReminderItem from './CompletedReminderItem';
 import ReminderAccordion from './ReminderAccordion';
 import { useState, useEffect } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css'; // Import the Calendar CSS
 import axios from 'axios';
 
 function RemindersTable() {
@@ -15,6 +17,7 @@ function RemindersTable() {
   const [completedCurrentPage, setCompletedCurrentPage] = useState(1);
   const [completedShowedData, completedShowData] = useState([]);
   const [completedTotalPages, setCompletedTotalPages] = useState();
+  console.log(upcomingReminders);
 
   // Define rowsPerPage as a constant since it does not change
   const rowsPerPage = 5;
@@ -76,6 +79,29 @@ function RemindersTable() {
     completedShowData(completedReminders.slice(firstIndex, lastIndex));
   };
 
+  const tileContent = ({ date, view }) => {
+    console.log("Date", date);
+    const formattedDate = new Date(date).toISOString().split('T')[0];
+    const remindersOnDate = upcomingReminders.some((reminder) => {
+      const reminderDate = new Date(reminder.date).toISOString().split('T')[0];
+      console.log("ReminderDate", reminderDate);
+      return reminderDate === formattedDate;
+    });
+
+    // if (view === 'month' && remindersOnDate.length > 0) {
+    //   return (
+    //     <div style={{ backgroundColor: 'red', borderRadius: '50%' }}>
+    //       {remindersOnDate.map((reminder, index) => (
+    //         <div key={index}>{reminder.title}</div>
+    //       ))}
+    //     </div>
+    //   );
+    // }
+
+    // return null;
+    return remindersOnDate && <div style={{ backgroundColor: 'green', borderRadius: '50%', height: '100%', width: '100%' }} />;
+  };
+
   return (
     <div>
       <ReminderAccordion
@@ -127,6 +153,10 @@ function RemindersTable() {
           </tbody>
         )}
       </Table>
+      <Calendar
+        tileContent={tileContent}
+        // Additional calendar props can be added as needed
+      />
       <h2 className='headers'>Completed Reminders</h2>
       <Pagination
         role='navigation'
@@ -171,6 +201,9 @@ function RemindersTable() {
           </tbody>
         )}
       </Table>
+
+
+      
     </div>
   );
 }
