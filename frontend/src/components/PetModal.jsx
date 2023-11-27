@@ -39,7 +39,7 @@ function PetModal(props) {
           <div className='modalImageContainer'>
             <Image src={pet.pet_img_url} alt={`${pet.name} the ${pet.variant}`} className='modalImage' rounded />
           </div>
-          <div class='modalTextContainer'>
+          <div className='modalTextContainer'>
             <Table bordered className='modal-table'>
               <thead>
                 <tr>
