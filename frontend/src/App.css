@@ -49,7 +49,7 @@
 }
 
 .petsGrid {
-  padding: 25px;
+  padding: 0px 25px 25px 25px;
 }
 
 .modal-body {
@@ -224,4 +224,8 @@ a.page-link {
 
 .btn-group {
   padding: 20px;
+}
+
+.g-4 {
+  --bs-gutter-y: 0px !important;
 }
