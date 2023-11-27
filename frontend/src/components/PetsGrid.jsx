@@ -3,9 +3,27 @@ import PetsGridItem from './PetsGridItem';
 import PetAccordion from './PetAccordion';
 import { useState, useEffect } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import PetsTableItem from './PetTableItem';
+import Table from 'react-bootstrap/Table';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
 
 function PetsGrid() {
   const [pets, setPets] = useState([]);
+  const [showGrid, setShowGrid] = useState(true);
+  const [activeView, setActiveView] = useState('grid');
+
+  const [checked, setChecked] = useState(false);
+  const [radioValue, setRadioValue] = useState('1');
+
+  const radios = [
+    { name: 'Grid', value: '1' },
+    { name: 'Table', value: '2' },
+  ];
+
+  const handleGridView = () => {
+
+  };
 
   const loadPets = () => {
     fetch('http://localhost:8080/api/pets')
@@ -49,7 +67,32 @@ function PetsGrid() {
           loadPets();
         }}
       />
-      <DragDropContext onDragEnd={onDragEnd}>
+
+      {/* Grid Table Toggle  */}
+      <ButtonGroup>
+        <ToggleButton
+          type='button'
+          variant={activeView === 'grid' ? 'info' : 'outline-info'}
+          onClick={() => {
+            setActiveView('grid')
+          }}
+        >
+          <strong>GRID</strong>
+        </ToggleButton>
+
+        <ToggleButton
+          type='button'
+          variant={activeView === 'table' ? 'info' : 'outline-info'}
+          onClick={() => {
+            setActiveView('table')
+          }}
+        >
+          <strong>TABLE</strong>
+        </ToggleButton>
+      </ButtonGroup>
+
+      {/* Grid view */}
+      {activeView === 'grid' && <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="pets">
           {(provided) => (
             <div className='petsGrid pets' {...provided.droppableProps} ref={provided.innerRef}>
@@ -79,7 +122,38 @@ function PetsGrid() {
             </div>
           )}
         </Droppable>
-      </DragDropContext>
+      </DragDropContext>}
+
+      {/* Table view */}
+      {activeView === 'table' && <Table responsive='sm' striped bordered className='petsTable'>
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>Pet Name</th>
+            <th>Date of Birth</th>
+            <th>Species</th>
+            <th>Food</th>
+            <th>Weight</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        {pets.length !== 0 && (
+          <tbody>
+            {pets.map((pet) => (
+              <tr key={pet.id} className='petsTableRow'>
+                <PetsTableItem pet={pet} />
+              </tr>
+            ))}
+          </tbody>
+        )}
+        {pets.length === 0 && (
+          <tbody>
+            <tr>
+              <td colSpan={5}> No Pets </td>
+            </tr>
+          </tbody>
+        )}
+      </Table>}
     </div>
   );
 }

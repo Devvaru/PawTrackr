@@ -204,3 +204,24 @@ a.page-link {
   margin-top: 50px;
   margin-bottom: 30px;
 }
+
+.petTableImg {
+  width: 80px;
+  border-radius: 50px;
+}
+
+.petsTableRow {
+  vertical-align: middle;
+}
+
+.btn-outline-info {
+  color: #0dcaf0 !important;
+}
+
+.btn-info {
+  color: #FFFFFF !important;
+}
+
+.btn-group {
+  padding: 20px;
+}
