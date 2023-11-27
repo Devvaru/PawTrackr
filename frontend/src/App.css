@@ -213,3 +213,7 @@ a.page-link {
 .petsTableRow {
   vertical-align: middle;
 }
+
+.btn-outline-info {
+  color: #212529 !important;
+}
