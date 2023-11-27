@@ -40,7 +40,7 @@ function PetModal(props) {
             <Image src={pet.pet_img_url} alt={`${pet.name} the ${pet.variant}`} className='modalImage' rounded />
           </div>
           <div class='modalTextContainer'>
-            <Table bordered>
+            <Table bordered className='modal-table'>
               <thead>
                 <tr>
                   <th><strong>Date of Birth</strong></th>

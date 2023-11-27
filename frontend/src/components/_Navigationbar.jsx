@@ -1,7 +1,7 @@
-import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
+import logo from '../logo/logo.png';
 
 function Navigationbar(props) {
   const { setShowPets, setShowReminders, setShowContacts } = props;
@@ -14,7 +14,9 @@ function Navigationbar(props) {
   return (
     <>
       <Navbar bg='dark' data-bs-theme='dark' fixed="top" className="nav-bar">
-        <Navbar.Brand className="logo" onClick={() => setShowPets()} aria-label="PawTrackr - Home">PawTrackr</Navbar.Brand>
+        <Navbar.Brand className="logo" onClick={() => setShowPets()} aria-label="PawTrackr - Home">
+          <img src={logo} className='main-logo'></img>
+        </Navbar.Brand>
         <Nav className='me-auto'>
           <Nav.Link onClick={() => setShowPets()} aria-label="Go to Pets">Pets</Nav.Link>
           <Nav.Link onClick={() => setShowReminders()} aria-label="Go to Reminders">Reminders</Nav.Link>

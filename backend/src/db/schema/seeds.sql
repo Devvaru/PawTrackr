@@ -12,11 +12,11 @@ VALUES
   (1, 'Swampy', 'images/frog.jpg', '2015-06-10', 'Frog', ARRAY['0.25'], 'Flies', 'Hops a lot!'),
   (1, 'Mischief', 'images/tabby_cat.jpg', '2018-10-31', 'Tabby', ARRAY['4.5'], 'IAMS Hairball Remedy', 'Shy but friendly'),
   (1, 'Princess', 'images/dachshund.jpg', '2000-04-05', 'Long-haired Dachshund', ARRAY['6'], 'Raw Meat Diet', 'Very energetic'),
-  (1, 'Daizy', 'images/dachshund.jpg', '2020-11-02', 'German Shepherd', ARRAY['6'], 'Fresh Chicken and Chicken Meal', 'Loves food'),
-  (1, 'Tuffy', 'images/dachshund.jpg', '2019-06-05', 'Afollie', ARRAY['6'], 'Feed him with quality dry dog food', 'Prefers not to walk in the rain'),
-  (1, 'Avocado', 'images/dachshund.jpg', '2020-02-24', 'Parakeet', ARRAY['0.2'], 'Seeds and veggies', 'Likes to watch TV'),
-  (1, 'Pebble', 'images/dachshund.jpg', '1980-05-17', 'Tortoise', ARRAY['10'], 'Leafy greens', 'Enjoys walking around the house'),
-  (1, 'Fluffy', 'images/cat.jpg', '2022-11-13', 'Turkish Angora', ARRAY['4'], 'Chicken & Fish Kitten Mix', 'Loves to snuggle on the sofa!');
+  (1, 'Daizy', 'images/shepherd.jpg', '2020-11-02', 'German Shepherd', ARRAY['6'], 'Fresh Chicken and Chicken Meal', 'Loves food'),
+  (1, 'Tuffy', 'images/collie.jpg', '2019-06-05', 'Afollie', ARRAY['6'], 'Feed him with quality dry dog food', 'Likes the seesaw'),
+  (1, 'Avocado', 'images/parakeet.jpg', '2020-02-24', 'Parakeet', ARRAY['0.2'], 'Seeds and veggies', 'Likes to watch TV'),
+  (1, 'Pebble', 'images/tortoise.jpg', '1980-05-17', 'Tortoise', ARRAY['10'], 'Leafy greens', 'Walks around the house'),
+  (1, 'Fluffy', 'images/angora.jpg', '2022-11-13', 'Turkish Angora', ARRAY['4'], 'Chicken & Fish Kitten Mix', 'Loves to snuggle on the sofa!');
  
 INSERT INTO reminders (pet_id, title, date, comment)
 VALUES

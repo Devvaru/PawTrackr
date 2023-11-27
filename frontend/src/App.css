@@ -55,7 +55,7 @@
 .modal-body {
   display: flex;
   justify-content: center;
-  padding-top: 0px !important;
+  padding: 0px !important;
 }
 
 .modalImageContainer {
@@ -63,9 +63,9 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding: 75px 0px 75px 0px;
-  border: 0.5px solid;
-  border-radius: 15px;
+  padding: 100px 0px 100px 0px;
+  border: lightgrey 0.5px solid;
+  border-radius: 10px;
 }
 
 .modalTextContainer {
@@ -74,14 +74,24 @@
   justify-content: left;
   align-items: center;
   flex-direction: column;
+  border: lightgrey 0.5px solid;
+  border-radius: 10px;
 }
 
 .modal-content {
-  padding: 0px 0px 50px 0px !important;
+  padding: 0px 0px 40px 0px !important;
+}
+
+.modal-table {
+  border: lightgrey 0.5px solid;
+  border-radius: 10px !important;
+  overflow: hidden;
+  margin: 0px !important;
 }
 
 .list-group {
   width: 90%;
+  border-radius: 10px !important;
 }
 
 .headers {
@@ -128,6 +138,7 @@ a.page-link {
 
 .modalColumn {
   width: 90% !important;
+  margin-bottom: 20px;
 }
 
 .modal-header {
@@ -143,13 +154,15 @@ a.page-link {
   margin: 0px;
 }
 
-.modalImage {
+/* Add after demo */
+
+/* .modalImage {
   transition: 0.5s;
 }
 
 .modalImage:hover {
-  transform: scale(1.05);
-}
+  transform: scale(1.2);
+} */
 
 .row {
   margin-right: 0px !important;
@@ -163,6 +176,16 @@ a.page-link {
 .nav-bar {
   padding-left: 50px !important;
   padding-right: 50px !important;
+}
+
+.main-logo {
+  height: 35px;
+  margin: 0px;
+}
+
+/* change padding if logo is changed */
+.card-header {
+  padding: 25px 0px 20px 0px !important;
 }
 
 .react-calendar,
