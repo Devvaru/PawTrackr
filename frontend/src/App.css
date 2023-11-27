@@ -215,7 +215,11 @@ a.page-link {
 }
 
 .btn-outline-info {
-  color: #212529 !important;
+  color: #0dcaf0 !important;
+}
+
+.btn-info {
+  color: #FFFFFF !important;
 }
 
 .btn-group {
