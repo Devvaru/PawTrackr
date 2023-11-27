@@ -3,9 +3,13 @@ import PetsGridItem from './PetsGridItem';
 import PetAccordion from './PetAccordion';
 import { useState, useEffect } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import PetsTableItem from './PetTableItem';
+import Table from 'react-bootstrap/Table';
 
 function PetsGrid() {
   const [pets, setPets] = useState([]);
+  const [showGrid, setShowGrid] = useState(true);
+  const [showTable, setShowTable] = useState(false);
 
   const loadPets = () => {
     fetch('http://localhost:8080/api/pets')
@@ -49,7 +53,9 @@ function PetsGrid() {
           loadPets();
         }}
       />
-      <DragDropContext onDragEnd={onDragEnd}>
+
+      {/* Grid view */}
+      {showGrid && <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="pets">
           {(provided) => (
             <div className='petsGrid pets' {...provided.droppableProps} ref={provided.innerRef}>
@@ -79,7 +85,37 @@ function PetsGrid() {
             </div>
           )}
         </Droppable>
-      </DragDropContext>
+      </DragDropContext>}
+      <Table responsive='sm' striped bordered>
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>Pet Name</th>
+            <th>Date of Birth</th>
+            <th>Species</th>
+            <th>Food</th>
+            <th>Weight</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        {pets.length !== 0 && (
+          <tbody>
+            {pets.map((pet) => (
+              <tr key={pet.id} className='petsTableRow'>
+                <PetsTableItem pet={pet} />
+              </tr>
+            ))}
+          </tbody>
+        )}
+        {pets.length === 0 && (
+          <tbody>
+            <tr>
+              <td colSpan={5}> No Pets </td>
+            </tr>
+          </tbody>
+        )}
+      </Table>
+
     </div>
   );
 }
