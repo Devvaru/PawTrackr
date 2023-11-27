@@ -50,7 +50,7 @@ function AddReminderForm(props) {
               <Form.Group controlId='name'>
                 <Form.Label>Name</Form.Label>
                 <Form.Select aria-label='select pet name' name='name'>
-                  <option value='' selected disabled>
+                  <option value='' disabled>
                     Choose Pet Name
                   </option>
                   {pets.map((pet) => (
