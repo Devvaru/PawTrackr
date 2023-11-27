@@ -125,7 +125,7 @@ function PetsGrid() {
       </DragDropContext>}
 
       {/* Table view */}
-      {activeView === 'table' && <Table responsive='sm' striped bordered>
+      {activeView === 'table' && <Table responsive='sm' striped bordered className='petsTable'>
         <thead>
           <tr>
             <th>Photo</th>

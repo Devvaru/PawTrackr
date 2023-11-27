@@ -217,3 +217,7 @@ a.page-link {
 .btn-outline-info {
   color: #212529 !important;
 }
+
+.btn-group {
+  padding: 20px;
+}
