@@ -1,7 +1,7 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
-import logo from '../logo/logo2A.png';
+import logo from '../logo/logo.png';
 
 function Navigationbar(props) {
   const { setShowPets, setShowReminders, setShowContacts } = props;

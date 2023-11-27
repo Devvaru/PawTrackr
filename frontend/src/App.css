@@ -154,13 +154,15 @@ a.page-link {
   margin: 0px;
 }
 
-.modalImage {
+/* Add after demo */
+
+/* .modalImage {
   transition: 0.5s;
 }
 
 .modalImage:hover {
-  transform: scale(1.05);
-}
+  transform: scale(1.2);
+} */
 
 .row {
   margin-right: 0px !important;
