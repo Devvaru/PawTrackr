@@ -4,6 +4,8 @@ import CompletedReminderItem from './CompletedReminderItem';
 import ReminderAccordion from './ReminderAccordion';
 import { useState, useEffect } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css'; // Import the Calendar CSS
 import axios from 'axios';
 
 function RemindersTable() {
@@ -76,6 +78,16 @@ function RemindersTable() {
     completedShowData(completedReminders.slice(firstIndex, lastIndex));
   };
 
+  const tileContent = ({ date, view }) => {
+    const formattedDate = new Date(date).toISOString().split('T')[0];
+    const remindersOnDate = upcomingReminders.some((reminder) => {
+      const reminderDate = new Date(reminder.date).toISOString().split('T')[0];
+      return reminderDate === formattedDate;
+    });
+
+    return remindersOnDate && <div style={{ backgroundColor: '#0dcaf0', borderRadius: '50%', height: '100%', width: '100%' }} />;
+  };
+
   return (
     <div>
       <ReminderAccordion
@@ -127,6 +139,10 @@ function RemindersTable() {
           </tbody>
         )}
       </Table>
+      <Calendar
+        tileContent={tileContent}
+        className="calendar"
+      />
       <h2 className='headers'>Completed Reminders</h2>
       <Pagination
         role='navigation'
@@ -171,6 +187,9 @@ function RemindersTable() {
           </tbody>
         )}
       </Table>
+
+
+      
     </div>
   );
 }
