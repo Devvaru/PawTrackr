@@ -164,3 +164,20 @@ a.page-link {
   padding-left: 50px !important;
   padding-right: 50px !important;
 }
+
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  color: black;
+}
+
+.react-calendar {
+  width: 700px !important;
+}
+
+.calendar {
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}

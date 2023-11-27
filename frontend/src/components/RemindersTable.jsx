@@ -85,7 +85,7 @@ function RemindersTable() {
       return reminderDate === formattedDate;
     });
 
-    return remindersOnDate && <div style={{ backgroundColor: 'green', borderRadius: '50%', height: '100%', width: '100%' }} />;
+    return remindersOnDate && <div style={{ backgroundColor: '#0dcaf0', borderRadius: '50%', height: '100%', width: '100%' }} />;
   };
 
   return (
@@ -141,6 +141,7 @@ function RemindersTable() {
       </Table>
       <Calendar
         tileContent={tileContent}
+        className="calendar"
       />
       <h2 className='headers'>Completed Reminders</h2>
       <Pagination
