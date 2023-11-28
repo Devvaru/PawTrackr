@@ -10,20 +10,21 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 
 function PetsGrid() {
   const [pets, setPets] = useState([]);
-  const [showGrid, setShowGrid] = useState(true);
+  // const [showGrid, setShowGrid] = useState(true);
   const [activeView, setActiveView] = useState('grid');
 
-  const [checked, setChecked] = useState(false);
-  const [radioValue, setRadioValue] = useState('1');
+  // TODO: Remove commented-out code
+  // const [checked, setChecked] = useState(false);
+  // const [radioValue, setRadioValue] = useState('1');
 
-  const radios = [
-  { name: 'Grid', value: '1' },
-  { name: 'Table', value: '2' },
-  ];
+  // const radios = [
+  //   { name: 'Grid', value: '1' },
+  //   { name: 'Table', value: '2' },
+  // ];
 
-  const handleGridView = () => {
+  // const handleGridView = () => {
 
-  };
+  // };
 
   const loadPets = () => {
     fetch('http://localhost:8080/api/pets')
