@@ -73,20 +73,24 @@ function PetsGrid() {
       <ButtonGroup>
         <ToggleButton
           type='button'
+          value="Switch to Grid View"
           variant={activeView === 'grid' ? 'info' : 'outline-info'}
           onClick={() => {
             setActiveView('grid')
           }}
+          aria-label='Switch to Grid View'
         >
           <strong>GRID</strong>
         </ToggleButton>
 
         <ToggleButton
           type='button'
+          value="Switch to Table View"
           variant={activeView === 'table' ? 'info' : 'outline-info'}
           onClick={() => {
             setActiveView('table')
           }}
+          aria-label='Switch to Table View'
         >
           <strong>TABLE</strong>
         </ToggleButton>
@@ -94,67 +98,67 @@ function PetsGrid() {
 
       {/* Grid view */}
       {activeView === 'grid' && <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId="pets">
-          {(provided) => (
-            <div className='petsGrid pets' {...provided.droppableProps} ref={provided.innerRef}>
-              {pets.length !== 0 && (
-                <Row xs={1} md={4} className='g-4' style={{ margin: '0px' }}>
-                  {pets.map((pet, index) => {
-                    return (
-                      <Draggable key={pet.id} draggableId={pet.id.toString()} index={index}>
-                        {(provided) => (
-                          <div
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
-                          >
-                            <PetsGridItem key={pet.id} pet={pet} />
-                          </div>
-                        )}
-                      </Draggable>
-                    )
+          <Droppable droppableId="pets">
+            {(provided) => (
+              <div className='petsGrid pets' {...provided.droppableProps} ref={provided.innerRef}>
+                {pets.length !== 0 && (
+                  <Row xs={1} md={4} className='g-4' style={{ margin: '0px' }}>
+                    {pets.map((pet, index) => {
+                      return (
+                        <Draggable key={pet.id} draggableId={pet.id.toString()} index={index}>
+                          {(provided) => (
+                            <div
+                              ref={provided.innerRef}
+                              {...provided.draggableProps}
+                              {...provided.dragHandleProps}
+                            >
+                              <PetsGridItem key={pet.id} pet={pet} />
+                            </div>
+                          )}
+                        </Draggable>
+                      )
                   }
                   )}
-                  {provided.placeholder}
-                </Row>
-              )}
-              {pets.length === 0 && <div>Loading</div>}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>}
+                    {provided.placeholder}
+                  </Row>
+                )}
+                {pets.length === 0 && <div>Loading</div>}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>}
 
       {/* Table view */}
       {activeView === 'table' && <Table responsive='sm' striped bordered className='petsTable'>
-        <thead>
-          <tr>
-            <th>Photo</th>
-            <th>Pet Name</th>
-            <th>Date of Birth</th>
-            <th>Species</th>
-            <th>Food</th>
-            <th>Weight</th>
-            <th>Comment</th>
-          </tr>
-        </thead>
-        {pets.length !== 0 && (
-          <tbody>
-            {pets.map((pet) => (
-              <tr key={pet.id} className='petsTableRow'>
-                <PetsTableItem pet={pet} />
-              </tr>
-            ))}
-          </tbody>
-        )}
-        {pets.length === 0 && (
-          <tbody>
+          <thead>
             <tr>
-              <td colSpan={5}> No Pets </td>
+              <th>Photo</th>
+              <th>Pet Name</th>
+              <th>Date of Birth</th>
+              <th>Species</th>
+              <th>Food</th>
+              <th>Weight</th>
+              <th>Comment</th>
             </tr>
-          </tbody>
-        )}
-      </Table>}
+          </thead>
+          {pets.length !== 0 && (
+            <tbody>
+              {pets.map((pet) => (
+                <tr key={pet.id} className='petsTableRow'>
+                  <PetsTableItem pet={pet} />
+                </tr>
+              ))}
+            </tbody>
+          )}
+          {pets.length === 0 && (
+            <tbody>
+              <tr>
+                <td colSpan={5}> No Pets </td>
+              </tr>
+            </tbody>
+          )}
+        </Table>}
     </div>
   );
 }
