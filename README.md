@@ -12,7 +12,7 @@ PawTrackr is a full stack app that enables pet owners to track all their pets' i
 
 <!-- A link to the ERD with dynamic highlighting of table relationships is available [HERE](https://dbdocs.io/**TBC**/**Filename-TBC**?view=relationships) -->
 
-!["Screenshot of ERD"](/planning/PawTrackr_ERD.png)
+!["Screenshot of ERD"](/planning/PawTrackr-ERD.png)
 
 ## Purpose
 
