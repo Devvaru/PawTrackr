@@ -66,7 +66,7 @@ function AddPetForm(props) {
             </Row>
             <Row className='mb-3'>
               <Form.Group controlId='weight'>
-                <Form.Label>Weight</Form.Label>
+                <Form.Label>Weight (kg)</Form.Label>
                 <Form.Control type='text' placeholder='Weight' name='weight' />
               </Form.Group>
             </Row>
