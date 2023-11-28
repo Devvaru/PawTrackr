@@ -111,37 +111,44 @@ function RemindersTable() {
           </Pagination.Item>
         ))}
       </Pagination>
-      <Table responsive='sm' striped bordered>
-        <thead>
-          <tr>
-            <th>Pet Name</th>
-            <th>Title</th>
-            <th>Date</th>
-            <th>Comment</th>
-            <th>Done</th>
-          </tr>
-        </thead>
-        {upcomingShowedData.length !== 0 && (
-          <tbody>
-            {upcomingShowedData.map((reminder) => (
-              <tr key={reminder.id}>
-                <UpcomingReminderItem upcomingReminder={reminder} loadReminders={loadReminders} />
-              </tr>
-            ))}
-          </tbody>
-        )}
-        {upcomingReminders.length === 0 && (
-          <tbody>
+
+      <div className='table-calendar-container'>
+        <Calendar
+          tileContent={tileContent}
+          className="calendar"
+        />
+
+        {/* Upcoming Reminders */}
+        <Table responsive='sm' striped bordered className='upcoming-reminders'>
+          <thead>
             <tr>
-              <td colSpan={5}> No Reminders </td>
+              <th>Pet Name</th>
+              <th>Title</th>
+              <th>Date</th>
+              <th>Comment</th>
+              <th>Done</th>
             </tr>
-          </tbody>
-        )}
-      </Table>
-      <Calendar
-        tileContent={tileContent}
-        className="calendar"
-      />
+          </thead>
+          {upcomingShowedData.length !== 0 && (
+            <tbody>
+              {upcomingShowedData.map((reminder) => (
+                <tr key={reminder.id}>
+                  <UpcomingReminderItem upcomingReminder={reminder} loadReminders={loadReminders} />
+                </tr>
+              ))}
+            </tbody>
+          )}
+          {upcomingReminders.length === 0 && (
+            <tbody>
+              <tr>
+                <td colSpan={5}> No Reminders </td>
+              </tr>
+            </tbody>
+          )}
+        </Table>
+      </div>
+
+      {/* Completed Reminders */}
       <h2 className='headers'>Completed Reminders</h2>
       <Pagination
         aria-label='Page Navigation for Completed Reminders'
@@ -187,7 +194,7 @@ function RemindersTable() {
       </Table>
 
 
-      
+
     </div>
   );
 }
