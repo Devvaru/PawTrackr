@@ -17,8 +17,8 @@ function PetsGrid() {
   const [radioValue, setRadioValue] = useState('1');
 
   const radios = [
-    { name: 'Grid', value: '1' },
-    { name: 'Table', value: '2' },
+  { name: 'Grid', value: '1' },
+  { name: 'Table', value: '2' },
   ];
 
   const handleGridView = () => {
@@ -72,6 +72,7 @@ function PetsGrid() {
       <ButtonGroup>
         <ToggleButton
           type='button'
+          value="Switch to Grid View"
           variant={activeView === 'grid' ? 'info' : 'outline-info'}
           onClick={() => {
             setActiveView('grid')
@@ -83,6 +84,7 @@ function PetsGrid() {
 
         <ToggleButton
           type='button'
+          value="Switch to Table View"
           variant={activeView === 'table' ? 'info' : 'outline-info'}
           onClick={() => {
             setActiveView('table')
