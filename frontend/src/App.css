@@ -195,14 +195,27 @@ a.page-link {
   color: black;
 }
 
-.react-calendar {
+/* .react-calendar {
   width: 700px !important;
-}
+} */
 
 .calendar {
-  margin: 0 auto;
   margin-top: 50px;
+  margin-right: 20px;
   margin-bottom: 30px;
+  margin: 50px 20px 30px 5px;
+}
+
+.table-calendar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upcoming-reminders {
+  flex-grow: 4;
+  min-width: 1300px  !important;
+  /* margin-right: 100px; */
 }
 
 .petTableImg {
