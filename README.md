@@ -11,7 +11,7 @@
 <kbd>
 
 ## devvaru
-### Full Stack Software Developer
+**FULL STACK SOFTWARE DEVELOPER**
 <span>
   <a href="https://linkedin.com/in/TBC/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
 </span>
@@ -27,7 +27,7 @@
 <kbd>
 
 ## shivangi0109
-### Full Stack Software Developer
+**FULL STACK SOFTWARE DEVELOPER**
 <span>
   <a href="https://linkedin.com/in/TBC/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
 </span>
@@ -43,7 +43,7 @@
 <kbd>
 
 ## kazvee
-### Full Stack Software Developer
+**FULL STACK SOFTWARE DEVELOPER**
 <span>
   <a href="https://linkedin.com/in/kazvee/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
 </span>
