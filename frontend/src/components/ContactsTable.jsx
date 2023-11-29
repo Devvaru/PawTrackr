@@ -36,7 +36,6 @@ function ContactsTable() {
       })
       .then((data) => {
         setContacts(data);
-        // console.log("Line 24Data", data)
       })
       .catch((error) => {
         console.error('Fetch error:', error);
