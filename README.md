@@ -1,3 +1,62 @@
+<div align="center">
+  <img src="frontend/src/logo/logo.png">
+</div>
+
+<h1 align="center">Meet the Team</h1>
+
+<!-- Meet the Team -->
+
+<div align="center">
+<kbd>
+
+## devvaru
+**FULL STACK SOFTWARE DEVELOPER**
+<br><br>
+<span>
+  <a href="https://linkedin.com/in/devon-g-b627872a1/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
+</span>
+<span>
+  <a href="https://github.com/devvaru/" target="_blank"><img src="https://skillicons.dev/icons?i=github"></a>
+</span>
+</kbd>
+</div>
+
+<br>
+
+<div align="center">
+<kbd>
+
+## shivangi0109
+**FULL STACK SOFTWARE DEVELOPER**
+<br><br>
+<span>
+  <a href="https://linkedin.com/in/shivangi-srivastava-390135180/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
+</span>
+<span>
+  <a href="https://github.com/shivangi0109/" target="_blank"><img src="https://skillicons.dev/icons?i=github"></a>
+</span>
+</kbd>
+</div>
+
+<br>
+
+<div align="center">
+<kbd>
+
+## kazvee
+**FULL STACK SOFTWARE DEVELOPER**
+<br><br>
+<span>
+  <a href="https://linkedin.com/in/kazvee/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
+</span>
+<span>
+  <a href="https://github.com/kazvee/" target="_blank"><img src="https://skillicons.dev/icons?i=github"></a>
+</span>
+</kbd>
+</div>
+
+*** 
+
 # PawTrackr - [Planning Board](https://github.com/users/Devvaru/projects/1)
 
 PawTrackr is a full stack app that enables pet owners to track all their pets' info in a central place.
@@ -105,6 +164,6 @@ Since this was a project for educational purposes, it has been bootstrapped with
 * Start the frontend side using the `npm start` command from within the `/frontend` folder. The client will run on Port 3000
 * Navigate to [http://localhost:3000](http://localhost:3000) in your browser
 
-<!-- ## Acknowledgements & Thanks
+## Acknowledgements & Thanks
 
-* Photos provided by [Pexels](https://www.pexels.com/) -->
+* Photos provided by [Pexels](https://www.pexels.com/)
