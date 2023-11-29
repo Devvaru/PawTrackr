@@ -12,7 +12,7 @@
 
 ## devvaru
 **FULL STACK SOFTWARE DEVELOPER**
-<br>
+<br><br>
 <span>
   <a href="https://linkedin.com/in/TBC/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
 </span>
@@ -29,7 +29,7 @@
 
 ## shivangi0109
 **FULL STACK SOFTWARE DEVELOPER**
-<br>
+<br><br>
 <span>
   <a href="https://linkedin.com/in/TBC/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
 </span>
@@ -46,7 +46,7 @@
 
 ## kazvee
 **FULL STACK SOFTWARE DEVELOPER**
-<br>
+<br><br>
 <span>
   <a href="https://linkedin.com/in/kazvee/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
 </span>
