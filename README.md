@@ -13,7 +13,7 @@
 **FULL STACK SOFTWARE DEVELOPER**
 <br><br>
 <span>
-  <a href="https://linkedin.com/in/TBC/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
+  <a href="https://linkedin.com/in/devon-g-b627872a1/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
 </span>
 <span>
   <a href="https://github.com/devvaru/" target="_blank"><img src="https://skillicons.dev/icons?i=github"></a>
@@ -30,7 +30,7 @@
 **FULL STACK SOFTWARE DEVELOPER**
 <br><br>
 <span>
-  <a href="https://linkedin.com/in/TBC/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
+  <a href="https://linkedin.com/in/shivangi-srivastava-390135180/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
 </span>
 <span>
   <a href="https://github.com/shivangi0109/" target="_blank"><img src="https://skillicons.dev/icons?i=github"></a>
