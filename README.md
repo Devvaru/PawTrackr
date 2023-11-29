@@ -58,49 +58,7 @@
 
 *** 
 
-<!-- Option 2 - Meet the Team -->
-<strong>OPTION 2</strong>
-
-### devvaru
-
-**Full Stack Software Developer**
-
-<span>
-  <a href="https://linkedin.com/in/TBC/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
-</span>
-<span>
-  <a href="https://github.com/devvaru/" target="_blank"><img src="https://skillicons.dev/icons?i=github"></a>
-</span>
-
-***
-
-### shivangi0109
-
-**Full Stack Software Developer**          
-
-<span>
-  <a href="https://linkedin.com/in/TBC/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
-</span>
-<span>
-  <a href="https://github.com/shivangi0109/" target="_blank"><img src="https://skillicons.dev/icons?i=github"></a>
-</span>
-
-***
-
-### kazvee
-
-**Full Stack Software Developer**
-
- <span>
-  <a href="https://linkedin.com/in/kazvee/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin"></a>
-</span>
-<span>
-  <a href="https://github.com/kazvee/" target="_blank"><img src="https://skillicons.dev/icons?i=github"></a>
-</span>
-
-*** 
-
-## PawTrackr - [Planning Board](https://github.com/users/Devvaru/projects/1)
+# PawTrackr - [Planning Board](https://github.com/users/Devvaru/projects/1)
 
 PawTrackr is a full stack app that enables pet owners to track all their pets' info in a central place.
 
