@@ -4,8 +4,7 @@
 
 <h1 align="center">Meet the Team</h1>
 
-<!-- Option 1 - Meet the Team -->
-<strong>OPTION 1</strong>
+<!-- Meet the Team -->
 
 <div align="center">
 <kbd>
