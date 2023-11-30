@@ -42,16 +42,7 @@ function Navigationbar(props) {
           >
             Contacts
           </Nav.Link>
-          <Nav.Link>
-            <a
-              href='https://github.com/Devvaru/PawTrackr/'
-              target='_blank'
-              rel='noreferrer'
-              style={{ textDecoration: 'none', color: '#FFFFFF8C' }}
-            >
-              About
-            </a>
-          </Nav.Link>
+          <Nav.Link href="https://github.com/Devvaru/PawTrackr/" target='_blank' className='nav-link'>About</Nav.Link>
         </Nav>
 
         <Form>
