@@ -3,6 +3,7 @@ import ContactItem from './ContactItem';
 import ContactAccordion from './ContactAccordion';
 import { useState, useEffect } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
+import axios from 'axios';
 
 function ContactsTable() {
   const [contacts, setContacts] = useState([]);
@@ -27,15 +28,9 @@ function ContactsTable() {
   }, [contacts, currentPage, rowsPerPage]);
 
   const loadContacts = () => {
-    fetch('http://localhost:8080/api/contacts')
+    axios.get('/api/contacts')
       .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setContacts(data);
+        setContacts(res.data);
       })
       .catch((error) => {
         console.error('Fetch error:', error);

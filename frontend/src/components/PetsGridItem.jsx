@@ -20,7 +20,6 @@ function PetsGridItem(props) {
             key={pet.id}
             id={pet.id}
             show={modalShow}
-            setModalShow={setModalShow}
             onHide={() => setModalShow(false)}
             pet={pet}
           />}

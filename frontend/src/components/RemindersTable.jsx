@@ -24,8 +24,8 @@ function RemindersTable() {
   const completedPages = Array.from({ length: completedTotalPages }, (_, index) => index + 1);
 
   const loadReminders = () => {
-    const upcomingRemindersPath = 'http://localhost:8080/api/reminders/upcoming';
-    const completedRemindersPath = 'http://localhost:8080/api/reminders/completed';
+    const upcomingRemindersPath = '/api/reminders/upcoming';
+    const completedRemindersPath = '/api/reminders/completed';
 
     axios.all([
       axios.get(upcomingRemindersPath),

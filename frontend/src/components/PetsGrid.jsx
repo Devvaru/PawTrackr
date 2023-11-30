@@ -7,21 +7,16 @@ import PetsTableItem from './PetTableItem';
 import Table from 'react-bootstrap/Table';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import axios from 'axios';
 
 function PetsGrid() {
   const [pets, setPets] = useState([]);
   const [activeView, setActiveView] = useState('grid');
 
   const loadPets = () => {
-    fetch('http://localhost:8080/api/pets')
+    axios.get('/api/pets')
       .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setPets(data);
+        setPets(res.data);
       })
       .catch((error) => {
         console.error('Fetch error:', error);

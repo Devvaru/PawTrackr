@@ -13,7 +13,7 @@ function AddReminderForm(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/pets`)
+      .get(`/api/pets`)
       .then((res) => {
         setPets(res.data);
       })
@@ -31,7 +31,7 @@ function AddReminderForm(props) {
     newReminder.comment = formData.get('comment');
 
     axios
-      .post('http://localhost:8080/api/reminders', newReminder)
+      .post('/api/reminders', newReminder)
       .then(() => {
         props.onReminderAdded();
         formRef.current.reset();
@@ -49,8 +49,8 @@ function AddReminderForm(props) {
             <Row className='mb-3'>
               <Form.Group controlId='name'>
                 <Form.Label>Name</Form.Label>
-                <Form.Select aria-label='select pet name' name='name'>
-                  <option value='' selected disabled>
+                <Form.Select aria-label='select pet name' name='name' defaultValue='0'>
+                  <option value='0' disabled>
                     Choose Pet Name
                   </option>
                   {pets.map((pet) => (

@@ -19,7 +19,7 @@ function AddContactForm(props) {
     newContact.website = formData.get('website');
 
     axios
-      .post('http://localhost:8080/api/contacts', newContact)
+      .post('/api/contacts', newContact)
       .then(() => {
         props.onContactAdded();
         formRef.current.reset();

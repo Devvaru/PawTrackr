@@ -21,7 +21,7 @@ function AddPetForm(props) {
     newPet.comment = formData.get('comment');
 
     axios
-      .post('http://localhost:8080/api/pets', newPet)
+      .post('/api/pets', newPet)
       .then(() => {
         props.onPetAdded();
         formRef.current.reset();
