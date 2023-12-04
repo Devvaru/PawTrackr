@@ -8,13 +8,15 @@ import Table from 'react-bootstrap/Table';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import axios from 'axios';
+import Spinner from 'react-bootstrap/Spinner';
 
 function PetsGrid() {
   const [pets, setPets] = useState([]);
   const [activeView, setActiveView] = useState('grid');
 
   const loadPets = () => {
-    axios.get('/api/pets')
+    axios
+      .get('/api/pets')
       .then((res) => {
         setPets(res.data);
       })
@@ -54,10 +56,10 @@ function PetsGrid() {
       <ButtonGroup>
         <ToggleButton
           type='button'
-          value="Switch to Grid View"
+          value='Switch to Grid View'
           variant={activeView === 'grid' ? 'info' : 'outline-info'}
           onClick={() => {
-            setActiveView('grid')
+            setActiveView('grid');
           }}
           aria-label='Switch to Grid View'
         >
@@ -66,10 +68,10 @@ function PetsGrid() {
 
         <ToggleButton
           type='button'
-          value="Switch to Table View"
+          value='Switch to Table View'
           variant={activeView === 'table' ? 'info' : 'outline-info'}
           onClick={() => {
-            setActiveView('table')
+            setActiveView('table');
           }}
           aria-label='Switch to Table View'
         >
@@ -78,15 +80,24 @@ function PetsGrid() {
       </ButtonGroup>
 
       {/* Grid view */}
-      {activeView === 'grid' && <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="pets">
+      {activeView === 'grid' && (
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Droppable droppableId='pets'>
             {(provided) => (
-              <div className='petsGrid pets' {...provided.droppableProps} ref={provided.innerRef}>
+              <div
+                className='petsGrid pets'
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+              >
                 {pets.length !== 0 && (
                   <Row xs={1} md={4} className='g-4' style={{ margin: '0px' }}>
                     {pets.map((pet, index) => {
                       return (
-                        <Draggable key={pet.id} draggableId={pet.id.toString()} index={index}>
+                        <Draggable
+                          key={pet.id}
+                          draggableId={pet.id.toString()}
+                          index={index}
+                        >
                           {(provided) => (
                             <div
                               ref={provided.innerRef}
@@ -97,21 +108,28 @@ function PetsGrid() {
                             </div>
                           )}
                         </Draggable>
-                      )
-                  }
-                  )}
+                      );
+                    })}
                     {provided.placeholder}
                   </Row>
                 )}
-                {pets.length === 0 && <div>Loading</div>}
+                {pets.length === 0 && (
+                  <div>
+                    <Spinner animation='border' role='status' variant='info'>
+                      <span className='visually-hidden'>Loading...</span>
+                    </Spinner>
+                  </div>
+                )}
                 {provided.placeholder}
               </div>
             )}
           </Droppable>
-        </DragDropContext>}
+        </DragDropContext>
+      )}
 
       {/* Table view */}
-      {activeView === 'table' && <Table responsive='sm' striped bordered className='petsTable'>
+      {activeView === 'table' && (
+        <Table responsive='sm' striped bordered className='petsTable'>
           <thead>
             <tr>
               <th>Photo</th>
@@ -139,7 +157,8 @@ function PetsGrid() {
               </tr>
             </tbody>
           )}
-        </Table>}
+        </Table>
+      )}
     </div>
   );
 }
