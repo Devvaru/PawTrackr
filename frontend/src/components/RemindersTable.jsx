@@ -7,6 +7,8 @@ import Pagination from 'react-bootstrap/Pagination';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'; // Import the Calendar CSS
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCalendarDays } from '@fortawesome/free-solid-svg-icons'
 
 function RemindersTable() {
   const [upcomingReminders, setUpcomingReminders] = useState([]);
@@ -163,7 +165,7 @@ function RemindersTable() {
           {upcomingReminders.length === 0 && (
             <tbody>
               <tr>
-                <td colSpan={5}> 📅 No Reminders </td>
+                <td colSpan={5}><FontAwesomeIcon icon={faCalendarDays} shake style={{color: "#0dcaf0",}} /> No Reminders </td>
               </tr>
             </tbody>
           )}
@@ -210,7 +212,7 @@ function RemindersTable() {
           {completedReminders.length === 0 && (
             <tbody>
               <tr>
-                <td colSpan={5}> 📅 No Reminders </td>
+              <td colSpan={5}><FontAwesomeIcon icon={faCalendarDays} shake style={{color: "#0dcaf0",}} /> No Reminders </td>
               </tr>
             </tbody>
           )}

@@ -9,6 +9,8 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPaw } from '@fortawesome/free-solid-svg-icons'
 
 function PetsGrid() {
   const [pets, setPets] = useState([]);
@@ -153,7 +155,7 @@ function PetsGrid() {
           {pets.length === 0 && (
             <tbody>
               <tr>
-                <td colSpan={7}>🐾 No Pets </td>
+                <td colSpan={7}><FontAwesomeIcon icon={faPaw} bounce style={{color: "#0dcaf0",}} /> No Pets </td>
               </tr>
             </tbody>
           )}
