@@ -55,6 +55,7 @@ function AddPetForm(props) {
                   type='date'
                   placeholder='Date of Birth'
                   name='date_of_birth'
+                  required
                 />
               </Form.Group>
             </Row>
