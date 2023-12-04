@@ -4,6 +4,8 @@ import ContactAccordion from './ContactAccordion';
 import { useState, useEffect } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAddressBook } from '@fortawesome/free-solid-svg-icons'
 
 function ContactsTable() {
   const [contacts, setContacts] = useState([]);
@@ -91,7 +93,7 @@ function ContactsTable() {
           {contacts.length === 0 && (
             <tbody>
               <tr>
-                <td colSpan={5}> No Contacts </td>
+                <td colSpan={5}><FontAwesomeIcon icon={faAddressBook} beatFade style={{color: "#0dcaf0",}} /> No Contacts </td>
               </tr>
             </tbody>
           )}
