@@ -165,36 +165,35 @@ function RemindersTable() {
           </Pagination.Item>
         ))}
       </Pagination>
-      <Table responsive='sm' striped bordered>
-        <thead>
-          <tr>
-            <th>Pet Name</th>
-            <th>Title</th>
-            <th>Date</th>
-            <th>Comment</th>
-            <th>Done</th>
-          </tr>
-        </thead>
-        {completedShowedData.length !== 0 && (
-          <tbody>
-            {completedShowedData.map((reminder) => (
-              <tr key={reminder.id}>
-                <CompletedReminderItem completedReminder={reminder} />
-              </tr>
-            ))}
-          </tbody>
-        )}
-        {completedReminders.length === 0 && (
-          <tbody>
+      <div className='completed-container'>
+        <Table responsive='sm' striped bordered className='completed-reminders'>
+          <thead>
             <tr>
-              <td colSpan={5}> No Reminders </td>
+              <th>Pet Name</th>
+              <th>Title</th>
+              <th>Date</th>
+              <th>Comment</th>
+              <th>Done</th>
             </tr>
-          </tbody>
-        )}
-      </Table>
-
-
-
+          </thead>
+          {completedShowedData.length !== 0 && (
+            <tbody>
+              {completedShowedData.map((reminder) => (
+                <tr key={reminder.id}>
+                  <CompletedReminderItem completedReminder={reminder} />
+                </tr>
+              ))}
+            </tbody>
+          )}
+          {completedReminders.length === 0 && (
+            <tbody>
+              <tr>
+                <td colSpan={5}> No Reminders </td>
+              </tr>
+            </tbody>
+          )}
+        </Table>
+      </div>
     </div>
   );
 }
