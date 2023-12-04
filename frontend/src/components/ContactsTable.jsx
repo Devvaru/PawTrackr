@@ -68,33 +68,35 @@ function ContactsTable() {
           </Pagination.Item>
         ))}
       </Pagination>
-      <Table responsive='sm' className='contacts-table' striped bordered>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-            <th>Website</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        {showedData.length !== 0 && (
-          <tbody>
-            {showedData.map((contact, index) => (
-              <tr key={index}>
-                <ContactItem contact={contact} loadContacts={loadContacts} />
-              </tr>
-            ))}
-          </tbody>
-        )}
-        {contacts.length === 0 && (
-          <tbody>
+      <div className='contacts-container'>
+        <Table responsive='sm' className='contacts-table' striped bordered>
+          <thead>
             <tr>
-              <td colSpan={5}> No Contacts </td>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Website</th>
+              <th>Delete</th>
             </tr>
-          </tbody>
-        )}
-      </Table>
+          </thead>
+          {showedData.length !== 0 && (
+            <tbody>
+              {showedData.map((contact, index) => (
+                <tr key={index}>
+                  <ContactItem contact={contact} loadContacts={loadContacts} />
+                </tr>
+              ))}
+            </tbody>
+          )}
+          {contacts.length === 0 && (
+            <tbody>
+              <tr>
+                <td colSpan={5}> No Contacts </td>
+              </tr>
+            </tbody>
+          )}
+        </Table>
+      </div>
     </div>
   );
 }
