@@ -8,7 +8,7 @@ function PetReminders(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/reminders/${pet.id}`)
+      .get(`/api/reminders/${pet.id}`)
       .then((res) => {
         setPetReminders(res.data)
       })
@@ -34,7 +34,7 @@ function PetReminders(props) {
             .getMinutes()
             .toString()
             .padStart(2, '0')}`;
-    return <p key={petReminder.id}>{formattedReminderDate} - <strong>{petReminder.title}</strong> - {petReminder.comment} </p>
+    return <p key={petReminder.title}>{formattedReminderDate} - <strong>{petReminder.title}</strong> - {petReminder.comment} </p>
   })
 
   return (

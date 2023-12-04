@@ -4,7 +4,7 @@ function ContactItem(props) {
   const { contact, loadContacts } = props;
 
   const handleDelete = (contactId) => {
-    axios.delete(`http://localhost:8080/api/contacts/${contactId}`)
+    axios.delete(`/api/contacts/${contactId}`)
       .then(() => {
         loadContacts();
       })

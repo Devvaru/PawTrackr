@@ -3,6 +3,9 @@ import ContactItem from './ContactItem';
 import ContactAccordion from './ContactAccordion';
 import { useState, useEffect } from 'react';
 import Pagination from 'react-bootstrap/Pagination';
+import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAddressBook } from '@fortawesome/free-solid-svg-icons'
 
 function ContactsTable() {
   const [contacts, setContacts] = useState([]);
@@ -27,15 +30,9 @@ function ContactsTable() {
   }, [contacts, currentPage, rowsPerPage]);
 
   const loadContacts = () => {
-    fetch('http://localhost:8080/api/contacts')
+    axios.get('/api/contacts')
       .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setContacts(data);
+        setContacts(res.data);
       })
       .catch((error) => {
         console.error('Fetch error:', error);
@@ -73,33 +70,35 @@ function ContactsTable() {
           </Pagination.Item>
         ))}
       </Pagination>
-      <Table responsive='sm' className='contacts-table' striped bordered>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Phone Number</th>
-            <th>Email</th>
-            <th>Website</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        {showedData.length !== 0 && (
-          <tbody>
-            {showedData.map((contact, index) => (
-              <tr key={index}>
-                <ContactItem contact={contact} loadContacts={loadContacts} />
-              </tr>
-            ))}
-          </tbody>
-        )}
-        {contacts.length === 0 && (
-          <tbody>
+      <div className='contacts-container'>
+        <Table responsive='sm' className='contacts-table' striped bordered>
+          <thead>
             <tr>
-              <td colSpan={5}> No Contacts </td>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Website</th>
+              <th>Delete</th>
             </tr>
-          </tbody>
-        )}
-      </Table>
+          </thead>
+          {showedData.length !== 0 && (
+            <tbody>
+              {showedData.map((contact, index) => (
+                <tr key={index}>
+                  <ContactItem contact={contact} loadContacts={loadContacts} />
+                </tr>
+              ))}
+            </tbody>
+          )}
+          {contacts.length === 0 && (
+            <tbody>
+              <tr>
+                <td colSpan={5}><FontAwesomeIcon icon={faAddressBook} beatFade style={{color: "#0dcaf0",}} /> No Contacts </td>
+              </tr>
+            </tbody>
+          )}
+        </Table>
+      </div>
     </div>
   );
 }

@@ -26,7 +26,7 @@ function UpcomingReminderItem(props) {
   const handleEdit = (reminderId) => {
     setIsDone(!isDone);
     axios
-      .put(`http://localhost:8080/api/reminders/${reminderId}`, {
+      .put(`/api/reminders/${reminderId}`, {
         done: isDone,
       })
       .then(() => {
