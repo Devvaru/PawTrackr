@@ -153,7 +153,7 @@ function PetsGrid() {
           {pets.length === 0 && (
             <tbody>
               <tr>
-                <td colSpan={7}> No Pets </td>
+                <td colSpan={7}>🐾 No Pets </td>
               </tr>
             </tbody>
           )}

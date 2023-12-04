@@ -91,7 +91,7 @@ function ContactsTable() {
           {contacts.length === 0 && (
             <tbody>
               <tr>
-                <td colSpan={5}> No Contacts </td>
+                <td colSpan={5}>📚 No Contacts </td>
               </tr>
             </tbody>
           )}

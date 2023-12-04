@@ -20,22 +20,31 @@ function RemindersTable() {
 
   // Define rowsPerPage as a constant since it does not change
   const rowsPerPage = 5;
-  const upcomingPages = Array.from({ length: upcomingTotalPages }, (_, index) => index + 1);
-  const completedPages = Array.from({ length: completedTotalPages }, (_, index) => index + 1);
+  const upcomingPages = Array.from(
+    { length: upcomingTotalPages },
+    (_, index) => index + 1
+  );
+  const completedPages = Array.from(
+    { length: completedTotalPages },
+    (_, index) => index + 1
+  );
 
   const loadReminders = () => {
     const upcomingRemindersPath = '/api/reminders/upcoming';
     const completedRemindersPath = '/api/reminders/completed';
 
-    axios.all([
-      axios.get(upcomingRemindersPath),
-      axios.get(completedRemindersPath)
-    ])
-      .then(axios.spread((response1, response2) => {
-        setUpcomingReminders(response1.data)
-        setCompletedReminders(response2.data)
-      }))
-      .catch(error => {
+    axios
+      .all([
+        axios.get(upcomingRemindersPath),
+        axios.get(completedRemindersPath),
+      ])
+      .then(
+        axios.spread((response1, response2) => {
+          setUpcomingReminders(response1.data);
+          setCompletedReminders(response2.data);
+        })
+      )
+      .catch((error) => {
         console.error('Error fetching reminders:', error);
       });
   };
@@ -48,18 +57,20 @@ function RemindersTable() {
     // The pagination logic here will run whenever contacts or currentPage changes
     const upcomingFirstIndex = (upcomingCurrentPage - 1) * rowsPerPage;
     const upcomingLastIndex = upcomingFirstIndex + rowsPerPage;
-    upcomingShowData(upcomingReminders.slice(upcomingFirstIndex, upcomingLastIndex));
+    upcomingShowData(
+      upcomingReminders.slice(upcomingFirstIndex, upcomingLastIndex)
+    );
     setUpcomingTotalPages(Math.ceil(upcomingReminders.length / rowsPerPage));
-
   }, [upcomingReminders, upcomingCurrentPage, rowsPerPage]);
 
   useEffect(() => {
     // The pagination logic here will run whenever contacts or currentPage changes
     const completedFirstIndex = (completedCurrentPage - 1) * rowsPerPage;
     const completedLastIndex = completedFirstIndex + rowsPerPage;
-    completedShowData(completedReminders.slice(completedFirstIndex, completedLastIndex));
+    completedShowData(
+      completedReminders.slice(completedFirstIndex, completedLastIndex)
+    );
     setCompletedTotalPages(Math.ceil(completedReminders.length / rowsPerPage));
-
   }, [completedReminders, completedCurrentPage, rowsPerPage]);
 
   const upcomingHandleClick = (page) => {
@@ -85,7 +96,18 @@ function RemindersTable() {
       return reminderDate === formattedDate;
     });
 
-    return remindersOnDate && <div style={{ backgroundColor: '#0dcaf0', borderRadius: '50%', height: '100%', width: '100%' }} />;
+    return (
+      remindersOnDate && (
+        <div
+          style={{
+            backgroundColor: '#0dcaf0',
+            borderRadius: '50%',
+            height: '100%',
+            width: '100%',
+          }}
+        />
+      )
+    );
   };
 
   return (
@@ -113,10 +135,7 @@ function RemindersTable() {
       </Pagination>
 
       <div className='table-calendar-container'>
-        <Calendar
-          tileContent={tileContent}
-          className="calendar"
-        />
+        <Calendar tileContent={tileContent} className='calendar' />
 
         {/* Upcoming Reminders */}
         <Table responsive='sm' striped bordered className='upcoming-reminders'>
@@ -133,7 +152,10 @@ function RemindersTable() {
             <tbody>
               {upcomingShowedData.map((reminder) => (
                 <tr key={reminder.id}>
-                  <UpcomingReminderItem upcomingReminder={reminder} loadReminders={loadReminders} />
+                  <UpcomingReminderItem
+                    upcomingReminder={reminder}
+                    loadReminders={loadReminders}
+                  />
                 </tr>
               ))}
             </tbody>
@@ -141,7 +163,7 @@ function RemindersTable() {
           {upcomingReminders.length === 0 && (
             <tbody>
               <tr>
-                <td colSpan={5}> No Reminders </td>
+                <td colSpan={5}> 📅 No Reminders </td>
               </tr>
             </tbody>
           )}
@@ -188,7 +210,7 @@ function RemindersTable() {
           {completedReminders.length === 0 && (
             <tbody>
               <tr>
-                <td colSpan={5}> No Reminders </td>
+                <td colSpan={5}> 📅 No Reminders </td>
               </tr>
             </tbody>
           )}
