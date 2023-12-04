@@ -62,6 +62,23 @@
 **Please note:** The app goes into "sleep" (idle) mode to conserve resources when inactive.\
 If you're the first visitor in a while, the first launch may take a few extra seconds to load, but subsequent launches will be much quicker! ⚡
 
+**Add a Pet:** Feel free to copy & paste one of the lines below into the `image` field of the new pet form, to have the newly-added pet display with a photo! 🖼️  
+`images/angora.jpg`  
+`images/cat.jpg`  
+`images/chocolate_lab.jpg`  
+`images/collie.jpg`  
+`images/dachshund.jpg`  
+`images/dog.jpg`  
+`images/frog.jpg`  
+`images/parakeet.jpg`  
+`images/shepherd.jpg`  
+`images/shire_horse.jpg`  
+`images/tabby_cat.jpg`  
+`images/tortoise.jpg`  
+
+Example:\
+![Add New Pet Photo Field Screnshot](planning/readme_images/Add_New_Pet_Image.png)
+
 ## PawTrackr - [Planning Board](https://github.com/users/Devvaru/projects/1)
 
 PawTrackr is a full stack app that enables pet owners to track all their pets' info in a central place.
