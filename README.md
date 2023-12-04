@@ -57,7 +57,12 @@
 
 *** 
 
-# PawTrackr - [Planning Board](https://github.com/users/Devvaru/projects/1)
+# ✨ [Live Demo](pawtrackr.netlify.app/) ✨
+
+**Please note:** The app goes into "sleep" (idle) mode to conserve resources when inactive.\
+If you're the first visitor in a while, the first launch may take a few extra seconds to load, but subsequent launches will be much quicker! ⚡
+
+## PawTrackr - [Planning Board](https://github.com/users/Devvaru/projects/1)
 
 PawTrackr is a full stack app that enables pet owners to track all their pets' info in a central place.
 
@@ -66,6 +71,8 @@ PawTrackr is a full stack app that enables pet owners to track all their pets' i
 <!-- [ Demo Video ] -->
 
 <!-- [ Screenshots ] -->
+
+
 
 ## Project ERD (Entity Relationship Diagram)
 
