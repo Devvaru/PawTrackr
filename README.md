@@ -79,11 +79,9 @@ If you're the first visitor in a while, the first launch may take a few extra se
 **Example:**  
 ![Add New Pet Photo Field Screnshot](planning/readme_images/Add_New_Pet_Image.png)
 
-## PawTrackr - [Planning Board](https://github.com/users/Devvaru/projects/1)
+## Final Product
 
-PawTrackr is a full stack app that enables pet owners to track all their pets' info in a central place.
-
-<!-- ## Final Product -->
+### PawTrackr is a full stack app that enables pet owners to track all their pets' info in a central place.
 
 <!-- [ Demo Video ] -->
 
@@ -92,6 +90,10 @@ PawTrackr is a full stack app that enables pet owners to track all their pets' i
 **Screen Reader Video (turn sound on!)**
 
 https://github.com/Devvaru/PawTrackr/assets/109990289/381f46fb-bacd-49bd-9b10-97f40962a196
+
+<hr>
+
+## PawTrackr - [Planning Board](https://github.com/users/Devvaru/projects/1) 
 
 ## Project ERD (Entity Relationship Diagram)
 
