@@ -102,7 +102,7 @@ If you're the first visitor in a while, the first launch may take a few extra se
 
 <hr>
 
-<!-- [ Demo Video ] -->
+https://github.com/Devvaru/PawTrackr/assets/109990289/a58bf60b-847f-4d87-ba97-7bc04ee0e25e
 
 ### Homepage View - All Pets:  
 <img src="planning/readme_images/Homepage_View.png" alt="Homepage View - All Pets">
@@ -196,7 +196,6 @@ With gratitude to the creators of the above tools, and the Chrome for Developers
 * [Express](https://expressjs.com/)
 * [Node.js](https://nodejs.org/)
 * [Node-Postgres](https://node-postgres.com/)
-* [SASS](https://www.npmjs.com/package/sass/)
 * [Babel](https://babeljs.io/)
 * [Body-Parser](https://www.npmjs.com/package/body-parser/)
 * [Axios](https://www.npmjs.com/package/axios/)
