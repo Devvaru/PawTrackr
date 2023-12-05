@@ -67,6 +67,11 @@
 If you're the first visitor in a while, the first launch may take a few extra seconds to load, but subsequent launches will be much quicker! ⚡
 
 **Add a Pet:** Feel free to copy & paste one of the lines below into the `image` field of the new pet form, to have the newly-added pet display with a photo! 🖼️  
+`images/bunny.jpg`  
+`images/chihuahua.jpg`  
+`images/finch.jpg`  
+`images/hamster.jpg`  
+`images/betta-fish.jpg`  
 `images/angora.jpg`  
 `images/cat.jpg`  
 `images/chocolate_lab.jpg`  
