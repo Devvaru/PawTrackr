@@ -89,7 +89,7 @@ PawTrackr is a full stack app that enables pet owners to track all their pets' i
 
 <!-- [ Screenshots ] -->
 
-**Screen Reader Video (with sound)**
+**Screen Reader Video (turn sound on!)**
 
 https://github.com/Devvaru/PawTrackr/assets/109990289/381f46fb-bacd-49bd-9b10-97f40962a196
 
