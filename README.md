@@ -179,7 +179,7 @@ With gratitude to the creators of the above tools, and the Chrome for Developers
 * Multiple pet photos
 * Pet health history tracking (weight, immunization dates)
 * Mobile-friendly views
-* Improve accessbible design functionality
+* Improve accessible design functionality
 * Unit, Component, and E2E testing
 
 ## Dependencies
