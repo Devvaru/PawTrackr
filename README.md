@@ -83,6 +83,8 @@ If you're the first visitor in a while, the first launch may take a few extra se
 **Example:**  
 ![Add New Pet Photo Field Screnshot](planning/readme_images/Add_New_Pet_Image.png)
 
+<hr>
+
 # Final Product - PawTrackr
 
 **PawTrackr** is a full stack app that enables pet owners to track all their pets' info in a central place<br>  
