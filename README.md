@@ -79,23 +79,45 @@ If you're the first visitor in a while, the first launch may take a few extra se
 **Example:**  
 ![Add New Pet Photo Field Screnshot](planning/readme_images/Add_New_Pet_Image.png)
 
-## Final Product
+# Final Product - PawTrackr
 
-### PawTrackr is a full stack app that enables pet owners to track all their pets' info in a central place.
+**PawTrackr** is a full stack app that enables pet owners to track all their pets' info in a central place<br>  
+😼 Has your cat ever lied to you about if they've been fed yet or not?  
+🐶 How does everybody in the house know if the dog’s been walked yet?  
+🤔 Even with a trusted pet sitter, do you worry about your pets getting their medication on time when you’re out of town?  
+🤩 We've built you the solution!
+
+🐾 Welcome to **PawTrackr**
+
+<hr>
 
 <!-- [ Demo Video ] -->
 
+### Homepage View - All Pets:  
 <img src="planning/readme_images/Homepage_View.png" alt="Homepage View - All Pets" width="800">
 
-<!-- [ Screenshots ] -->
+### Pet Modal View:
+<img src="planning/readme_images/Pet_Modal_View.png" alt="Pet Modal View" width="800">
 
-**Screen Reader Video (turn sound on!)**
+### Reminders View:
+<img src="planning/readme_images/Reminders_View.png" alt="Reminders View" width="800">
+
+### Add New Reminder View:
+<img src="planning/readme_images/Add_New_Reminder_View.png" alt="Add New Reminder View" width="800">
+
+### Contacts View:
+<img src="planning/readme_images/Contacts_View.png" alt="Contacts View" width="800">
+
+### Add New Contact View:
+<img src="planning/readme_images/Add_New_Contact_View.png" alt="Add New Contact View" width="800">
+
+### Screen Reader Video (turn sound on!)
 
 https://github.com/Devvaru/PawTrackr/assets/109990289/381f46fb-bacd-49bd-9b10-97f40962a196
 
 <hr>
 
-## PawTrackr - [Planning Board](https://github.com/users/Devvaru/projects/1) 
+## [Project Planning Board](https://github.com/users/Devvaru/projects/1) 
 
 ## Project ERD (Entity Relationship Diagram)
 
