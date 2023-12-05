@@ -1,6 +1,10 @@
 <div align="center">
   <img src="frontend/src/logo/logo.png">
+  <br>
+    Your <strong><em>complete</strong></em> Pet Care Solution
 </div>
+
+<hr>
 
 <h1 align="center">Meet the Team</h1>
 
@@ -94,24 +98,24 @@ If you're the first visitor in a while, the first launch may take a few extra se
 <!-- [ Demo Video ] -->
 
 ### Homepage View - All Pets:  
-<img src="planning/readme_images/Homepage_View.png" alt="Homepage View - All Pets" width="800">
+<img src="planning/readme_images/Homepage_View.png" alt="Homepage View - All Pets">
 
 ### Pet Modal View:
-<img src="planning/readme_images/Pet_Modal_View.png" alt="Pet Modal View" width="800">
+<img src="planning/readme_images/Pet_Modal_View.png" alt="Pet Modal View">
 
 ### Reminders View:
-<img src="planning/readme_images/Reminders_View.png" alt="Reminders View" width="800">
+<img src="planning/readme_images/Reminders_View.png" alt="Reminders View">
 
 ### Add New Reminder View:
-<img src="planning/readme_images/Add_New_Reminder_View.png" alt="Add New Reminder View" width="800">
+<img src="planning/readme_images/Add_New_Reminder_View.png" alt="Add New Reminder View">
 
 ### Contacts View:
-<img src="planning/readme_images/Contacts_View.png" alt="Contacts View" width="800">
+<img src="planning/readme_images/Contacts_View.png" alt="Contacts View">
 
 ### Add New Contact View:
-<img src="planning/readme_images/Add_New_Contact_View.png" alt="Add New Contact View" width="800">
+<img src="planning/readme_images/Add_New_Contact_View.png" alt="Add New Contact View">
 
-### Screen Reader Video (turn sound on!)
+### Screen Reader Video (🔊 turn sound on!)
 
 https://github.com/Devvaru/PawTrackr/assets/109990289/381f46fb-bacd-49bd-9b10-97f40962a196
 
@@ -124,6 +128,8 @@ https://github.com/Devvaru/PawTrackr/assets/109990289/381f46fb-bacd-49bd-9b10-97
 <!-- A link to the ERD with dynamic highlighting of table relationships is available [HERE](https://dbdocs.io/**TBC**/**Filename-TBC**?view=relationships) -->
 
 !["Screenshot of ERD"](/planning/PawTrackr-ERD.png)
+
+<hr>
 
 ## Purpose
 
@@ -164,6 +170,16 @@ Here are some resources and techniques that have helped us so far:
 
 With gratitude to the creators of the above tools, and the Chrome for Developers team for their [A11ycasts](https://youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&si=hecDEvcnI4IgJc25) series. 
 
+## Ideas for Future Development
+
+* Logins for various household members
+* Reminder SMS/Email alerts
+* Multiple pet photos
+* Pet health history tracking (weight, immunization dates)
+* Mobile-friendly views
+* Improve accessbible design functionality
+* Unit, Component, and E2E testing
+
 ## Dependencies
 
 * [React](https://react.dev/)
@@ -180,11 +196,20 @@ With gratitude to the creators of the above tools, and the Chrome for Developers
 * [Morgan](https://www.npmjs.com/package/morgan/)
 * [Dotenv](https://www.npmjs.com/package/dotenv/)
 
+### Deploy Details:
+* [Netlify](https://www.netlify.com/)
+* [Render](https://render.com/)
+* [ElephantSQL](https://www.elephantsql.com/)
+
+<hr>
+
 ## A note about `create-react-app`
 
 For larger-scale production-ready applications with enhanced customization, React's official documentation and best practices now recommend other ways to [Start a New React Project](https://react.dev/learn/start-a-new-react-project)
 
 Since this was a project for educational purposes, it has been bootstrapped with [Create React App](https://github.com/facebook/create-react-app) which provided a straightforward way to get a functional React app up and running quickly.
+
+<hr>
 
 ## Installation
 
@@ -228,6 +253,8 @@ Since this was a project for educational purposes, it has been bootstrapped with
 * Start the backend by running the `npm start` command from within the `/backend` folder. The API server will run on Port 8080
 * Start the frontend side using the `npm start` command from within the `/frontend` folder. The client will run on Port 3000
 * Navigate to [http://localhost:3000](http://localhost:3000) in your browser
+
+<hr>
 
 ## Acknowledgements & Thanks
 
