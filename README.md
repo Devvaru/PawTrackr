@@ -76,7 +76,7 @@ If you're the first visitor in a while, the first launch may take a few extra se
 `images/tabby_cat.jpg`  
 `images/tortoise.jpg`  
 
-Example:\
+**Example:**  
 ![Add New Pet Photo Field Screnshot](planning/readme_images/Add_New_Pet_Image.png)
 
 ## PawTrackr - [Planning Board](https://github.com/users/Devvaru/projects/1)
@@ -114,7 +114,7 @@ While working to build this project to successful completion, we:
 * Designed and architected a complete application
 * Leveraged all of the skills and knowledge learned to date
 * Created functional requirements, user stories, ERD, and wireframes
-<!-- * Stretch: Deploy the application to the cloud -->
+* Deployed the application to the cloud as a Stretch Goal Achievement 
 
 ### Project Outcomes & Learning Achievements
 
@@ -122,22 +122,35 @@ While working to build this project to successful completion, we:
 * Leveraged code sharing and carried out code reviews
 * Collaborated effectively to deliver a product by the deadline
 * Built a complete Project to add to our portfolio
-* Learned a new library
-<!-- * Learned a new framework/library/tech stack/language -->
+* Rapidly acquired and applied new skills to enhance our final product:
+  - React-Bootstrap, React-Calendar, Pagination, Light/Dark Theme changing, and Drag & Drop functionality 
+
+## Accessibility (a11y)
+
+Inclusive design is an ongoing process that belongs at the heart of software creation. We are eager to keep learning and growing our ability to build accessible digital solutions.  
+Here are some resources and techniques that have helped us so far:
+- [Google Lighthouse Accessibility Report](https://developer.chrome.com/docs/lighthouse/accessibility/scoring): contains an accessibility score and provides actionable feedback on issues detected
+- [axe DevTools browser extension](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US&utm_source=chromedev): provides an automated accessibility audit and details on how to resolve problems
+- [Manual Testing - Keyboard Checks](https://web.dev/learn/accessibility/test-manual#keyboard_checks): setting aside the mouse, we navigated our own app using only a keyboard
+- [NVDA Screen Reader](https://www.nvaccess.org/): we used a screenreader on our own app, to ensure that navigation waypoints were detected and read out loud
+
+With gratitude to the creators of the above tools, and the Chrome for Developers team for their [A11ycasts](https://youtube.com/playlist?list=PLNYkxOF6rcICWx0C9LVWWVqvHlYJyqw7g&si=hecDEvcnI4IgJc25) series. 
 
 ## Dependencies
 
 * [React](https://react.dev/)
-* [react-bootstrap](https://react-bootstrap.netlify.app/)
-* [Express](https://expressjs.com)
+* [React-Bootstrap](https://react-bootstrap.netlify.app/)
+* [React-Beautiful-DnD](https://www.npmjs.com/package/react-beautiful-dnd/)
+* [React-Calendar](https://www.npmjs.com/package/react-calendar/)
+* [Express](https://expressjs.com/)
 * [Node.js](https://nodejs.org/)
-* [node-postgres](https://node-postgres.com/)
-* [SASS](https://www.npmjs.com/package/sass)
+* [Node-Postgres](https://node-postgres.com/)
+* [SASS](https://www.npmjs.com/package/sass/)
 * [Babel](https://babeljs.io/)
-* [body-parser](https://www.npmjs.com/package/body-parser)
+* [Body-Parser](https://www.npmjs.com/package/body-parser/)
 * [Axios](https://www.npmjs.com/package/axios/)
 * [Morgan](https://www.npmjs.com/package/morgan/)
-* [dotenv](https://www.npmjs.com/package/dotenv/)
+* [Dotenv](https://www.npmjs.com/package/dotenv/)
 
 ## A note about `create-react-app`
 
