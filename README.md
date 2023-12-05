@@ -85,6 +85,8 @@ If you're the first visitor in a while, the first launch may take a few extra se
 
 <!-- [ Demo Video ] -->
 
+<img src="planning/readme_images/Homepage_View.png" alt="Homepage View - All Pets" width="800">
+
 <!-- [ Screenshots ] -->
 
 **Screen Reader Video (turn sound on!)**
