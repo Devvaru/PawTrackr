@@ -61,7 +61,7 @@
 
 *** 
 
-# ✨ <a href="https://pawtrackr.netlify.app/" target="_blank">Live Demo</a> ✨
+# ✨ [Live Demo](pawtrackr.netlify.app/) ✨
 
 **Please note:** The app goes into "sleep" (idle) mode to conserve resources when inactive.\
 If you're the first visitor in a while, the first launch may take a few extra seconds to load, but subsequent launches will be much quicker! ⚡
