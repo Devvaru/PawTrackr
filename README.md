@@ -231,4 +231,4 @@ Since this was a project for educational purposes, it has been bootstrapped with
 
 ## Acknowledgements & Thanks
 
-* Photos provided by [Pexels](https://www.pexels.com/)
+Photos provided by [Pexels](https://www.pexels.com/)
