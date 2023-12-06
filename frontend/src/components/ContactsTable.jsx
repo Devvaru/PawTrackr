@@ -35,7 +35,7 @@ function ContactsTable() {
         setContacts(res.data);
       })
       .catch((error) => {
-        console.error('Fetch error:', error);
+        console.error('Error loading contacts:', error);
       });
   };
 
