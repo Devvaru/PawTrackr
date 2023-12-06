@@ -47,7 +47,7 @@ function RemindersTable() {
         })
       )
       .catch((error) => {
-        console.error('Error fetching reminders:', error);
+        console.error('Error loading reminders:', error);
       });
   };
 
